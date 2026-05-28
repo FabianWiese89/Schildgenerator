@@ -4,6 +4,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.lib import colors
 from PIL import Image, ImageTk
+from src.paths import resource_path
 import os
 import sys
 import tkinter as tk
@@ -14,13 +15,6 @@ import urllib.parse
 # ---- Farbdefinitionen ----
 BG_COLOR = "#9d9d9d"
 BUTTON_COLOR = "#00703c"
-
-def resource_path(relative_path):
-    try:
-        base_path = sys._MEIPASS
-    except AttributeError:
-        base_path = os.path.abspath('.')
-    return os.path.join(base_path, relative_path)
 
 class ReleaseNotesWindow(tk.Toplevel):
     def __init__(self, parent):
