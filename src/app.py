@@ -6,6 +6,7 @@ from reportlab.lib import colors
 from PIL import Image, ImageTk
 from src.paths import resource_path
 from src.pdf_generator import generate_pdf_einzeln
+from src.validators import is_single_pdf_valid
 import os
 import sys
 import tkinter as tk
@@ -354,10 +355,7 @@ class QRCodeGeneratorApp:
         lagerplatz = self.single_lagerplatz.get().strip()
         pdf = self.single_output.get().strip()
         layout = self.single_layout.get()
-        if (layout in ["4 Zeilen pro PDF-Seite", "5 Zeilen pro PDF-Seite"]
-            and len(lagerplatz) >= 7
-            and "-" in lagerplatz
-            and pdf.endswith(".pdf")):
+        if is_single_pdf_valid(lagerplatz, pdf, layout):
             self.single_btn_pdf.config(state="normal")
         else:
             self.single_btn_pdf.config(state="disabled")
