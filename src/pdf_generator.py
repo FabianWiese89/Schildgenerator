@@ -5,7 +5,7 @@ from PIL import Image
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.pdfgen import canvas
-
+from src.layouts import SINGLE_LABEL_LAYOUT
 from src.paths import resource_path
 
 def generate_pdf_einzeln(text_vis, qr_data, output, zeilen):
@@ -21,9 +21,9 @@ def generate_pdf_einzeln(text_vis, qr_data, output, zeilen):
         width, height = landscape(A4)
 
         # Rahmen
-        margin = 28.3465*2
+        margin = SINGLE_LABEL_LAYOUT["margin"]
         pdf.setStrokeColor(border_color)
-        pdf.setLineWidth(14.1732)
+        pdf.setLineWidth(SINGLE_LABEL_LAYOUT["border_width"])
         pdf.rect(margin, margin, width-2*margin, height-2*margin)
 
         # Visueller Text
