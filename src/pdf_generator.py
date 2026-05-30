@@ -73,7 +73,7 @@ def generate_pdf_einzeln(text_vis, qr_data, output, zeilen):
         pdf.showPage()
         pdf.save()
 
-def generate_text_sign_pdf(title_text, text, output):
+def generate_text_sign_pdf(title_text, text, output, show_safe_area=False):
     layout = TEXT_SIGN_A4_LANDSCAPE_LAYOUT
 
     pdf = canvas.Canvas(output, pagesize=landscape(A4))
@@ -134,6 +134,40 @@ def generate_text_sign_pdf(title_text, text, output):
         title_text
     ) 
     pdf.showPage()
+    
+    safe_area_x = (
+    margin
+    + layout["text_area_left_padding"]
+    )
+
+    safe_area_y = (
+    margin
+    + layout["text_area_bottom_padding"]
+    )
+
+    safe_area_width = (
+    width
+    - (2 * margin)
+    - layout["text_area_left_padding"]
+    - layout["text_area_right_padding"]
+    )
+
+    safe_area_height = (
+    height
+    - (2 * margin)
+    - layout["title_area_height"]
+    - layout["text_area_top_padding"]
+    - layout["text_area_bottom_padding"]
+    )
+    if show_safe_area:
+        pdf.setStrokeColorRGB(1, 0, 0)
+
+        pdf.rect(
+            safe_area_x,
+            safe_area_y,
+            safe_area_width,
+            safe_area_height
+    )
     pdf.save()
     
    

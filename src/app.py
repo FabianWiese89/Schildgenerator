@@ -351,7 +351,8 @@ class QRCodeGeneratorApp:
             command=lambda: generate_text_sign_pdf(
                 "TESTSCHILD",
                 "",
-                "output/test_textschild.pdf"
+                "output/test_textschild.pdf",
+                True
             ),
             bg=BUTTON_COLOR,
             fg="black",
