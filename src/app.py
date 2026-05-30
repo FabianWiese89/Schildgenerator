@@ -6,6 +6,7 @@ from reportlab.lib import colors
 from PIL import Image, ImageTk
 from src.paths import resource_path
 from src.pdf_generator import generate_pdf_einzeln
+from src.pdf_generator import generate_text_sign_pdf
 from src.validators import is_single_pdf_valid
 import os
 import sys
@@ -343,6 +344,20 @@ class QRCodeGeneratorApp:
             fg="black",
             relief="raised"
         ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
+        
+        tk.Button(
+            btn_frame,
+            text="Textschild Test",
+            command=lambda: generate_text_sign_pdf(
+                "TESTSCHILD",
+                "",
+                "output/test_textschild.pdf"
+            ),
+            bg=BUTTON_COLOR,
+            fg="black",
+            padx=18,
+            pady=5
+        ).pack(side="left", padx=(0, 20))
 
         # Live-Validation
         frame.bind_all('<KeyRelease>', lambda e: self.update_single_button())

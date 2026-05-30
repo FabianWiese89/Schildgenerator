@@ -2,7 +2,7 @@
 
 Lokales Python-Programm zur Erstellung von Lagerplatzschildern mit QR-Code als PDF.
 
-## Aktueller Stand
+# Aktueller Stand
 
 - Einzelerstellung von Lagerplatzschildern
 - Sammelverarbeitung über Excel
@@ -10,6 +10,6 @@ Lokales Python-Programm zur Erstellung von Lagerplatzschildern mit QR-Code als P
 - PDF-Ausgabe
 - Grafische Oberfläche mit tkinter
 
-## Ziel
+# Ziel
 
 Das Programm soll schrittweise zu einem modernen Schildergenerator für Lager und Logistik weiterentwickelt werden.

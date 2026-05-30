@@ -1,4 +1,5 @@
 import os
+from turtle import title, width
 import qrcode
 
 from PIL import Image
@@ -8,7 +9,8 @@ from reportlab.pdfgen import canvas
 from src.layouts import (
     SINGLE_LABEL_LAYOUT,
     FOUR_LINE_LAYOUT,
-    FIVE_LINE_LAYOUT
+    FIVE_LINE_LAYOUT,
+    TEXT_SIGN_A4_LANDSCAPE_LAYOUT,
 )
 from src.paths import resource_path
 
@@ -70,3 +72,68 @@ def generate_pdf_einzeln(text_vis, qr_data, output, zeilen):
         os.remove(tmp_logo)
         pdf.showPage()
         pdf.save()
+
+def generate_text_sign_pdf(title_text, text, output):
+    layout = TEXT_SIGN_A4_LANDSCAPE_LAYOUT
+
+    pdf = canvas.Canvas(output, pagesize=landscape(A4))
+    width, height = landscape(A4)
+
+    border_color = colors.Color(0 / 255, 112 / 255, 60 / 255)
+
+    margin = layout["margin"]
+    pdf.setStrokeColor(border_color)
+    pdf.setLineWidth(layout["border_width"])
+    pdf.rect(margin, margin, width - 2 * margin, height - 2 * margin)
+    logo_file = resource_path(layout["logo_path"])
+
+    logo_img = Image.open(logo_file)
+
+    logo_w = layout["logo_max_width"]
+    logo_h = logo_w * logo_img.size[1] / logo_img.size[0]
+
+    logo_x = (
+        width - logo_w - layout["logo_padding_x"] - margin
+    )
+    logo_y = (
+        height - logo_h - layout["logo_padding_y"] - margin
+    )
+
+    tmp_logo = "temp_text_logo.png"
+    logo_img.save(tmp_logo)
+
+    pdf.drawImage(
+        tmp_logo,
+        logo_x,
+        logo_y,
+        logo_w,
+        logo_h
+    )
+
+    os.remove(tmp_logo)
+    pdf.setFont(
+        layout["title_font_name"],
+        layout["title_font_size"]
+    )
+
+    title_x = (
+        margin
+        + layout["title_area_padding"]
+    )
+
+    title_y = (
+        height
+        - margin
+        - layout["title_area_padding"]
+        - layout["title_font_size"]
+    )
+
+    pdf.drawString(
+        title_x,
+        title_y,
+        title_text
+    ) 
+    pdf.showPage()
+    pdf.save()
+    
+   
