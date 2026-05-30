@@ -6,3 +6,11 @@ SINGLE_LABEL_LAYOUT = {
     "qr_max_height": 200,
     "border_width": 14.1732,
 }
+
+FOUR_LINE_LAYOUT = {
+    "font_sizes": [60, 70, 75, 105],
+}
+
+FIVE_LINE_LAYOUT = {
+    "font_sizes": [40, 50, 75, 105, 80],
+}

@@ -5,17 +5,22 @@ from PIL import Image
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.pdfgen import canvas
-from src.layouts import SINGLE_LABEL_LAYOUT
+from src.layouts import (
+    SINGLE_LABEL_LAYOUT,
+    FOUR_LINE_LAYOUT,
+    FIVE_LINE_LAYOUT
+)
 from src.paths import resource_path
 
 def generate_pdf_einzeln(text_vis, qr_data, output, zeilen):
         if zeilen == 4:
-            font_sizes = [60, 70, 75, 105]
+            layout_profile = FOUR_LINE_LAYOUT
             text_y = landscape(A4)[1] - 100 - 56.6929 - 28.3465
         else:
-            font_sizes = [40, 50, 75, 105, 80]
+            layout_profile = FIVE_LINE_LAYOUT
             text_y = landscape(A4)[1] - 100 - 56.6929
-
+        font_sizes = layout_profile["font_sizes"]
+        
         border_color = colors.Color(0/255,112/255,60/255)
         pdf = canvas.Canvas(output, pagesize=landscape(A4))
         width, height = landscape(A4)
