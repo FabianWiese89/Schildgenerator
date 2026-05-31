@@ -350,7 +350,7 @@ class QRCodeGeneratorApp:
             text="Textschild Test",
             command=lambda: generate_text_sign_pdf(
                 "TESTSCHILD",
-                "",
+                "PARKPLATZ FÜR BESUCHER UND LIEFERANTEN SOWIE EXTERNE DIENSTLEISTER",
                 "output/test_textschild.pdf",
                 True
             ),

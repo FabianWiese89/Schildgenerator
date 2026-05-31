@@ -40,4 +40,8 @@ TEXT_SIGN_A4_LANDSCAPE_LAYOUT = {
     "text_area_bottom_padding": 30,
     "text_area_left_padding": 40,
     "text_area_right_padding": 40,
+    
+    # Sonstiges
+    "min_font_size": 20,
+    "max_font_size": 180,
 }
