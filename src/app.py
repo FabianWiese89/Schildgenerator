@@ -602,7 +602,7 @@ class QRCodeGeneratorApp:
             qr_x = width/2+50-42.5197-56.6929; qr_y = (height-qr_max)/2-28.3465
             pdf.drawImage(tmp_qr, qr_x, qr_y, qr_max, qr_max)
             os.remove(tmp_qr)
-            logo_file = resource_path("IMG_0060.jpeg")
+            logo_file = resource_path("assets/Logo_White.jpeg")
             logo_img = Image.open(logo_file)
             logo_w=qr_max*0.5; logo_h=logo_w*logo_img.size[1]/logo_img.size[0]
             logo_img=logo_img.resize((int(logo_w),int(logo_h)), Image.LANCZOS)
@@ -653,7 +653,7 @@ class QRCodeGeneratorApp:
             qr_x = width/2+50-42.5197-56.6929; qr_y = (height-qr_max)/2-28.3465
             pdf.drawImage(tmp_qr, qr_x, qr_y, qr_max, qr_max)
             os.remove(tmp_qr)
-            logo_file = resource_path("IMG_0060.jpeg")
+            logo_file = resource_path("assets/Logo_White.jpeg")
             logo_img = Image.open(logo_file)
             logo_w=qr_max*0.5; logo_h=logo_w*logo_img.size[1]/logo_img.size[0]
             logo_img=logo_img.resize((int(logo_w),int(logo_h)), Image.LANCZOS)

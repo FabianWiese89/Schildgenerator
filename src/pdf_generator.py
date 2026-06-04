@@ -135,7 +135,7 @@ def generate_pdf_einzeln(text_vis, qr_data, output, zeilen):
     pdf.drawImage(tmp_qr, qr_x, qr_y, qr_max, qr_max)
     os.remove(tmp_qr)
 
-    logo_file = resource_path("assets/IMG_0060.jpeg")
+    logo_file = resource_path("assets/Logo_White.jpeg")
     logo_img = Image.open(logo_file)
 
     logo_w = qr_max * 0.5
