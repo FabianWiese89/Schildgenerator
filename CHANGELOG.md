@@ -113,6 +113,9 @@ Ausgangsversion des Projekts.
 - Klasse `HandbuchWindow` aus `app.py` in das neue GUI-Modul `src/gui/handbuch_window.py` ausgelagert.
 - `app.py` weiter reduziert und GUI-Fensterlogik stärker von der Hauptanwendung getrennt.
 - Importstruktur für das ausgelagerte Handbuch-Fenster angepasst.
+- Neues Konfigurationsmodul `src/config/theme.py` erstellt.
+- GUI-Hintergrundfarbe `BG_COLOR` zentralisiert und aus `app.py`, `release_notes_window.py` und `handbuch_window.py` ausgelagert.
+- Doppelte Farbdefinitionen reduziert und Grundlage für eine spätere zentrale GUI-Theme-Verwaltung geschaffen.
 
 #### Neue Datei: layouts.py
 

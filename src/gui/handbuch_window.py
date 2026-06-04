@@ -1,7 +1,7 @@
 import tkinter as tk
 import webbrowser
 
-BG_COLOR = "#9d9d9d"
+from src.config.theme import BG_COLOR
 
 class HandbuchWindow(tk.Toplevel):
     def __init__(self, parent):

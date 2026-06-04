@@ -1,6 +1,6 @@
 import tkinter as tk
 
-BG_COLOR = "#9d9d9d"
+from src.config.theme import BG_COLOR
 
 class ReleaseNotesWindow(tk.Toplevel):
     def __init__(self, parent):
