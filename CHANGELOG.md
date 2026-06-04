@@ -140,6 +140,10 @@ Ausgangsversion des Projekts.
 - Batch-PDF-Erzeugung vollständig aus der GUI-Klasse `QRCodeGeneratorApp` entfernt.
 - `app.py` weiter auf GUI-Steuerung und Benutzerinteraktion reduziert.
 - Sammelverarbeitung für 4- und 5-Zeilen-Layouts nach Auslagerung erfolgreich geprüft.
+- Nicht mehr benötigte Imports aus `app.py` entfernt.
+- Veraltete Abhängigkeiten zu Excel-, QR-Code-, PDF- und Systembibliotheken aus der GUI-Datei bereinigt.
+- `app.py` weiter auf GUI-Steuerung und Benutzerinteraktion reduziert.
+- Logo-Anzeige nach Korrektur des verwendeten Asset-Namens erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 

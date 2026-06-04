@@ -1,16 +1,8 @@
-from csv import excel
-
-import openpyxl
-import qrcode
 import webbrowser
 import urllib.parse
 import os
-import sys
 import tkinter as tk
 
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import landscape, A4
-from reportlab.lib import colors
 from PIL import Image, ImageTk
 from src.paths import resource_path
 from src.pdf_generator import generate_pdf_einzeln
@@ -103,7 +95,7 @@ class QRCodeGeneratorApp:
         frame = self.tab_single
 
         # Firmenlogo
-        logo_path = resource_path("Schnellecke Logistics_transparent.png")
+        logo_path = resource_path("assets/Logo_trans.png")
         if os.path.exists(logo_path):
             img = Image.open(logo_path)
             img = img.resize((250, 80), Image.LANCZOS)
@@ -257,7 +249,7 @@ class QRCodeGeneratorApp:
         frame = self.tab_batch
 
         # Firmenlogo
-        logo_path = resource_path("Schnellecke Logistics_transparent.png")
+        logo_path = resource_path("assets/Logo_trans.png")
         if os.path.exists(logo_path):
             img = Image.open(logo_path)
             img = img.resize((250, 80), Image.LANCZOS)
