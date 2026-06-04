@@ -1,4 +1,5 @@
 import os
+import openpyxl
 import qrcode
 
 from PIL import Image
@@ -270,3 +271,50 @@ def generate_text_sign_pdf(title_text, text, output, show_safe_area=False):
 
     pdf.showPage()
     pdf.save()
+    
+def generate_batch_pdf_4(excel, output):
+        wb = openpyxl.load_workbook(excel)
+        sheet = wb.active
+        font_sizes = [60, 70, 75, 105]
+        border_color = colors.Color(0/255,112/255,60/255)
+        pdf = canvas.Canvas(output, pagesize=landscape(A4))
+        width, height = landscape(A4)
+        for idx, row in enumerate(sheet.iter_rows(min_row=1, values_only=True)):
+            pdf.setStrokeColor(border_color)
+            pdf.setLineWidth(14.1732)
+            margin = 28.3465*2
+            pdf.rect(margin, margin, width-2*margin, height-2*margin)
+            text_y = height-100-56.6929-28.3465
+            text_x = 50
+            left_width = width/2-50
+            if row[0]:
+                lines = str(row[0]).split()
+                for i, line in enumerate(lines):
+                    size = font_sizes[min(i,len(font_sizes)-1)]
+                    pdf.setFont("Times-Bold", size)
+                    tw = pdf.stringWidth(line, "Times-Bold", size)
+                    pdf.drawString(text_x+(left_width-tw)/2, text_y, line)
+                    text_y -= size+22.6772
+            footer_text = "Erstellt: Fabian Wiese, generiert durch Lagerplatz-QRCode-Generator Version 1.0"
+            pdf.setFont("Times-Roman",12)
+            pdf.drawString(50,30, footer_text)
+            qr_data = row[1] if row[1] else "https://example.com"
+            qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=10, border=1)
+            qr.add_data(qr_data)
+            qr.make(fit=True)
+            qr_img = qr.make_image(fill_color="black", back_color="white")
+            tmp_qr = f"temp_qr_{idx}.png"; qr_img.save(tmp_qr)
+            qr_max = min(width/2-50, height-200)
+            qr_img = Image.open(tmp_qr).resize((int(qr_max),int(qr_max)), Image.LANCZOS)
+            qr_x = width/2+50-42.5197-56.6929; qr_y = (height-qr_max)/2-28.3465
+            pdf.drawImage(tmp_qr, qr_x, qr_y, qr_max, qr_max)
+            os.remove(tmp_qr)
+            logo_file = resource_path("assets/Logo_White.jpeg")
+            logo_img = Image.open(logo_file)
+            logo_w=qr_max*0.5; logo_h=logo_w*logo_img.size[1]/logo_img.size[0]
+            logo_img=logo_img.resize((int(logo_w),int(logo_h)), Image.LANCZOS)
+            tmp_logo=f"temp_logo_{idx}.png"; logo_img.save(tmp_logo)
+            pdf.drawImage(tmp_logo, qr_x+(qr_max-logo_w)/2, qr_y+qr_max+10, logo_w, logo_h)
+            os.remove(tmp_logo)
+            pdf.showPage()
+        pdf.save()

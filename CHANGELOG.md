@@ -131,6 +131,10 @@ Ausgangsversion des Projekts.
 - Direkte Abhängigkeit der Batch-PDF-Erzeugung von Tkinter-Eingabefeldern reduziert.
 - Methode `on_batch_generate()` übergibt Excel- und PDF-Ausgabepfad nun gezielt an die PDF-Erzeugung.
 - Auslagerung der Batch-PDF-Erzeugung aus `app.py` vorbereitet.
+- 4-Zeilen-Batch-PDF-Erzeugung aus `app.py` nach `src/pdf_generator.py` ausgelagert.
+- Neue Funktion `generate_batch_pdf_4(excel, output)` erstellt.
+- GUI-Klasse `QRCodeGeneratorApp` weiter von PDF-Erzeugungslogik entlastet.
+- Sammelverarbeitung für 4-Zeilen-Layouts nach Auslagerung erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 
