@@ -135,6 +135,11 @@ Ausgangsversion des Projekts.
 - Neue Funktion `generate_batch_pdf_4(excel, output)` erstellt.
 - GUI-Klasse `QRCodeGeneratorApp` weiter von PDF-Erzeugungslogik entlastet.
 - Sammelverarbeitung für 4-Zeilen-Layouts nach Auslagerung erfolgreich geprüft.
+- 5-Zeilen-Batch-PDF-Erzeugung aus `app.py` nach `src/pdf_generator.py` ausgelagert.
+- Neue Funktion `generate_batch_pdf_5(excel, output)` erstellt.
+- Batch-PDF-Erzeugung vollständig aus der GUI-Klasse `QRCodeGeneratorApp` entfernt.
+- `app.py` weiter auf GUI-Steuerung und Benutzerinteraktion reduziert.
+- Sammelverarbeitung für 4- und 5-Zeilen-Layouts nach Auslagerung erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 
