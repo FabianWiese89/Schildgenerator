@@ -107,6 +107,13 @@ Ausgangsversion des Projekts.
 
 ### Refactoring
 
+- Klasse `ReleaseNotesWindow` aus `app.py` in das neue GUI-Modul `src/gui/release_notes_window.py` ausgelagert.
+- `app.py` weiter reduziert und erste fachliche Trennung innerhalb der GUI-Struktur vorbereitet.
+- Importstruktur für das ausgelagerte Release-Notes-Fenster angepasst.
+- Klasse `HandbuchWindow` aus `app.py` in das neue GUI-Modul `src/gui/handbuch_window.py` ausgelagert.
+- `app.py` weiter reduziert und GUI-Fensterlogik stärker von der Hauptanwendung getrennt.
+- Importstruktur für das ausgelagerte Handbuch-Fenster angepasst.
+
 #### Neue Datei: layouts.py
 
 Ausgelagert:
@@ -289,3 +296,4 @@ Verwendete Ressourcen:
 * Textumbruch erfolgt aktuell wortbasiert und noch nicht über eine vollständige Layout-Optimierungslogik
 * Vorschaufenster noch nicht implementiert
 * Weitere Schildtypen noch nicht integriert
+
