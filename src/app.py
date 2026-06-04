@@ -1,3 +1,5 @@
+from csv import excel
+
 import openpyxl
 import qrcode
 from reportlab.pdfgen import canvas
@@ -7,7 +9,7 @@ from PIL import Image, ImageTk
 from src.paths import resource_path
 from src.pdf_generator import generate_pdf_einzeln
 from src.pdf_generator import generate_text_sign_pdf
-from src.validators import is_single_pdf_valid
+from src.validators import is_single_pdf_valid, is_batch_pdf_valid
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
 from src.config.theme import BG_COLOR, BUTTON_COLOR
@@ -353,10 +355,7 @@ class QRCodeGeneratorApp:
         excel = self.batch_excel_path.get().strip()
         pdf = self.batch_output_path.get().strip()
         zeilen = self.batch_layout.get()
-        if (zeilen in ["4 Zeilen pro PDF-Seite", "5 Zeilen pro PDF-Seite"]
-            and excel.endswith(".xlsx")
-            and pdf.endswith(".pdf")
-            and os.path.exists(excel)):
+        if is_batch_pdf_valid(excel, pdf, zeilen):
             self.batch_btn_pdf.config(state="normal")
         else:
             self.batch_btn_pdf.config(state="disabled")

@@ -119,6 +119,10 @@ Ausgangsversion des Projekts.
 - GUI-Buttonfarbe `BUTTON_COLOR` in `src/config/theme.py` zentralisiert.
 - `app.py` weiter von festen Designwerten entlastet.
 - Zentrale Theme-Konfiguration für zukünftige GUI-Anpassungen erweitert.
+- Neue Funktion `is_batch_pdf_valid()` in `src/validators.py` ergänzt.
+- Batch-Validierung aus `app.py` ausgelagert.
+- Validierungslogik für Einzelerstellung und Sammelverarbeitung weiter zentralisiert.
+- `app.py` weiter von fachlicher Prüflogik entlastet.
 
 #### Neue Datei: layouts.py
 
