@@ -123,6 +123,10 @@ Ausgangsversion des Projekts.
 - Batch-Validierung aus `app.py` ausgelagert.
 - Validierungslogik für Einzelerstellung und Sammelverarbeitung weiter zentralisiert.
 - `app.py` weiter von fachlicher Prüflogik entlastet.
+- Neues Hilfsmodul `src/utils/layout_helpers.py` erstellt.
+- Funktion `get_line_count_from_layout()` ergänzt.
+- Doppelte Logik zur Ermittlung der Zeilenanzahl aus der GUI-Auswahl aus `app.py` ausgelagert.
+- Einzelerstellung und Sammelverarbeitung auf die zentrale Hilfsfunktion umgestellt.
 
 #### Neue Datei: layouts.py
 

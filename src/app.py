@@ -2,6 +2,12 @@ from csv import excel
 
 import openpyxl
 import qrcode
+import webbrowser
+import urllib.parse
+import os
+import sys
+import tkinter as tk
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.lib import colors
@@ -13,12 +19,9 @@ from src.validators import is_single_pdf_valid, is_batch_pdf_valid
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
 from src.config.theme import BG_COLOR, BUTTON_COLOR
-import os
-import sys
-import tkinter as tk
+from src.utils.layout_helpers import get_line_count_from_layout
 from tkinter import filedialog, messagebox, ttk
-import webbrowser
-import urllib.parse
+
 
 
 # ---- Farbdefinitionen ----
@@ -234,7 +237,7 @@ class QRCodeGeneratorApp:
     def on_single_generate(self):
         self.single_status.config(text="PDF wird erstellt...")
         self.root.update_idletasks()
-        choice = 5 if "5 Zeilen" in self.single_layout.get() else 4
+        choice = get_line_count_from_layout(self.single_layout.get())
         lagerplatz_sys = self.single_lagerplatz.get().strip()
         lagerplatz_vis = lagerplatz_sys.replace("-", " ")
         qr_data = lagerplatz_sys
@@ -381,7 +384,7 @@ class QRCodeGeneratorApp:
     def on_batch_generate(self):
         self.batch_status.config(text="PDF wird erstellt...")
         self.root.update_idletasks()
-        choice = 5 if "5 Zeilen" in self.batch_layout.get() else 4
+        choice = get_line_count_from_layout(self.batch_layout.get())
         if choice == 4:
             self.generate_pdf_4()
         else:
