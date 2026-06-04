@@ -81,6 +81,18 @@ class QRCodeGeneratorApp:
         self.version_lbl.bind("<Leave>", self._on_version_leave)
         self.version_lbl.bind("<Button-1>", self.show_release_notes)
 
+    def add_logo_to_frame(self, frame):
+        logo_path = resource_path("assets/Logo_trans.png")
+
+        if os.path.exists(logo_path):
+            img = Image.open(logo_path)
+            img = img.resize((250, 80), Image.LANCZOS)
+            logo_img = ImageTk.PhotoImage(img)
+
+            logo_label = tk.Label(frame, image=logo_img, bg=BG_COLOR)
+            logo_label.image = logo_img
+            logo_label.place(relx=1.0, rely=0.0, anchor="ne")
+        
     def _on_version_hover(self, event):
         self.version_lbl.config(fg="white", font=("Arial", 10, "underline"), cursor="hand2")
 
@@ -95,15 +107,8 @@ class QRCodeGeneratorApp:
         frame = self.tab_single
 
         # Firmenlogo
-        logo_path = resource_path("assets/Logo_trans.png")
-        if os.path.exists(logo_path):
-            img = Image.open(logo_path)
-            img = img.resize((250, 80), Image.LANCZOS)
-            logo_img = ImageTk.PhotoImage(img)
-            logo_label = tk.Label(frame, image=logo_img, bg=BG_COLOR)
-            logo_label.image = logo_img
-            logo_label.place(relx=1.0, rely=0.0, anchor="ne")
-
+        self.add_logo_to_frame(frame)
+        
         # Titel
         tk.Label(
             frame,
@@ -249,14 +254,7 @@ class QRCodeGeneratorApp:
         frame = self.tab_batch
 
         # Firmenlogo
-        logo_path = resource_path("assets/Logo_trans.png")
-        if os.path.exists(logo_path):
-            img = Image.open(logo_path)
-            img = img.resize((250, 80), Image.LANCZOS)
-            logo_img = ImageTk.PhotoImage(img)
-            logo_label = tk.Label(frame, image=logo_img, bg=BG_COLOR)
-            logo_label.image = logo_img
-            logo_label.place(relx=1.0, rely=0.0, anchor="ne")
+        self.add_logo_to_frame(frame)
 
         # Titel
         tk.Label(

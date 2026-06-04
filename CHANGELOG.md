@@ -144,6 +144,10 @@ Ausgangsversion des Projekts.
 - Veraltete Abhängigkeiten zu Excel-, QR-Code-, PDF- und Systembibliotheken aus der GUI-Datei bereinigt.
 - `app.py` weiter auf GUI-Steuerung und Benutzerinteraktion reduziert.
 - Logo-Anzeige nach Korrektur des verwendeten Asset-Namens erfolgreich geprüft.
+- Doppelte GUI-Logo-Logik aus `build_tab_single()` und `build_tab_batch()` entfernt.
+- Neue Methode `add_logo_to_frame()` in `QRCodeGeneratorApp` ergänzt.
+- Logo-Erstellung und Logo-Platzierung innerhalb der GUI zentralisiert.
+- Anzeige des Firmenlogos in beiden Tabs erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 
