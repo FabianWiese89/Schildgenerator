@@ -12,10 +12,18 @@ from src.pdf_generator import generate_batch_pdf_5
 from src.validators import is_single_pdf_valid, is_batch_pdf_valid
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
-from src.config.theme import BG_COLOR, BUTTON_COLOR
 from src.utils.layout_helpers import get_line_count_from_layout
 from tkinter import filedialog, messagebox, ttk
-
+from src.config.theme import (
+    BG_COLOR,
+    BUTTON_COLOR,
+    GUI_LOGO_PATH,
+    GUI_LOGO_WIDTH,
+    GUI_LOGO_HEIGHT,
+    GUI_LOGO_RELX,
+    GUI_LOGO_RELY,
+    GUI_LOGO_ANCHOR,
+)
 
 
 # ---- Farbdefinitionen ----
@@ -82,16 +90,20 @@ class QRCodeGeneratorApp:
         self.version_lbl.bind("<Button-1>", self.show_release_notes)
 
     def add_logo_to_frame(self, frame):
-        logo_path = resource_path("assets/Logo_trans.png")
+        logo_path = resource_path(GUI_LOGO_PATH)
 
         if os.path.exists(logo_path):
             img = Image.open(logo_path)
-            img = img.resize((250, 80), Image.LANCZOS)
+            img = img.resize((GUI_LOGO_WIDTH, GUI_LOGO_HEIGHT), Image.LANCZOS)
             logo_img = ImageTk.PhotoImage(img)
 
             logo_label = tk.Label(frame, image=logo_img, bg=BG_COLOR)
             logo_label.image = logo_img
-            logo_label.place(relx=1.0, rely=0.0, anchor="ne")
+            logo_label.place(
+                relx=GUI_LOGO_RELX,
+                rely=GUI_LOGO_RELY,
+                anchor=GUI_LOGO_ANCHOR,
+            )
         
     def _on_version_hover(self, event):
         self.version_lbl.config(fg="white", font=("Arial", 10, "underline"), cursor="hand2")

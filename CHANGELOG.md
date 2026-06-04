@@ -148,6 +148,10 @@ Ausgangsversion des Projekts.
 - Neue Methode `add_logo_to_frame()` in `QRCodeGeneratorApp` ergänzt.
 - Logo-Erstellung und Logo-Platzierung innerhalb der GUI zentralisiert.
 - Anzeige des Firmenlogos in beiden Tabs erfolgreich geprüft.
+- GUI-Logo-Konfiguration in `src/config/theme.py` zentralisiert.
+- Logo-Dateiname, Logo-Größe und Logo-Position aus `app.py` ausgelagert.
+- Methode `add_logo_to_frame()` auf zentrale Konfigurationswerte umgestellt.
+- Logo-Anzeige in beiden Tabs nach der Umstellung erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 
