@@ -10,7 +10,7 @@ from src.pdf_generator import generate_text_sign_pdf
 from src.validators import is_single_pdf_valid
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
-from src.config.theme import BG_COLOR
+from src.config.theme import BG_COLOR, BUTTON_COLOR
 import os
 import sys
 import tkinter as tk
@@ -20,7 +20,6 @@ import urllib.parse
 
 
 # ---- Farbdefinitionen ----
-BUTTON_COLOR = "#00703c"
 class QRCodeGeneratorApp:
     def __init__(self, root):
         self.root = root

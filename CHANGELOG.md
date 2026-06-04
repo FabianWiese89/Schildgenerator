@@ -116,6 +116,9 @@ Ausgangsversion des Projekts.
 - Neues Konfigurationsmodul `src/config/theme.py` erstellt.
 - GUI-Hintergrundfarbe `BG_COLOR` zentralisiert und aus `app.py`, `release_notes_window.py` und `handbuch_window.py` ausgelagert.
 - Doppelte Farbdefinitionen reduziert und Grundlage für eine spätere zentrale GUI-Theme-Verwaltung geschaffen.
+- GUI-Buttonfarbe `BUTTON_COLOR` in `src/config/theme.py` zentralisiert.
+- `app.py` weiter von festen Designwerten entlastet.
+- Zentrale Theme-Konfiguration für zukünftige GUI-Anpassungen erweitert.
 
 #### Neue Datei: layouts.py
 

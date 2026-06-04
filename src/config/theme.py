@@ -1,1 +1,2 @@
 BG_COLOR = "#9d9d9d"
+BUTTON_COLOR = "#00703c"
