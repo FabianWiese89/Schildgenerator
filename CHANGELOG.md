@@ -127,6 +127,10 @@ Ausgangsversion des Projekts.
 - Funktion `get_line_count_from_layout()` ergänzt.
 - Doppelte Logik zur Ermittlung der Zeilenanzahl aus der GUI-Auswahl aus `app.py` ausgelagert.
 - Einzelerstellung und Sammelverarbeitung auf die zentrale Hilfsfunktion umgestellt.
+- Batch-PDF-Methoden `generate_pdf_4()` und `generate_pdf_5()` auf explizite Parameterübergabe umgestellt.
+- Direkte Abhängigkeit der Batch-PDF-Erzeugung von Tkinter-Eingabefeldern reduziert.
+- Methode `on_batch_generate()` übergibt Excel- und PDF-Ausgabepfad nun gezielt an die PDF-Erzeugung.
+- Auslagerung der Batch-PDF-Erzeugung aus `app.py` vorbereitet.
 
 #### Neue Datei: layouts.py
 

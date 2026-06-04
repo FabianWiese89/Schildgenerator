@@ -385,10 +385,12 @@ class QRCodeGeneratorApp:
         self.batch_status.config(text="PDF wird erstellt...")
         self.root.update_idletasks()
         choice = get_line_count_from_layout(self.batch_layout.get())
+        excel = self.batch_excel_path.get()
+        output = self.batch_output_path.get()
         if choice == 4:
-            self.generate_pdf_4()
+            self.generate_pdf_4(excel, output)
         else:
-            self.generate_pdf_5()
+            self.generate_pdf_5(excel, output)
         self.batch_status.config(text="Fertig")
         messagebox.showinfo("Fertig", f"PDF erfolgreich erstellt:\n{self.batch_output_path.get()}")
 
@@ -409,9 +411,7 @@ class QRCodeGeneratorApp:
         webbrowser.open(mailto_link)
 
     # ==== BATCH GENERIERUNG (wie bisher) ====
-    def generate_pdf_4(self):
-        excel = self.batch_excel_path.get()
-        output = self.batch_output_path.get()
+    def generate_pdf_4(self, excel, output):
         wb = openpyxl.load_workbook(excel)
         sheet = wb.active
         font_sizes = [60, 70, 75, 105]
@@ -458,9 +458,7 @@ class QRCodeGeneratorApp:
             pdf.showPage()
         pdf.save()
 
-    def generate_pdf_5(self):
-        excel = self.batch_excel_path.get()
-        output = self.batch_output_path.get()
+    def generate_pdf_5(self, excel, output):
         wb = openpyxl.load_workbook(excel)
         sheet = wb.active
         font_sizes = [40, 50, 75, 105, 80]
