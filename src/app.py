@@ -5,15 +5,17 @@ import tkinter as tk
 
 from PIL import Image, ImageTk
 from src.paths import resource_path
-from src.pdf_generator import generate_pdf_einzeln
-from src.pdf_generator import generate_text_sign_pdf
-from src.pdf_generator import generate_batch_pdf_4
-from src.pdf_generator import generate_batch_pdf_5
 from src.validators import is_single_pdf_valid, is_batch_pdf_valid
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
 from src.utils.layout_helpers import get_line_count_from_layout
 from tkinter import filedialog, messagebox, ttk
+from src.pdf_generator import (
+    generate_pdf_einzeln,
+    generate_text_sign_pdf,
+    generate_batch_pdf_4,
+    generate_batch_pdf_5,
+)
 from src.config.theme import (
     BG_COLOR,
     BUTTON_COLOR,
@@ -24,7 +26,6 @@ from src.config.theme import (
     GUI_LOGO_RELY,
     GUI_LOGO_ANCHOR,
 )
-
 
 # ---- Farbdefinitionen ----
 class QRCodeGeneratorApp:

@@ -152,6 +152,9 @@ Ausgangsversion des Projekts.
 - Logo-Dateiname, Logo-Größe und Logo-Position aus `app.py` ausgelagert.
 - Methode `add_logo_to_frame()` auf zentrale Konfigurationswerte umgestellt.
 - Logo-Anzeige in beiden Tabs nach der Umstellung erfolgreich geprüft.
+- PDF-Funktionsimporte in `app.py` gebündelt.
+- Mehrere Einzelimporte aus `src.pdf_generator` durch einen übersichtlichen mehrzeiligen Import ersetzt.
+- Importstruktur in `app.py` weiter bereinigt.
 
 #### Neue Datei: layouts.py
 
