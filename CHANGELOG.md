@@ -183,6 +183,12 @@ Ausgangsversion des Projekts.
 - Import der Layoutdefinitionen im PDF-Generator auf `src.config.layouts` angepasst.
 - Layoutwerte fachlich dem Konfigurationsbereich zugeordnet.
 - PDF-Erzeugung und GUI-Funktionen nach der Umstellung erfolgreich geprüft.
+- Datei `paths.py` nach `src/utils/paths.py` verschoben.
+- Funktion `resource_path()` zentral über `src.utils` exportiert.
+- Imports in `app.py` und `src/pdf/generator.py` angepasst.
+- Pfadlogik fachlich dem Utils-Bereich zugeordnet.
+- GUI-Logo und PDF-Erzeugung nach der Umstellung erfolgreich geprüft.
+
 #### Neue Datei: layouts.py
 
 Ausgelagert:

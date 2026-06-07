@@ -13,7 +13,7 @@ from src.config.layouts import (
     FIVE_LINE_LAYOUT,
     TEXT_SIGN_A4_LANDSCAPE_LAYOUT,
 )
-from src.paths import resource_path
+from src.utils import resource_path
 
 
 def fit_text_to_safe_area(pdf, lines, safe_area_width, safe_area_height, layout):
