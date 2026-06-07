@@ -79,7 +79,7 @@ Aktuell:
 
 * main.py
 * app.py
-* pdf_generator.py
+* src/pdf/generator.py
 * validators.py
 * layouts.py
 * paths.py

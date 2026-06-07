@@ -79,6 +79,9 @@ Ausgangsversion des Projekts.
 ---
 
 ### Geändert
+- `PROJECT_OVERVIEW.md` an die neue PDF-Paketstruktur mit `src/pdf/generator.py` angepasst.
+- Aktive Projektverweise auf die alte Datei `pdf_generator.py` geprüft und bereinigt.
+- Historische CHANGELOG-Einträge unverändert beibehalten.
 
 #### PDF-Layout
 
