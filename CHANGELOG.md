@@ -360,14 +360,39 @@ Neu eingeführt:
 
 ### Projektstruktur
 
-Aktive Kernmodule:
+Aktive Kernmodule und Pakete:
 
 * `main.py`
-* `app.py`
-* `pdf_generator.py`
-* `layouts.py`
-* `validators.py`
-* `paths.py`
+* `src/app.py`
+
+#### GUI
+
+* `src/gui/__init__.py`
+* `src/gui/release_notes_window.py`
+* `src/gui/handbuch_window.py`
+
+#### PDF
+
+* `src/pdf/__init__.py`
+* `src/pdf/generator.py`
+
+#### Konfiguration
+
+* `src/config/__init__.py`
+* `src/config/theme.py`
+* `src/config/layouts.py`
+
+#### Services
+
+* `src/services/__init__.py`
+* `src/services/support_service.py`
+
+#### Utilities
+
+* `src/utils/__init__.py`
+* `src/utils/layout_helpers.py`
+* `src/utils/paths.py`
+* `src/utils/validators.py`
 
 Verwendete Ressourcen:
 

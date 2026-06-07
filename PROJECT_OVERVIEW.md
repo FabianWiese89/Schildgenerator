@@ -61,30 +61,108 @@ Die Grundarchitektur soll zuerst stabil und sauber aufgebaut werden.
 
 ## 4. Bereits umgesetzte Modularisierung
 
-Ausgelagerte Komponenten:
+Ausgelagerte Komponenten und Pakete:
 
-* validators.py
-* layouts.py
-* paths.py
+* `src/gui/`
+  * `release_notes_window.py`
+  * `handbuch_window.py`
+  * zentraler Export über `src/gui/__init__.py`
 
-Neue Funktionen:
+* `src/pdf/`
+  * `generator.py`
+  * zentraler Export der PDF-Funktionen über `src/pdf/__init__.py`
 
-* generate_text_sign_pdf()
+* `src/config/`
+  * `theme.py`
+  * `layouts.py`
+  * zentraler Export der Theme- und Logo-Konfiguration über `src/config/__init__.py`
+
+* `src/utils/`
+  * `layout_helpers.py`
+  * `paths.py`
+  * `validators.py`
+  * zentraler Export über `src/utils/__init__.py`
+
+* `src/services/`
+  * `support_service.py`
+  * zentraler Export über `src/services/__init__.py`
+
+Neue bzw. ausgelagerte Funktionen:
+
+* `generate_text_sign_pdf()`
+* `generate_batch_pdf_4()`
+* `generate_batch_pdf_5()`
+* `get_line_count_from_layout()`
+* `resource_path()`
+* `is_single_pdf_valid()`
+* `is_batch_pdf_valid()`
+* `open_support_email()`
 
 ---
 
-## 5. Wichtige Dateien
+## 5. Wichtige Dateien und Pakete
 
 Aktuell:
 
-* main.py
-* app.py
-* src/pdf/generator.py
-* src/utils/validators.py
-* src/config/layouts.py
-* src/utils/paths.py
+* `main.py`
+* `src/app.py`
+
+### GUI
+
+* `src/gui/__init__.py`
+* `src/gui/release_notes_window.py`
+* `src/gui/handbuch_window.py`
+
+### PDF
+
+* `src/pdf/__init__.py`
+* `src/pdf/generator.py`
+
+### Konfiguration
+
+* `src/config/__init__.py`
+* `src/config/theme.py`
+* `src/config/layouts.py`
+
+### Services
+
+* `src/services/__init__.py`
+* `src/services/support_service.py`
+
+### Utilities
+
+* `src/utils/__init__.py`
+* `src/utils/layout_helpers.py`
+* `src/utils/paths.py`
+* `src/utils/validators.py`
 
 ---
+
+## 5.1 Aktuelle Projektstruktur
+
+```text
+src/
+├── app.py
+├── config/
+│   ├── __init__.py
+│   ├── layouts.py
+│   └── theme.py
+├── gui/
+│   ├── __init__.py
+│   ├── handbuch_window.py
+│   └── release_notes_window.py
+├── pdf/
+│   ├── __init__.py
+│   └── generator.py
+├── services/
+│   ├── __init__.py
+│   └── support_service.py
+└── utils/
+    ├── __init__.py
+    ├── layout_helpers.py
+    ├── paths.py
+    └── validators.py
+```
 
 ## 6. Verwendete Bibliotheken
 
@@ -191,3 +269,9 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Modularisierung begonnen
 * Architekturumbau aktiv
 * Bereit für weitere Refactoring-Schritte
+* GUI-Fensterlogik teilweise nach `src/gui/` ausgelagert
+* PDF-Erzeugung nach `src/pdf/` verschoben
+* Layout- und Theme-Konfiguration nach `src/config/` verschoben
+* Pfad-, Layout- und Validierungshelfer nach `src/utils/` verschoben
+* Support-Mail-Logik nach `src/services/` ausgelagert
+* Paket-Exports über `__init__.py` für `gui`, `pdf`, `config`, `utils` und `services` eingerichtet
