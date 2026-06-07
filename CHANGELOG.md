@@ -85,6 +85,9 @@ Ausgangsversion des Projekts.
 - `PROJECT_OVERVIEW.md` an die neue Layout-Struktur mit `src/config/layouts.py` angepasst.
 - Aktive Projektverweise auf die alte Datei `src/layouts.py` geprüft und bereinigt.
 - Historische CHANGELOG-Einträge unverändert beibehalten.
+- `PROJECT_OVERVIEW.md` an die neue Utils-Struktur mit `src/utils/paths.py` angepasst.
+- Aktive Projektverweise auf die alte Datei `src/paths.py` geprüft und bereinigt.
+- Pfad-Hilfsfunktion `resource_path()` als Bestandteil des Utils-Bereichs dokumentiert.
 
 #### PDF-Layout
 
