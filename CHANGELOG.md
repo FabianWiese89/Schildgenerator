@@ -176,7 +176,10 @@ Ausgangsversion des Projekts.
 - PDF-Funktionen zentral über `src.pdf` exportiert.
 - Importstruktur in `app.py` auf das neue PDF-Paket umgestellt.
 - Einzelerstellung, Textschild-Test, Sammelverarbeitung, Handbuch, Release Notes und Logo nach der Umstellung erfolgreich geprüft.
-
+- Layoutdefinitionen aus `src/layouts.py` nach `src/config/layouts.py` verschoben.
+- Import der Layoutdefinitionen im PDF-Generator auf `src.config.layouts` angepasst.
+- Layoutwerte fachlich dem Konfigurationsbereich zugeordnet.
+- PDF-Erzeugung und GUI-Funktionen nach der Umstellung erfolgreich geprüft.
 #### Neue Datei: layouts.py
 
 Ausgelagert:

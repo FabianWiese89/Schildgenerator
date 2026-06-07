@@ -7,7 +7,7 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.pdfgen import canvas
 
-from src.layouts import (
+from src.config.layouts import (
     SINGLE_LABEL_LAYOUT,
     FOUR_LINE_LAYOUT,
     FIVE_LINE_LAYOUT,
