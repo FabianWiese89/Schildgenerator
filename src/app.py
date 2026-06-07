@@ -1,11 +1,10 @@
-import webbrowser
-import urllib.parse
 import os
 import tkinter as tk
 
 from PIL import Image, ImageTk
 from tkinter import filedialog, messagebox, ttk
 from src.gui import ReleaseNotesWindow, HandbuchWindow
+from src.services.support_service import open_support_email
 
 from src.utils import (
     get_line_count_from_layout,
@@ -403,21 +402,8 @@ class QRCodeGeneratorApp:
         messagebox.showinfo("Fertig", f"PDF erfolgreich erstellt:\n{self.batch_output_path.get()}")
 
     def open_email(self):
-        empfaenger = "fabian.wiese@schnellecke.com"
-        betreff = "Supportanfrage für QR-Code Generator"
-        body = (
-            "Name:\n"
-            "Vorname:\n"
-            "Telefonnummer (optional):\n"
-            "E-Mail-Adresse:\n"
-            "Beschreibung / Verbesserungsvorschlag:\n\n"
-            "Falls möglich, bitte ein Screenshot-Bild vom Fehler mit anhängen."
-        )
-        mailto_link = (
-            f"mailto:{empfaenger}?subject={urllib.parse.quote(betreff)}&body={urllib.parse.quote(body)}"
-        )
-        webbrowser.open(mailto_link)
-
+        open_support_email()
+    
     # ==== BATCH GENERIERUNG (wie bisher) ====
     
 def main():

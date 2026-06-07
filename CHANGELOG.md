@@ -199,6 +199,11 @@ Ausgangsversion des Projekts.
 - Imports in `app.py` angepasst.
 - Validierungslogik fachlich dem Utils-Bereich zugeordnet.
 - Button-Validierung für Einzelerstellung und Sammelverarbeitung nach der Umstellung erfolgreich geprüft.
+- Neues Verzeichnis `src/services/` erstellt.
+- Support-Mail-Logik aus `app.py` in `src/services/support_service.py` ausgelagert.
+- Neue Funktion `open_support_email()` erstellt.
+- Methode `open_email()` in `app.py` auf einen Service-Aufruf reduziert.
+- Support-Button nach der Umstellung erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 
