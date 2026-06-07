@@ -213,6 +213,10 @@ Ausgangsversion des Projekts.
 - `app.py` auf zentralen Batch-PDF-Aufruf umgestellt.
 - Direkte Detailaufrufe der 4- und 5-Zeilen-Batch-Erzeugung aus der GUI entfernt.
 - Sammelverarbeitung für beide Layoutvarianten nach der Umstellung erfolgreich geprüft.
+- Öffentliche Exporte in `src/pdf/__init__.py` bereinigt.
+- Detailfunktionen `generate_batch_pdf_4()` und `generate_batch_pdf_5()` nicht mehr über `src.pdf` exportiert.
+- `generate_batch_pdf()` als zentrale öffentliche Batch-PDF-Schnittstelle beibehalten.
+- PDF-Paket-Schnittstelle weiter vereinfacht.
 
 #### Neue Datei: layouts.py
 
