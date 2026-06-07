@@ -1,0 +1,2 @@
+from src.gui.release_notes_window import ReleaseNotesWindow
+from src.gui.handbuch_window import HandbuchWindow

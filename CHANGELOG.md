@@ -155,6 +155,10 @@ Ausgangsversion des Projekts.
 - PDF-Funktionsimporte in `app.py` gebündelt.
 - Mehrere Einzelimporte aus `src.pdf_generator` durch einen übersichtlichen mehrzeiligen Import ersetzt.
 - Importstruktur in `app.py` weiter bereinigt.
+- Neue Datei `src/gui/__init__.py` erstellt.
+- GUI-Fenster `ReleaseNotesWindow` und `HandbuchWindow` zentral über `src.gui` exportiert.
+- Importstruktur in `app.py` für GUI-Komponenten vereinfacht.
+- Grundlage für weitere GUI-Modularisierung geschaffen.
 
 #### Neue Datei: layouts.py
 
