@@ -163,7 +163,10 @@ Ausgangsversion des Projekts.
 - Theme- und GUI-Logo-Konfigurationswerte zentral über `src.config` exportiert.
 - Importstruktur in `app.py` für Konfigurationswerte vereinfacht.
 - Grundlage für weitere Konfigurationsmodule geschaffen.
-
+- Neue Datei `src/utils/__init__.py` erstellt.
+- Hilfsfunktion `get_line_count_from_layout()` zentral über `src.utils` exportiert.
+- Importstruktur in `app.py` für Hilfsfunktionen vereinfacht.
+- Grundlage für weitere Utility-Module geschaffen.
 #### Neue Datei: layouts.py
 
 Ausgelagert:

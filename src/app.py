@@ -6,7 +6,7 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from src.paths import resource_path
 from src.validators import is_single_pdf_valid, is_batch_pdf_valid
-from src.utils.layout_helpers import get_line_count_from_layout
+from src.utils import get_line_count_from_layout
 from tkinter import filedialog, messagebox, ttk
 from src.gui import ReleaseNotesWindow, HandbuchWindow
 from src.pdf_generator import (
