@@ -88,6 +88,9 @@ Ausgangsversion des Projekts.
 - `PROJECT_OVERVIEW.md` an die neue Utils-Struktur mit `src/utils/paths.py` angepasst.
 - Aktive Projektverweise auf die alte Datei `src/paths.py` geprüft und bereinigt.
 - Pfad-Hilfsfunktion `resource_path()` als Bestandteil des Utils-Bereichs dokumentiert.
+- `PROJECT_OVERVIEW.md` an die neue Utils-Struktur mit `src/utils/validators.py` angepasst.
+- Aktive Projektverweise auf die alte Datei `src/validators.py` geprüft und bereinigt.
+- Validierungslogik als Bestandteil des Utils-Bereichs dokumentiert.
 
 #### PDF-Layout
 
