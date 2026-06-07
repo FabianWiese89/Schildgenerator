@@ -204,6 +204,10 @@ Ausgangsversion des Projekts.
 - Neue Funktion `open_support_email()` erstellt.
 - Methode `open_email()` in `app.py` auf einen Service-Aufruf reduziert.
 - Support-Button nach der Umstellung erfolgreich geprüft.
+- Neue Datei `src/services/__init__.py` erstellt.
+- Funktion `open_support_email()` zentral über `src.services` exportiert.
+- Importstruktur in `app.py` für Service-Funktionen vereinfacht.
+- Grundlage für weitere Service-Module geschaffen.
 
 #### Neue Datei: layouts.py
 

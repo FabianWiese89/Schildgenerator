@@ -4,7 +4,7 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import filedialog, messagebox, ttk
 from src.gui import ReleaseNotesWindow, HandbuchWindow
-from src.services.support_service import open_support_email
+from src.services import open_support_email
 
 from src.utils import (
     get_line_count_from_layout,
