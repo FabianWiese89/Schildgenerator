@@ -219,6 +219,9 @@ Ausgangsversion des Projekts.
 - Detailfunktionen `generate_batch_pdf_4()` und `generate_batch_pdf_5()` nicht mehr über `src.pdf` exportiert.
 - `generate_batch_pdf()` als zentrale öffentliche Batch-PDF-Schnittstelle beibehalten.
 - PDF-Paket-Schnittstelle weiter vereinfacht.
+- Neue Datei `src/__init__.py` erstellt.
+- `src` als zentrales Python-Paket gekennzeichnet.
+- Bestehende Paketstruktur formal vervollständigt.
 
 #### Neue Datei: layouts.py
 

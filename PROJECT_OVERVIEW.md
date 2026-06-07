@@ -110,6 +110,7 @@ Aktuell:
 
 * `main.py`
 * `src/app.py`
+* `src/__init__.py`
 
 ### GUI
 
@@ -146,6 +147,7 @@ Aktuell:
 
 ```text
 src/
+├── __init__.py
 ├── app.py
 ├── config/
 │   ├── __init__.py
