@@ -81,7 +81,7 @@ Aktuell:
 * app.py
 * src/pdf/generator.py
 * validators.py
-* layouts.py
+* src/config/layouts.py
 * paths.py
 
 ---
