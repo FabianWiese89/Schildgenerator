@@ -208,6 +208,11 @@ Ausgangsversion des Projekts.
 - Funktion `open_support_email()` zentral über `src.services` exportiert.
 - Importstruktur in `app.py` für Service-Funktionen vereinfacht.
 - Grundlage für weitere Service-Module geschaffen.
+- Neue Funktion `generate_batch_pdf()` in `src/pdf/generator.py` ergänzt.
+- Auswahl zwischen `generate_batch_pdf_4()` und `generate_batch_pdf_5()` in das PDF-Modul verlagert.
+- `app.py` auf zentralen Batch-PDF-Aufruf umgestellt.
+- Direkte Detailaufrufe der 4- und 5-Zeilen-Batch-Erzeugung aus der GUI entfernt.
+- Sammelverarbeitung für beide Layoutvarianten nach der Umstellung erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 

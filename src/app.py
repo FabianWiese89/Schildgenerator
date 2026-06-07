@@ -16,9 +16,9 @@ from src.utils import (
 from src.pdf import (
     generate_pdf_einzeln,
     generate_text_sign_pdf,
-    generate_batch_pdf_4,
-    generate_batch_pdf_5,
+    generate_batch_pdf,
 )
+
 from src.config import (
     BG_COLOR,
     BUTTON_COLOR,
@@ -391,13 +391,13 @@ class QRCodeGeneratorApp:
     def on_batch_generate(self):
         self.batch_status.config(text="PDF wird erstellt...")
         self.root.update_idletasks()
+        
         choice = get_line_count_from_layout(self.batch_layout.get())
         excel = self.batch_excel_path.get()
         output = self.batch_output_path.get()
-        if choice == 4:
-            generate_batch_pdf_4(excel, output)
-        else:
-            generate_batch_pdf_5(excel, output)
+        
+        generate_batch_pdf(excel, output, choice)
+        
         self.batch_status.config(text="Fertig")
         messagebox.showinfo("Fertig", f"PDF erfolgreich erstellt:\n{self.batch_output_path.get()}")
 

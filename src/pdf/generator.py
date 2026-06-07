@@ -368,3 +368,8 @@ def generate_batch_pdf_5(excel, output):
         pdf.showPage()
     pdf.save()
         
+def generate_batch_pdf(excel, output, line_count):
+    if line_count == 4:
+        generate_batch_pdf_4(excel, output)
+    else:
+        generate_batch_pdf_5(excel, output)
