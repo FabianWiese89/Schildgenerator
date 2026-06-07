@@ -91,6 +91,8 @@ Ausgangsversion des Projekts.
 - `PROJECT_OVERVIEW.md` an die neue Utils-Struktur mit `src/utils/validators.py` angepasst.
 - Aktive Projektverweise auf die alte Datei `src/validators.py` geprüft und bereinigt.
 - Validierungslogik als Bestandteil des Utils-Bereichs dokumentiert.
+- `PROJECT_OVERVIEW.md` an die neue zentrale Batch-PDF-Schnittstelle `generate_batch_pdf()` angepasst.
+- Interne Detailfunktionen `generate_batch_pdf_4()` und `generate_batch_pdf_5()` als interne PDF-Funktionen eingeordnet.
 
 #### PDF-Layout
 

@@ -87,16 +87,20 @@ Ausgelagerte Komponenten und Pakete:
   * `support_service.py`
   * zentraler Export über `src/services/__init__.py`
 
-Neue bzw. ausgelagerte Funktionen:
+Neue bzw. ausgelagerte öffentliche Funktionen:
 
 * `generate_text_sign_pdf()`
-* `generate_batch_pdf_4()`
-* `generate_batch_pdf_5()`
+* `generate_batch_pdf()`
 * `get_line_count_from_layout()`
 * `resource_path()`
 * `is_single_pdf_valid()`
 * `is_batch_pdf_valid()`
 * `open_support_email()`
+
+Interne Detailfunktionen:
+
+* `generate_batch_pdf_4()`
+* `generate_batch_pdf_5()`
 
 ---
 
