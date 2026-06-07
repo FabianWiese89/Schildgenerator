@@ -167,6 +167,13 @@ Ausgangsversion des Projekts.
 - Hilfsfunktion `get_line_count_from_layout()` zentral über `src.utils` exportiert.
 - Importstruktur in `app.py` für Hilfsfunktionen vereinfacht.
 - Grundlage für weitere Utility-Module geschaffen.
+- Neues Paket `src/pdf/` erstellt.
+- Datei `pdf_generator.py` nach `src/pdf/generator.py` verschoben.
+- Neue Datei `src/pdf/__init__.py` erstellt.
+- PDF-Funktionen zentral über `src.pdf` exportiert.
+- Importstruktur in `app.py` auf das neue PDF-Paket umgestellt.
+- Einzelerstellung, Textschild-Test, Sammelverarbeitung, Handbuch, Release Notes und Logo nach der Umstellung erfolgreich geprüft.
+
 #### Neue Datei: layouts.py
 
 Ausgelagert:
