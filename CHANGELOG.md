@@ -191,6 +191,11 @@ Ausgangsversion des Projekts.
 - Imports in `app.py` und `src/pdf/generator.py` angepasst.
 - Pfadlogik fachlich dem Utils-Bereich zugeordnet.
 - GUI-Logo und PDF-Erzeugung nach der Umstellung erfolgreich geprüft.
+- Datei `validators.py` nach `src/utils/validators.py` verschoben.
+- Funktionen `is_single_pdf_valid()` und `is_batch_pdf_valid()` zentral über `src.utils` exportiert.
+- Imports in `app.py` angepasst.
+- Validierungslogik fachlich dem Utils-Bereich zugeordnet.
+- Button-Validierung für Einzelerstellung und Sammelverarbeitung nach der Umstellung erfolgreich geprüft.
 
 #### Neue Datei: layouts.py
 
