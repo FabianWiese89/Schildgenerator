@@ -15,7 +15,7 @@ from src.pdf_generator import (
     generate_batch_pdf_4,
     generate_batch_pdf_5,
 )
-from src.config.theme import (
+from src.config import (
     BG_COLOR,
     BUTTON_COLOR,
     GUI_LOGO_PATH,

@@ -159,6 +159,10 @@ Ausgangsversion des Projekts.
 - GUI-Fenster `ReleaseNotesWindow` und `HandbuchWindow` zentral über `src.gui` exportiert.
 - Importstruktur in `app.py` für GUI-Komponenten vereinfacht.
 - Grundlage für weitere GUI-Modularisierung geschaffen.
+- Neue Datei `src/config/__init__.py` erstellt.
+- Theme- und GUI-Logo-Konfigurationswerte zentral über `src.config` exportiert.
+- Importstruktur in `app.py` für Konfigurationswerte vereinfacht.
+- Grundlage für weitere Konfigurationsmodule geschaffen.
 
 #### Neue Datei: layouts.py
 
