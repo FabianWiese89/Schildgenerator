@@ -111,12 +111,14 @@ Aktuell:
 * `main.py`
 * `src/app.py`
 * `src/__init__.py`
+* 
 
 ### GUI
 
 * `src/gui/__init__.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
+* `src/gui/main_window.py`
 
 ### PDF
 

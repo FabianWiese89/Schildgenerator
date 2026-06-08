@@ -222,6 +222,9 @@ Ausgangsversion des Projekts.
 - Neue Datei `src/__init__.py` erstellt.
 - `src` als zentrales Python-Paket gekennzeichnet.
 - Bestehende Paketstruktur formal vervollständigt.
+- Hauptfensterklasse `QRCodeGeneratorApp` aus `src/app.py` nach `src/gui/main_window.py` verschoben.
+- `src/app.py` auf die reine Startlogik der Anwendung reduziert.
+- GUI-Paketstruktur durch zentrale Hauptfenster-Datei erweitert.
 
 #### Neue Datei: layouts.py
 
