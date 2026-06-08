@@ -7,4 +7,7 @@ from src.config.theme import (
     GUI_LOGO_RELX,
     GUI_LOGO_RELY,
     GUI_LOGO_ANCHOR,
+    MAIN_WINDOW_GEOMETRY,
+    SEPARATOR_COLOR,
+    VERSION_LABEL_TEXT,
 )

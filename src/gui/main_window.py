@@ -28,13 +28,16 @@ from src.config import (
     GUI_LOGO_RELX,
     GUI_LOGO_RELY,
     GUI_LOGO_ANCHOR,
+    MAIN_WINDOW_GEOMETRY,
+    SEPARATOR_COLOR,
+    VERSION_LABEL_TEXT,
 )
 # ---- Farbdefinitionen ----
 class QRCodeGeneratorApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Lagerplatz-QRCode-Generator Version 1.0")
-        self.root.geometry("810x600")
+        self.root.geometry(MAIN_WINDOW_GEOMETRY)
         self.root.resizable(False, False)
         self.root.configure(bg=BG_COLOR)
 
@@ -52,7 +55,7 @@ class QRCodeGeneratorApp:
         self.notebook.pack(fill="both", expand=True, padx=40, pady=28)
 
         # Trennstrich unter den Tabs
-        separator = tk.Frame(root, bg="#6e6e6e", height=2)
+        separator = tk.Frame(root, bg=SEPARATOR_COLOR, height=2)
         separator.pack(fill="x", padx=30, pady=(0, 8))
 
         self.notebook.select(0)  # Einzelerstellung ist Standard
@@ -82,7 +85,7 @@ class QRCodeGeneratorApp:
 
         self.version_lbl = tk.Label(
             frame,
-            text="© Fabian Wiese – Version 1.0 ⓘ",
+            text=VERSION_LABEL_TEXT,
             fg="black",
             bg=BG_COLOR,
             cursor="arrow"

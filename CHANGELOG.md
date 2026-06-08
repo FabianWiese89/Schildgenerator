@@ -225,6 +225,9 @@ Ausgangsversion des Projekts.
 - Hauptfensterklasse `QRCodeGeneratorApp` aus `src/app.py` nach `src/gui/main_window.py` verschoben.
 - `src/app.py` auf die reine Startlogik der Anwendung reduziert.
 - GUI-Paketstruktur durch zentrale Hauptfenster-Datei erweitert.
+- GUI-Konstanten für Fenstergröße, Separator-Farbe und Versionslabel nach `src/config/theme.py` ausgelagert.
+- Harte GUI-Werte in `src/gui/main_window.py` durch zentrale Konfigurationswerte ersetzt.
+- Öffentliche Konfigurationsschnittstelle über `src/config/__init__.py` erweitert.
 
 #### Neue Datei: layouts.py
 
