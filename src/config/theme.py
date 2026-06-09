@@ -15,3 +15,5 @@ FONT_TITLE = ("Arial", 12, "bold")
 FONT_LABEL = ("Arial", 10)
 FONT_VERSION = ("Arial", 10, "normal")
 FONT_VERSION_HOVER = ("Arial", 10, "underline")
+FONT_HINT = ("Arial", 9)
+HINT_TEXT_COLOR = "darkblue"

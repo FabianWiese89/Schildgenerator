@@ -15,4 +15,6 @@ from src.config.theme import (
     FONT_LABEL,
     FONT_VERSION,
     FONT_VERSION_HOVER,
+    FONT_HINT,
+    HINT_TEXT_COLOR,
 )

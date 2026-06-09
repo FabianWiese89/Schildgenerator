@@ -231,6 +231,8 @@ Ausgangsversion des Projekts.
 - Zentrale GUI-Schriftdefinitionen in `src/config/theme.py` ergänzt.
 - Wiederkehrende Schriftwerte in `src/gui/main_window.py` durch zentrale Theme-Konstanten ersetzt.
 - Öffentliche Konfigurationsschnittstelle über `src/config/__init__.py` um GUI-Schriftwerte erweitert.
+- Hinweistext-Schrift und Hinweistext-Farbe als zentrale Theme-Konstanten ergänzt.
+- Drei Hinweiszeilen im Tab „Sammelverarbeitung“ auf zentrale Theme-Werte umgestellt.
 
 #### Neue Datei: layouts.py
 

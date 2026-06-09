@@ -36,6 +36,8 @@ from src.config import (
     FONT_LABEL,
     FONT_VERSION,
     FONT_VERSION_HOVER,
+    FONT_HINT,
+    HINT_TEXT_COLOR,
 )
 # ---- Farbdefinitionen ----
 class QRCodeGeneratorApp:
@@ -311,13 +313,13 @@ class QRCodeGeneratorApp:
 
         # Hinweistext
         tk.Label(
-            frame, text="• Es muss eine .xlsx-Datei ohne Überschrift verwendet werden.", font=("Arial", 9), fg="darkblue", bg=BG_COLOR
+            frame, text="• Es muss eine .xlsx-Datei ohne Überschrift verwendet werden.", font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
         ).grid(row=5, column=0, sticky="w", pady=(12, 0))
         tk.Label(
-            frame, text="• Spalte A: Lagerplatz mit Leerzeichen (z. B. 05 H2 11 093 L)", font=("Arial", 9), fg="darkblue", bg=BG_COLOR
+            frame, text="• Spalte A: Lagerplatz mit Leerzeichen (z. B. 05 H2 11 093 L)", font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
         ).grid(row=6, column=0, sticky="w")
         tk.Label(
-            frame, text="• Spalte B: Lagerplatz mit Bindestrichen (z. B. 05-H2-11-093-L)", font=("Arial", 9), fg="darkblue", bg=BG_COLOR
+            frame, text="• Spalte B: Lagerplatz mit Bindestrichen (z. B. 05-H2-11-093-L)", font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
         ).grid(row=7, column=0, sticky="w")
 
         # Speicherort Auswahl
