@@ -17,3 +17,6 @@ FONT_VERSION = ("Arial", 10, "normal")
 FONT_VERSION_HOVER = ("Arial", 10, "underline")
 FONT_HINT = ("Arial", 9)
 HINT_TEXT_COLOR = "darkblue"
+APP_WINDOW_TITLE = "Lagerplatz-QRCode-Generator Version 1.0"
+TAB_SINGLE_TITLE = "Einzelerstellung"
+TAB_BATCH_TITLE = "Sammelverarbeitung"

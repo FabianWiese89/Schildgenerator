@@ -17,4 +17,7 @@ from src.config.theme import (
     FONT_VERSION_HOVER,
     FONT_HINT,
     HINT_TEXT_COLOR,
+    APP_WINDOW_TITLE,
+    TAB_SINGLE_TITLE,
+    TAB_BATCH_TITLE,
 )

@@ -233,6 +233,9 @@ Ausgangsversion des Projekts.
 - Öffentliche Konfigurationsschnittstelle über `src/config/__init__.py` um GUI-Schriftwerte erweitert.
 - Hinweistext-Schrift und Hinweistext-Farbe als zentrale Theme-Konstanten ergänzt.
 - Drei Hinweiszeilen im Tab „Sammelverarbeitung“ auf zentrale Theme-Werte umgestellt.
+- Fenstertitel und Tab-Namen als zentrale Theme-Konstanten ergänzt.
+- Hauptfenster-Strukturtexte in `src/gui/main_window.py` auf zentrale Konfigurationswerte umgestellt.
+- Harte Strukturtexte im Hauptfenster weiter reduziert.
 
 #### Neue Datei: layouts.py
 

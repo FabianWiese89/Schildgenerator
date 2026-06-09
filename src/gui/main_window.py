@@ -38,12 +38,15 @@ from src.config import (
     FONT_VERSION_HOVER,
     FONT_HINT,
     HINT_TEXT_COLOR,
+    APP_WINDOW_TITLE,
+    TAB_SINGLE_TITLE,
+    TAB_BATCH_TITLE,
 )
 # ---- Farbdefinitionen ----
 class QRCodeGeneratorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Lagerplatz-QRCode-Generator Version 1.0")
+        self.root.title(APP_WINDOW_TITLE)
         self.root.geometry(MAIN_WINDOW_GEOMETRY)
         self.root.resizable(False, False)
         self.root.configure(bg=BG_COLOR)
@@ -57,8 +60,8 @@ class QRCodeGeneratorApp:
         self.notebook = ttk.Notebook(root)
         self.tab_single = tk.Frame(self.notebook, bg=BG_COLOR)
         self.tab_batch = tk.Frame(self.notebook, bg=BG_COLOR)
-        self.notebook.add(self.tab_single, text="Einzelerstellung")
-        self.notebook.add(self.tab_batch, text="Sammelverarbeitung")
+        self.notebook.add(self.tab_single, text=TAB_SINGLE_TITLE)
+        self.notebook.add(self.tab_batch, text=TAB_BATCH_TITLE)
         self.notebook.pack(fill="both", expand=True, padx=40, pady=28)
 
         # Trennstrich unter den Tabs
