@@ -236,6 +236,9 @@ Ausgangsversion des Projekts.
 - Fenstertitel und Tab-Namen als zentrale Theme-Konstanten ergänzt.
 - Hauptfenster-Strukturtexte in `src/gui/main_window.py` auf zentrale Konfigurationswerte umgestellt.
 - Harte Strukturtexte im Hauptfenster weiter reduziert.
+- Status- und Versionsfarben als zentrale Theme-Konstanten ergänzt.
+- Statuslabel und Versionslabel im Hauptfenster auf zentrale Farbwerte umgestellt.
+- Harte Farbangaben für Status- und Versionsanzeige in `src/gui/main_window.py` reduziert.
 
 #### Neue Datei: layouts.py
 

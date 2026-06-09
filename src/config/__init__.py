@@ -20,4 +20,7 @@ from src.config.theme import (
     APP_WINDOW_TITLE,
     TAB_SINGLE_TITLE,
     TAB_BATCH_TITLE,
+    STATUS_TEXT_COLOR,
+    VERSION_TEXT_COLOR,
+    VERSION_HOVER_TEXT_COLOR,
 )

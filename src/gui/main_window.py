@@ -41,6 +41,9 @@ from src.config import (
     APP_WINDOW_TITLE,
     TAB_SINGLE_TITLE,
     TAB_BATCH_TITLE,
+    STATUS_TEXT_COLOR,
+    VERSION_TEXT_COLOR,
+    VERSION_HOVER_TEXT_COLOR,
 )
 # ---- Farbdefinitionen ----
 class QRCodeGeneratorApp:
@@ -96,7 +99,7 @@ class QRCodeGeneratorApp:
         self.version_lbl = tk.Label(
             frame,
             text=VERSION_LABEL_TEXT,
-            fg="black",
+            fg=VERSION_TEXT_COLOR,
             bg=BG_COLOR,
             cursor="arrow"
         )
@@ -122,10 +125,10 @@ class QRCodeGeneratorApp:
             )
         
     def _on_version_hover(self, event):
-        self.version_lbl.config(fg="white", font=FONT_VERSION_HOVER, cursor="hand2")
+        self.version_lbl.config(fg=VERSION_HOVER_TEXT_COLOR, font=FONT_VERSION_HOVER, cursor="hand2")
 
     def _on_version_leave(self, event):
-        self.version_lbl.config(fg="black", font=FONT_VERSION, cursor="arrow")
+        self.version_lbl.config(fg=VERSION_TEXT_COLOR, font=FONT_VERSION, cursor="arrow")
 
     def show_release_notes(self, event=None):
         ReleaseNotesWindow(self.root)
@@ -182,7 +185,7 @@ class QRCodeGeneratorApp:
         tk.Button(frame, text="Durchsuchen", command=self.single_save_pdf, bg=BUTTON_COLOR, fg="black").grid(row=6, column=1, padx=10)
 
         # Status-Label
-        self.single_status = tk.Label(frame, text="Bereit", fg="blue", bg=BG_COLOR)
+        self.single_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
         self.single_status.grid(row=7, column=0, pady=(15, 0), sticky="w")
 
         # Buttons
@@ -331,7 +334,7 @@ class QRCodeGeneratorApp:
         tk.Button(frame, text="Durchsuchen", command=self.save_batch_pdf, bg=BUTTON_COLOR, fg="black").grid(row=9, column=1, padx=10)
 
         # Status-Label
-        self.batch_status = tk.Label(frame, text="Bereit", fg="blue", bg=BG_COLOR)
+        self.batch_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
         self.batch_status.grid(row=10, column=0, pady=(15, 0), sticky="w")
 
         # Buttons
