@@ -245,6 +245,9 @@ Ausgangsversion des Projekts.
 - Entry-Textfarbe und Entry-Cursorfarbe als zentrale Theme-Konstanten ergänzt.
 - Eingabefelder im Hauptfenster auf zentrale Theme-Werte umgestellt.
 - Harte Entry-Farbwerte in `src/gui/main_window.py` weiter reduziert.
+- Layout-Auswahltexte für die GUI als zentrale Konfigurationswerte ergänzt.
+- Standardwert und Auswahloptionen der Layout-Dropdowns in `src/gui/main_window.py` auf zentrale Werte umgestellt.
+- Harte Layout-Auswahltexte im Hauptfenster reduziert.
 
 #### Neue Datei: layouts.py
 

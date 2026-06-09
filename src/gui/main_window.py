@@ -47,6 +47,8 @@ from src.config import (
     STATUS_TEXT_COLOR,
     VERSION_TEXT_COLOR,
     VERSION_HOVER_TEXT_COLOR,
+    LAYOUT_OPTION_DEFAULT,
+    LAYOUT_OPTIONS,
 )
 # ---- Farbdefinitionen ----
 class QRCodeGeneratorApp:
@@ -78,14 +80,14 @@ class QRCodeGeneratorApp:
 
         # Einzel-TAB Variablen
         self.single_lagerplatz = tk.StringVar()
-        self.single_layout = tk.StringVar(value="Bitte wählen...")
+        self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
         self.single_output = tk.StringVar()
         self.single_status = None
         self.single_btn_pdf = None
 
         # Batch-TAB Variablen
         self.batch_excel_path = tk.StringVar()
-        self.batch_layout = tk.StringVar(value="Bitte wählen...")
+        self.batch_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
         self.batch_output_path = tk.StringVar()
         self.batch_status = None
         self.batch_btn_pdf = None
@@ -161,7 +163,7 @@ class QRCodeGeneratorApp:
         layout_dropdown = ttk.Combobox(
             frame,
             textvariable=self.single_layout,
-            values=["Bitte wählen...", "4 Zeilen pro PDF-Seite", "5 Zeilen pro PDF-Seite"],
+            values=LAYOUT_OPTIONS,
             state="readonly",
             width=30
         )
@@ -308,7 +310,7 @@ class QRCodeGeneratorApp:
         layout_dropdown = ttk.Combobox(
             frame,
             textvariable=self.batch_layout,
-            values=["Bitte wählen...", "4 Zeilen pro PDF-Seite", "5 Zeilen pro PDF-Seite"],
+            values=LAYOUT_OPTIONS,
             state="readonly",
             width=30
         )
