@@ -260,7 +260,9 @@ Ausgangsversion des Projekts.
 - Gemeinsame Handbuch-Aktion `show_handbuch()` innerhalb von `src/gui/main_window.py` in den Bereich gemeinsamer Aktionen verschoben.
 - Methodenstruktur im Hauptfenster fachlich klarer gruppiert.
 - Vorbereitung für spätere Auslagerung von Einzelerstellung und Sammelverarbeitung verbessert.
-
+- Versionslabel- und Release-Notes-Bereich in `src/gui/main_window.py` klarer gruppiert.
+- Methode `add_logo_to_frame()` in einen allgemeinen GUI-Hilfsmethodenbereich verschoben.
+- Abschnittsstruktur im Hauptfenster für spätere GUI-Auslagerungen weiter vorbereitet.
 
 #### Neue Datei: layouts.py
 

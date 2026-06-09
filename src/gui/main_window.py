@@ -96,7 +96,7 @@ class QRCodeGeneratorApp:
         self.build_tab_batch()
         self.build_version_label()
 
-    # ==== VERSION LABEL MIT RELEASE NOTES ====
+    # ==== VERSIONSLABEL UND RELEASE NOTES ====
     def build_version_label(self):
         frame = tk.Frame(self.root, bg=BG_COLOR)
         frame.place(relx=0, rely=1.0, anchor="sw", x=12, y=-8)
@@ -112,7 +112,17 @@ class QRCodeGeneratorApp:
         self.version_lbl.bind("<Enter>", self._on_version_hover)
         self.version_lbl.bind("<Leave>", self._on_version_leave)
         self.version_lbl.bind("<Button-1>", self.show_release_notes)
+  
+    def _on_version_hover(self, event):
+        self.version_lbl.config(fg=VERSION_HOVER_TEXT_COLOR, font=FONT_VERSION_HOVER, cursor="hand2")
 
+    def _on_version_leave(self, event):
+        self.version_lbl.config(fg=VERSION_TEXT_COLOR, font=FONT_VERSION, cursor="arrow")
+
+    def show_release_notes(self, event=None):
+        ReleaseNotesWindow(self.root)
+
+# ==== ALLGEMEINE GUI-HILFSMETHODEN ====
     def add_logo_to_frame(self, frame):
         logo_path = resource_path(GUI_LOGO_PATH)
 
@@ -128,16 +138,7 @@ class QRCodeGeneratorApp:
                 rely=GUI_LOGO_RELY,
                 anchor=GUI_LOGO_ANCHOR,
             )
-        
-    def _on_version_hover(self, event):
-        self.version_lbl.config(fg=VERSION_HOVER_TEXT_COLOR, font=FONT_VERSION_HOVER, cursor="hand2")
-
-    def _on_version_leave(self, event):
-        self.version_lbl.config(fg=VERSION_TEXT_COLOR, font=FONT_VERSION, cursor="arrow")
-
-    def show_release_notes(self, event=None):
-        ReleaseNotesWindow(self.root)
-
+      
     # ==== EINZELERSTELLUNG ====
     def build_tab_single(self):
         frame = self.tab_single
