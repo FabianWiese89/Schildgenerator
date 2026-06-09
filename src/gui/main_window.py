@@ -31,6 +31,11 @@ from src.config import (
     MAIN_WINDOW_GEOMETRY,
     SEPARATOR_COLOR,
     VERSION_LABEL_TEXT,
+    FONT_TAB,
+    FONT_TITLE,
+    FONT_LABEL,
+    FONT_VERSION,
+    FONT_VERSION_HOVER,
 )
 # ---- Farbdefinitionen ----
 class QRCodeGeneratorApp:
@@ -44,7 +49,7 @@ class QRCodeGeneratorApp:
         # Tabs
         style = ttk.Style()
         style.theme_use('default')
-        style.configure('TNotebook.Tab', background=BG_COLOR, font=('Arial', 11, 'bold'), padding=[16, 6])
+        style.configure('TNotebook.Tab', background=BG_COLOR, font=FONT_TAB, padding=[16, 6])
         style.map('TNotebook.Tab', background=[('selected', '#bdbdbd')])
 
         self.notebook = ttk.Notebook(root)
@@ -112,10 +117,10 @@ class QRCodeGeneratorApp:
             )
         
     def _on_version_hover(self, event):
-        self.version_lbl.config(fg="white", font=("Arial", 10, "underline"), cursor="hand2")
+        self.version_lbl.config(fg="white", font=FONT_VERSION_HOVER, cursor="hand2")
 
     def _on_version_leave(self, event):
-        self.version_lbl.config(fg="black", font=("Arial", 10, "normal"), cursor="arrow")
+        self.version_lbl.config(fg="black", font=FONT_VERSION, cursor="arrow")
 
     def show_release_notes(self, event=None):
         ReleaseNotesWindow(self.root)
@@ -131,7 +136,7 @@ class QRCodeGeneratorApp:
         tk.Label(
             frame,
             text="Ein einzelnes Lagerplatzschild generieren",
-            font=("Arial", 12, "bold"),
+            font=FONT_TITLE,
             bg=BG_COLOR
         ).grid(row=0, column=0, sticky="w", pady=(10, 8), columnspan=2)
 
@@ -139,7 +144,7 @@ class QRCodeGeneratorApp:
         tk.Label(
             frame,
             text="Wie viele Zeilen Text soll dein Lagerplatzetikett enthalten?",
-            font=("Arial", 10),
+            font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=1, column=0, sticky="w", padx=(0,0))
         layout_dropdown = ttk.Combobox(
@@ -156,7 +161,7 @@ class QRCodeGeneratorApp:
         tk.Label(
             frame,
             text="Lagerplatz (systemisch, mit Bindestrichen):",
-            font=("Arial", 10),
+            font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=3, column=0, sticky="w", pady=(0, 2))
         tk.Entry(frame, textvariable=self.single_lagerplatz, width=50, bg=BG_COLOR, fg="black", insertbackground="black").grid(row=4, column=0, sticky="w")
@@ -165,7 +170,7 @@ class QRCodeGeneratorApp:
         tk.Label(
             frame,
             text="Speicherort für das PDF:",
-            font=("Arial", 10),
+            font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=5, column=0, pady=(14, 0), sticky="w")
         tk.Entry(frame, textvariable=self.single_output, width=60, bg=BG_COLOR, fg="black", insertbackground="black").grid(row=6, column=0, sticky="w")
@@ -278,7 +283,7 @@ class QRCodeGeneratorApp:
         tk.Label(
             frame,
             text="Lagerplatz-Schilder aus Excel-Datei generieren.",
-            font=("Arial", 12, "bold"),
+            font=FONT_TITLE,
             bg=BG_COLOR
         ).grid(row=0, column=0, sticky="w", pady=(10, 8), columnspan=2)
 
@@ -286,7 +291,7 @@ class QRCodeGeneratorApp:
         tk.Label(
             frame,
             text="Wie viele Zeilen Text soll dein Lagerplatzetikett enthalten?",
-            font=("Arial", 10),
+            font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=1, column=0, sticky="w", padx=(0,0))
         layout_dropdown = ttk.Combobox(

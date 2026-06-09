@@ -10,4 +10,9 @@ from src.config.theme import (
     MAIN_WINDOW_GEOMETRY,
     SEPARATOR_COLOR,
     VERSION_LABEL_TEXT,
+    FONT_TAB,
+    FONT_TITLE,
+    FONT_LABEL,
+    FONT_VERSION,
+    FONT_VERSION_HOVER,
 )

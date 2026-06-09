@@ -228,6 +228,9 @@ Ausgangsversion des Projekts.
 - GUI-Konstanten für Fenstergröße, Separator-Farbe und Versionslabel nach `src/config/theme.py` ausgelagert.
 - Harte GUI-Werte in `src/gui/main_window.py` durch zentrale Konfigurationswerte ersetzt.
 - Öffentliche Konfigurationsschnittstelle über `src/config/__init__.py` erweitert.
+- Zentrale GUI-Schriftdefinitionen in `src/config/theme.py` ergänzt.
+- Wiederkehrende Schriftwerte in `src/gui/main_window.py` durch zentrale Theme-Konstanten ersetzt.
+- Öffentliche Konfigurationsschnittstelle über `src/config/__init__.py` um GUI-Schriftwerte erweitert.
 
 #### Neue Datei: layouts.py
 
