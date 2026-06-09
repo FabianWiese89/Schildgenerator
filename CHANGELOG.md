@@ -257,6 +257,11 @@ Ausgangsversion des Projekts.
 - Veraltete Kommentare in `src/gui/main_window.py` bereinigt.
 - Abschnittsbezeichnung für das Hauptfenster aktualisiert.
 - Nicht mehr passende Batch-Kommentarzeile nach Auslagerung der PDF-Erzeugung entfernt.
+- Gemeinsame Handbuch-Aktion `show_handbuch()` innerhalb von `src/gui/main_window.py` in den Bereich gemeinsamer Aktionen verschoben.
+- Methodenstruktur im Hauptfenster fachlich klarer gruppiert.
+- Vorbereitung für spätere Auslagerung von Einzelerstellung und Sammelverarbeitung verbessert.
+
+
 #### Neue Datei: layouts.py
 
 Ausgelagert:

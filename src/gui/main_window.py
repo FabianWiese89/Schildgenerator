@@ -248,9 +248,6 @@ class QRCodeGeneratorApp:
         frame.bind_all('<KeyRelease>', lambda e: self.update_single_button())
         frame.bind_all('<<ComboboxSelected>>', lambda e: self.update_single_button())
 
-    def show_handbuch(self):
-        HandbuchWindow(self.root)
-
     def update_single_button(self):
         lagerplatz = self.single_lagerplatz.get().strip()
         pdf = self.single_output.get().strip()
@@ -421,8 +418,9 @@ class QRCodeGeneratorApp:
         
         self.batch_status.config(text="Fertig")
         messagebox.showinfo("Fertig", f"PDF erfolgreich erstellt:\n{self.batch_output_path.get()}")
-
+    
+    def show_handbuch(self):
+        HandbuchWindow(self.root)
+        
     def open_email(self):
         open_support_email()
-    
-    
