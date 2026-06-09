@@ -254,7 +254,9 @@ Ausgangsversion des Projekts.
 - Funktion `get_line_count_from_layout()` auf zentrale Layout-Konstanten umgestellt.
 - Textfragment-Prüfung in `src/utils/layout_helpers.py` durch exakte Layoutwert-Vergleiche ersetzt.
 - Rückgabeverhalten bei ungültiger Layout-Auswahl klarer definiert.
-
+- Veraltete Kommentare in `src/gui/main_window.py` bereinigt.
+- Abschnittsbezeichnung für das Hauptfenster aktualisiert.
+- Nicht mehr passende Batch-Kommentarzeile nach Auslagerung der PDF-Erzeugung entfernt.
 #### Neue Datei: layouts.py
 
 Ausgelagert:

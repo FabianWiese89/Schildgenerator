@@ -50,7 +50,7 @@ from src.config import (
     LAYOUT_OPTION_DEFAULT,
     LAYOUT_OPTIONS,
 )
-# ---- Farbdefinitionen ----
+# ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
     def __init__(self, root):
         self.root = root
@@ -425,5 +425,4 @@ class QRCodeGeneratorApp:
     def open_email(self):
         open_support_email()
     
-    # ==== BATCH GENERIERUNG (wie bisher) ====
     
