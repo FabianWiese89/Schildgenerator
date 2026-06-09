@@ -30,4 +30,5 @@ from src.config.theme import (
     LAYOUT_OPTION_4_LINES,
     LAYOUT_OPTION_5_LINES,
     LAYOUT_OPTIONS,
+    VALID_LAYOUT_OPTIONS,
 )

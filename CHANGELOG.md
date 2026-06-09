@@ -248,6 +248,9 @@ Ausgangsversion des Projekts.
 - Layout-Auswahltexte für die GUI als zentrale Konfigurationswerte ergänzt.
 - Standardwert und Auswahloptionen der Layout-Dropdowns in `src/gui/main_window.py` auf zentrale Werte umgestellt.
 - Harte Layout-Auswahltexte im Hauptfenster reduziert.
+- Gültige Layout-Auswahlwerte als zentrale Konfigurationsliste `VALID_LAYOUT_OPTIONS` ergänzt.
+- Validierungslogik für Einzelerstellung und Sammelverarbeitung auf zentrale Layout-Konstanten umgestellt.
+- Harte Layout-Auswahltexte aus `src/utils/validators.py` entfernt.
 
 #### Neue Datei: layouts.py
 
