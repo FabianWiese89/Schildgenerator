@@ -251,6 +251,9 @@ Ausgangsversion des Projekts.
 - Gültige Layout-Auswahlwerte als zentrale Konfigurationsliste `VALID_LAYOUT_OPTIONS` ergänzt.
 - Validierungslogik für Einzelerstellung und Sammelverarbeitung auf zentrale Layout-Konstanten umgestellt.
 - Harte Layout-Auswahltexte aus `src/utils/validators.py` entfernt.
+- Funktion `get_line_count_from_layout()` auf zentrale Layout-Konstanten umgestellt.
+- Textfragment-Prüfung in `src/utils/layout_helpers.py` durch exakte Layoutwert-Vergleiche ersetzt.
+- Rückgabeverhalten bei ungültiger Layout-Auswahl klarer definiert.
 
 #### Neue Datei: layouts.py
 
