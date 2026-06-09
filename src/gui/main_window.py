@@ -22,6 +22,7 @@ from src.pdf import (
 from src.config import (
     BG_COLOR,
     BUTTON_COLOR,
+    BUTTON_TEXT_COLOR,
     GUI_LOGO_PATH,
     GUI_LOGO_WIDTH,
     GUI_LOGO_HEIGHT,
@@ -182,7 +183,7 @@ class QRCodeGeneratorApp:
             bg=BG_COLOR
         ).grid(row=5, column=0, pady=(14, 0), sticky="w")
         tk.Entry(frame, textvariable=self.single_output, width=60, bg=BG_COLOR, fg="black", insertbackground="black").grid(row=6, column=0, sticky="w")
-        tk.Button(frame, text="Durchsuchen", command=self.single_save_pdf, bg=BUTTON_COLOR, fg="black").grid(row=6, column=1, padx=10)
+        tk.Button(frame, text="Durchsuchen", command=self.single_save_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=6, column=1, padx=10)
 
         # Status-Label
         self.single_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
@@ -197,7 +198,7 @@ class QRCodeGeneratorApp:
             text="PDF erstellen",
             command=self.on_single_generate,
             bg=BUTTON_COLOR,
-            fg="black",
+            fg=BUTTON_TEXT_COLOR,
             padx=20,
             pady=5,
             state="disabled"
@@ -209,7 +210,7 @@ class QRCodeGeneratorApp:
             text="Kontakt / Support",
             command=self.open_email,
             bg=BUTTON_COLOR,
-            fg="black",
+            fg=BUTTON_TEXT_COLOR,
             padx=18,
             pady=5
         ).pack(side="left")
@@ -220,7 +221,7 @@ class QRCodeGeneratorApp:
             text="Handbuch",
             command=self.show_handbuch,
             bg=BUTTON_COLOR,
-            fg="black",
+            fg=BUTTON_TEXT_COLOR,
             relief="raised"
         ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
         
@@ -234,7 +235,7 @@ class QRCodeGeneratorApp:
                 True
             ),
             bg=BUTTON_COLOR,
-            fg="black",
+            fg=BUTTON_TEXT_COLOR,
             padx=18,
             pady=5
         ).pack(side="left", padx=(0, 20))
@@ -315,7 +316,7 @@ class QRCodeGeneratorApp:
         # Excel-Dateiauswahl
         tk.Label(frame, text="Excel-Datei auswählen:", bg=BG_COLOR).grid(row=3, column=0, sticky="w")
         tk.Entry(frame, textvariable=self.batch_excel_path, width=60, bg=BG_COLOR, fg="black", insertbackground="black").grid(row=4, column=0, sticky="w")
-        tk.Button(frame, text="Durchsuchen", command=self.browse_batch_excel, bg=BUTTON_COLOR, fg="black").grid(row=4, column=1, padx=10)
+        tk.Button(frame, text="Durchsuchen", command=self.browse_batch_excel, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=4, column=1, padx=10)
 
         # Hinweistext
         tk.Label(
@@ -331,7 +332,7 @@ class QRCodeGeneratorApp:
         # Speicherort Auswahl
         tk.Label(frame, text="Speicherort für die kombinierte PDF:", bg=BG_COLOR).grid(row=8, column=0, pady=(16, 0), sticky="w")
         tk.Entry(frame, textvariable=self.batch_output_path, width=60, bg=BG_COLOR, fg="black", insertbackground="black").grid(row=9, column=0, sticky="w")
-        tk.Button(frame, text="Durchsuchen", command=self.save_batch_pdf, bg=BUTTON_COLOR, fg="black").grid(row=9, column=1, padx=10)
+        tk.Button(frame, text="Durchsuchen", command=self.save_batch_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=9, column=1, padx=10)
 
         # Status-Label
         self.batch_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
@@ -346,7 +347,7 @@ class QRCodeGeneratorApp:
             text="PDF erstellen",
             command=self.on_batch_generate,
             bg=BUTTON_COLOR,
-            fg="black",
+            fg=BUTTON_TEXT_COLOR,
             padx=20,
             pady=5,
             state="disabled"
@@ -358,7 +359,7 @@ class QRCodeGeneratorApp:
             text="Kontakt / Support",
             command=self.open_email,
             bg=BUTTON_COLOR,
-            fg="black",
+            fg=BUTTON_TEXT_COLOR,
             padx=18,
             pady=5
         ).pack(side="left")
@@ -369,7 +370,7 @@ class QRCodeGeneratorApp:
             text="Handbuch",
             command=self.show_handbuch,
             bg=BUTTON_COLOR,
-            fg="black",
+            fg=BUTTON_TEXT_COLOR,
             relief="raised"
         ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
 

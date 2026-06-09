@@ -1,5 +1,6 @@
 BG_COLOR = "#9d9d9d"
 BUTTON_COLOR = "#00703c"
+BUTTON_TEXT_COLOR = "black"
 
 GUI_LOGO_PATH = "assets/Logo_trans.png"
 GUI_LOGO_WIDTH = 250

@@ -1,6 +1,7 @@
 from src.config.theme import (
     BG_COLOR,
     BUTTON_COLOR,
+    BUTTON_TEXT_COLOR,
     GUI_LOGO_PATH,
     GUI_LOGO_WIDTH,
     GUI_LOGO_HEIGHT,
