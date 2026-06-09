@@ -239,6 +239,12 @@ Ausgangsversion des Projekts.
 - Status- und Versionsfarben als zentrale Theme-Konstanten ergänzt.
 - Statuslabel und Versionslabel im Hauptfenster auf zentrale Farbwerte umgestellt.
 - Harte Farbangaben für Status- und Versionsanzeige in `src/gui/main_window.py` reduziert.
+- Button-Textfarbe als zentrale Theme-Konstante `BUTTON_TEXT_COLOR` ergänzt.
+- Button-Schriftfarben im Hauptfenster auf zentrale Theme-Werte umgestellt.
+- Harte Button-Farbwerte in `src/gui/main_window.py` weiter reduziert.
+- Entry-Textfarbe und Entry-Cursorfarbe als zentrale Theme-Konstanten ergänzt.
+- Eingabefelder im Hauptfenster auf zentrale Theme-Werte umgestellt.
+- Harte Entry-Farbwerte in `src/gui/main_window.py` weiter reduziert.
 
 #### Neue Datei: layouts.py
 
