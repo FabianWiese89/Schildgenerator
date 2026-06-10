@@ -300,6 +300,9 @@ Ausgangsversion des Projekts.
 - Handbuch-Button-Erstellung in zentrale GUI-Hilfsmethode `add_handbook_button()` ausgelagert.
 - Doppelte Handbuch-Button-Logik aus Einzelerstellung und Sammelverarbeitung entfernt.
 - Hauptfensterstruktur weiter für spätere Tab-Auslagerung vorbereitet.
+- Kontakt-/Support-Button-Erstellung in zentrale GUI-Hilfsmethode `add_support_button()` ausgelagert.
+- Doppelte Support-Button-Logik aus Einzelerstellung und Sammelverarbeitung entfernt.
+- Gemeinsame GUI-Buttonlogik im Hauptfenster weiter reduziert.
 
 #### Neue Datei: layouts.py
 

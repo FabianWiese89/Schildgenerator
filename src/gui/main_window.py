@@ -166,7 +166,18 @@ class QRCodeGeneratorApp:
             fg=BUTTON_TEXT_COLOR,
             relief="raised"
         ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
-        
+    
+    def add_support_button(self, frame):
+        tk.Button(
+            frame,
+            text=BUTTON_SUPPORT_TEXT,
+            command=self.open_email,
+            bg=BUTTON_COLOR,
+            fg=BUTTON_TEXT_COLOR,
+            padx=18,
+            pady=5
+        ).pack(side="left", padx=(0, 20))
+            
     def init_single_variables(self):
         self.single_lagerplatz = tk.StringVar()
         self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
@@ -245,15 +256,7 @@ class QRCodeGeneratorApp:
         )
         self.single_btn_pdf.pack(side="left", padx=(0, 20))
 
-        tk.Button(
-            btn_frame,
-            text=BUTTON_SUPPORT_TEXT,
-            command=self.open_email,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            padx=18,
-            pady=5
-        ).pack(side="left")
+        self.add_support_button(btn_frame)
 
         # Handbuch-Button unten rechts
         self.add_handbook_button(frame)
@@ -399,15 +402,7 @@ class QRCodeGeneratorApp:
         )
         self.batch_btn_pdf.pack(side="left", padx=(0, 20))
 
-        tk.Button(
-            btn_frame,
-            text=BUTTON_SUPPORT_TEXT,
-            command=self.open_email,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            padx=18,
-            pady=5
-        ).pack(side="left")
+        self.add_support_button(btn_frame)
 
         # Handbuch-Button unten rechts
         self.add_handbook_button(frame)
