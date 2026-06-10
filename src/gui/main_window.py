@@ -76,6 +76,7 @@ from src.config import (
     BATCH_HINT_NO_HEADER_TEXT,
     BATCH_HINT_COLUMN_A_TEXT,
     BATCH_HINT_COLUMN_B_TEXT,
+    SHOW_TEXT_SIGN_TEST_BUTTON,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -253,20 +254,25 @@ class QRCodeGeneratorApp:
             relief="raised"
         ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
         
-        tk.Button(
-            btn_frame,
-            text=BUTTON_TEXT_SIGN_TEST_TEXT,
-            command=lambda: generate_text_sign_pdf(
-                "TESTSCHILD",
-                "PARKPLATZ FÜR BESUCHER UND LIEFERANTEN SOWIE EXTERNE DIENSTLEISTER",
-                "output/test_textschild.pdf",
-                True
-            ),
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            padx=18,
-            pady=5
-        ).pack(side="left", padx=(0, 20))
+        # Temporäre Entwicklungsfunktion:
+        # Dient aktuell nur zum Testen der Textschild-PDF-Erzeugung.
+        # Die spätere Vollversion soll Textschild-Inhalte über die GUI auswählbar machen.
+        # Daher werden die hier verwendeten Testwerte bewusst nicht weiter zentralisiert.
+        if SHOW_TEXT_SIGN_TEST_BUTTON:
+            tk.Button(
+                btn_frame,
+                text=BUTTON_TEXT_SIGN_TEST_TEXT,
+                command=lambda: generate_text_sign_pdf(
+                    "TESTSCHILD",
+                    "PARKPLATZ FÜR BESUCHER UND LIEFERANTEN SOWIE EXTERNE DIENSTLEISTER",
+                    "output/test_textschild.pdf",
+                    True
+                ),
+                bg=BUTTON_COLOR,
+                fg=BUTTON_TEXT_COLOR,
+                padx=18,
+                pady=5
+            ).pack(side="left", padx=(0, 20))
 
         # Live-Validation
         frame.bind_all('<KeyRelease>', lambda e: self.update_single_button())

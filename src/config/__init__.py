@@ -58,4 +58,5 @@ from src.config.theme import (
     BATCH_HINT_NO_HEADER_TEXT,
     BATCH_HINT_COLUMN_A_TEXT,
     BATCH_HINT_COLUMN_B_TEXT,
+    SHOW_TEXT_SIGN_TEST_BUTTON,
 )
