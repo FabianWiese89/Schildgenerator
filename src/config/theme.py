@@ -47,3 +47,8 @@ SINGLE_TAB_TITLE_TEXT = "Ein einzelnes Lagerplatzschild generieren"
 SINGLE_LAYOUT_LABEL_TEXT = "Wie viele Zeilen Text soll dein Lagerplatzetikett enthalten?"
 SINGLE_STORAGE_LABEL_TEXT = "Lagerplatz (systemisch, mit Bindestrichen):"
 SINGLE_OUTPUT_LABEL_TEXT = "Speicherort für das PDF:"
+
+BATCH_TAB_TITLE_TEXT = "Lagerplatz-Schilder aus Excel-Datei generieren."
+BATCH_LAYOUT_LABEL_TEXT = "Wie viele Zeilen Text soll dein Lagerplatzetikett enthalten?"
+BATCH_EXCEL_LABEL_TEXT = "Excel-Datei auswählen:"
+BATCH_OUTPUT_LABEL_TEXT = "Speicherort für die kombinierte PDF:"

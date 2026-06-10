@@ -53,6 +53,10 @@ from src.config import (
     SINGLE_LAYOUT_LABEL_TEXT,
     SINGLE_STORAGE_LABEL_TEXT,
     SINGLE_OUTPUT_LABEL_TEXT,
+    BATCH_TAB_TITLE_TEXT,
+    BATCH_LAYOUT_LABEL_TEXT,
+    BATCH_EXCEL_LABEL_TEXT,
+    BATCH_OUTPUT_LABEL_TEXT,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -300,7 +304,7 @@ class QRCodeGeneratorApp:
         # Titel
         tk.Label(
             frame,
-            text="Lagerplatz-Schilder aus Excel-Datei generieren.",
+            text=BATCH_TAB_TITLE_TEXT,
             font=FONT_TITLE,
             bg=BG_COLOR
         ).grid(row=0, column=0, sticky="w", pady=(10, 8), columnspan=2)
@@ -308,7 +312,7 @@ class QRCodeGeneratorApp:
         # Layout Dropdown
         tk.Label(
             frame,
-            text="Wie viele Zeilen Text soll dein Lagerplatzetikett enthalten?",
+            text=BATCH_LAYOUT_LABEL_TEXT,
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=1, column=0, sticky="w", padx=(0,0))
@@ -323,7 +327,7 @@ class QRCodeGeneratorApp:
         layout_dropdown.bind("<<ComboboxSelected>>", lambda e: self.update_batch_button())
 
         # Excel-Dateiauswahl
-        tk.Label(frame, text="Excel-Datei auswählen:", bg=BG_COLOR).grid(row=3, column=0, sticky="w")
+        tk.Label(frame, text=BATCH_EXCEL_LABEL_TEXT, bg=BG_COLOR).grid(row=3, column=0, sticky="w")
         tk.Entry(frame, textvariable=self.batch_excel_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=4, column=0, sticky="w")
         tk.Button(frame, text="Durchsuchen", command=self.browse_batch_excel, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=4, column=1, padx=10)
 
@@ -339,7 +343,7 @@ class QRCodeGeneratorApp:
         ).grid(row=7, column=0, sticky="w")
 
         # Speicherort Auswahl
-        tk.Label(frame, text="Speicherort für die kombinierte PDF:", bg=BG_COLOR).grid(row=8, column=0, pady=(16, 0), sticky="w")
+        tk.Label(frame, text=BATCH_OUTPUT_LABEL_TEXT, bg=BG_COLOR).grid(row=8, column=0, pady=(16, 0), sticky="w")
         tk.Entry(frame, textvariable=self.batch_output_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=9, column=0, sticky="w")
         tk.Button(frame, text="Durchsuchen", command=self.save_batch_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=9, column=1, padx=10)
 

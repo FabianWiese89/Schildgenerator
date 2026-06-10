@@ -272,6 +272,9 @@ Ausgangsversion des Projekts.
 - Labeltexte der Einzelerstellung als zentrale Konfigurationswerte ergänzt.
 - Beschriftungen im Tab „Einzelerstellung“ in `src/gui/main_window.py` auf zentrale Textkonstanten umgestellt.
 - Vorbereitung für spätere Auslagerung des Einzelerstellungs-Tabs verbessert.
+- Labeltexte der Sammelverarbeitung als zentrale Konfigurationswerte ergänzt.
+- Beschriftungen im Tab „Sammelverarbeitung“ in `src/gui/main_window.py` auf zentrale Textkonstanten umgestellt.
+- Vorbereitung für spätere Auslagerung des Sammelverarbeitungs-Tabs verbessert.
 
 #### Neue Datei: layouts.py
 
