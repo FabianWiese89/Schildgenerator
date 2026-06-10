@@ -67,6 +67,12 @@ from src.config import (
     STATUS_DONE_TEXT,
     MESSAGEBOX_DONE_TITLE,
     MESSAGEBOX_PDF_CREATED_TEXT,
+    PDF_DEFAULT_EXTENSION,
+    PDF_FILE_TYPE_LABEL,
+    PDF_FILE_PATTERN,
+    EXCEL_DIALOG_TITLE,
+    EXCEL_FILE_TYPE_LABEL,
+    EXCEL_FILE_PATTERN,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -274,8 +280,8 @@ class QRCodeGeneratorApp:
 
     def single_save_pdf(self):
         path = filedialog.asksaveasfilename(
-            defaultextension=".pdf",
-            filetypes=[("PDF-Dateien", "*.pdf")]
+            defaultextension=PDF_DEFAULT_EXTENSION,
+            filetypes=[(PDF_FILE_TYPE_LABEL, PDF_FILE_PATTERN)]
         )
         if path:
             self.single_output.set(path)
@@ -415,8 +421,8 @@ class QRCodeGeneratorApp:
 
     def browse_batch_excel(self):
         path = filedialog.askopenfilename(
-            title="Excel-Datei wählen",
-            filetypes=[("Excel-Dateien", "*.xlsx")]
+            title=EXCEL_DIALOG_TITLE,
+            filetypes=[(EXCEL_FILE_TYPE_LABEL, EXCEL_FILE_PATTERN)] 
         )
         if path:
             self.batch_excel_path.set(path)
@@ -424,8 +430,8 @@ class QRCodeGeneratorApp:
 
     def save_batch_pdf(self):
         path = filedialog.asksaveasfilename(
-            defaultextension=".pdf",
-            filetypes=[("PDF-Dateien", "*.pdf")]
+            defaultextension=PDF_DEFAULT_EXTENSION,
+            filetypes=[(PDF_FILE_TYPE_LABEL, PDF_FILE_PATTERN)]
         )
         if path:
             self.batch_output_path.set(path)

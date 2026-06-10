@@ -281,6 +281,11 @@ Ausgangsversion des Projekts.
 - Status- und Erfolgsmeldungen als zentrale Konfigurationswerte ergänzt.
 - Statusanzeigen für Einzelerstellung und Sammelverarbeitung auf zentrale Textkonstanten umgestellt.
 - Erfolgsmeldungen der PDF-Erstellung in `src/gui/main_window.py` auf zentrale Meldungstexte umgestellt.
+- Dateidialog-Texte und Dateityp-Filter als zentrale Konfigurationswerte ergänzt.
+- PDF-Speicherdialoge in Einzelerstellung und Sammelverarbeitung auf zentrale Dialog-Konstanten umgestellt.
+- Excel-Auswahldialog der Sammelverarbeitung auf zentrale Dialog-Konstanten umgestellt.
+- Harte Dateidialog-Werte in `src/gui/main_window.py` reduziert.
+
 
 #### Neue Datei: layouts.py
 

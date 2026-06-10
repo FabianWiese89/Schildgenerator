@@ -64,3 +64,11 @@ STATUS_CREATING_PDF_TEXT = "PDF wird erstellt..."
 STATUS_DONE_TEXT = "Fertig"
 MESSAGEBOX_DONE_TITLE = "Fertig"
 MESSAGEBOX_PDF_CREATED_TEXT = "PDF erfolgreich erstellt:"
+
+PDF_DEFAULT_EXTENSION = ".pdf"
+PDF_FILE_TYPE_LABEL = "PDF-Dateien"
+PDF_FILE_PATTERN = "*.pdf"
+
+EXCEL_DIALOG_TITLE = "Excel-Datei wählen"
+EXCEL_FILE_TYPE_LABEL = "Excel-Dateien"
+EXCEL_FILE_PATTERN = "*.xlsx"
