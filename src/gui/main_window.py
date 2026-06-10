@@ -121,7 +121,7 @@ class QRCodeGeneratorApp:
 
     def show_release_notes(self, event=None):
         ReleaseNotesWindow(self.root)
-
+   
 # ==== ALLGEMEINE GUI-HILFSMETHODEN ====
     def add_logo_to_frame(self, frame):
         logo_path = resource_path(GUI_LOGO_PATH)
@@ -138,7 +138,7 @@ class QRCodeGeneratorApp:
                 rely=GUI_LOGO_RELY,
                 anchor=GUI_LOGO_ANCHOR,
             )
-      
+   
     # ==== EINZELERSTELLUNG ====
     def build_tab_single(self):
         frame = self.tab_single
@@ -425,3 +425,4 @@ class QRCodeGeneratorApp:
         
     def open_email(self):
         open_support_email()
+        

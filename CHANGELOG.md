@@ -263,6 +263,9 @@ Ausgangsversion des Projekts.
 - Versionslabel- und Release-Notes-Bereich in `src/gui/main_window.py` klarer gruppiert.
 - Methode `add_logo_to_frame()` in einen allgemeinen GUI-Hilfsmethodenbereich verschoben.
 - Abschnittsstruktur im Hauptfenster für spätere GUI-Auslagerungen weiter vorbereitet.
+- Versionslabel- und Release-Notes-Bereich in `src/gui/main_window.py` klarer gruppiert.
+- Methode `add_logo_to_frame()` in einen allgemeinen GUI-Hilfsmethodenbereich verschoben.
+- Abschnittsstruktur im Hauptfenster für spätere GUI-Auslagerungen weiter vorbereitet.
 
 #### Neue Datei: layouts.py
 
