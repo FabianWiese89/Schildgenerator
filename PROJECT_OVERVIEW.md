@@ -64,6 +64,7 @@ Die Grundarchitektur soll zuerst stabil und sauber aufgebaut werden.
 Ausgelagerte Komponenten und Pakete:
 
 * `src/gui/`
+  * `main_window.py`
   * `release_notes_window.py`
   * `handbuch_window.py`
   * zentraler Export über `src/gui/__init__.py`
@@ -75,7 +76,7 @@ Ausgelagerte Komponenten und Pakete:
 * `src/config/`
   * `theme.py`
   * `layouts.py`
-  * zentraler Export der Theme- und Logo-Konfiguration über `src/config/__init__.py`
+  * zentraler Export der Theme-, Layout-, Logo- und GUI-Textkonfiguration über `src/config/__init__.py`
 
 * `src/utils/`
   * `layout_helpers.py`
@@ -111,7 +112,6 @@ Aktuell:
 * `main.py`
 * `src/app.py`
 * `src/__init__.py`
-* 
 
 ### GUI
 
@@ -158,6 +158,7 @@ src/
 ├── gui/
 │   ├── __init__.py
 │   ├── handbuch_window.py
+│   ├── main_window.py
 │   └── release_notes_window.py
 ├── pdf/
 │   ├── __init__.py
@@ -277,9 +278,11 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Modularisierung begonnen
 * Architekturumbau aktiv
 * Bereit für weitere Refactoring-Schritte
-* GUI-Fensterlogik teilweise nach `src/gui/` ausgelagert
+* Hauptfensterklasse `QRCodeGeneratorApp` nach `src/gui/main_window.py` ausgelagert
 * PDF-Erzeugung nach `src/pdf/` verschoben
 * Layout- und Theme-Konfiguration nach `src/config/` verschoben
 * Pfad-, Layout- und Validierungshelfer nach `src/utils/` verschoben
 * Support-Mail-Logik nach `src/services/` ausgelagert
 * Paket-Exports über `__init__.py` für `gui`, `pdf`, `config`, `utils` und `services` eingerichtet
+* GUI-Theme-, Text- und Dialogwerte in `src/config/theme.py` zentralisiert
+* Textschild-Testbutton als temporäre Entwicklungsfunktion zentral ein- und ausblendbar
