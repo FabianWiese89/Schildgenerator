@@ -294,6 +294,9 @@ Ausgangsversion des Projekts.
 - GUI-Imports in `src/gui/main_window.py` präzisiert.
 - Direkte Modulimporte für `ReleaseNotesWindow` und `HandbuchWindow` ergänzt.
 - Abhängigkeit des Hauptfensters vom GUI-Paketexport reduziert.
+- Ausgewählte Notebook-Tab-Farbe als zentrale Theme-Konstante ergänzt.
+- Harten Farbwert für den aktiven Tab in `src/gui/main_window.py` entfernt.
+- GUI-Theme-Konfiguration weiter vervollständigt.
 
 #### Neue Datei: layouts.py
 
