@@ -275,6 +275,9 @@ Ausgangsversion des Projekts.
 - Labeltexte der Sammelverarbeitung als zentrale Konfigurationswerte ergänzt.
 - Beschriftungen im Tab „Sammelverarbeitung“ in `src/gui/main_window.py` auf zentrale Textkonstanten umgestellt.
 - Vorbereitung für spätere Auslagerung des Sammelverarbeitungs-Tabs verbessert.
+- Buttontexte als zentrale Konfigurationswerte ergänzt.
+- Wiederkehrende Button-Beschriftungen in `src/gui/main_window.py` auf zentrale Textkonstanten umgestellt.
+- Vorbereitung für spätere Auslagerung von Einzelerstellung und Sammelverarbeitung weiter verbessert.
 
 #### Neue Datei: layouts.py
 

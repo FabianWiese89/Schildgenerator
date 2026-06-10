@@ -57,6 +57,11 @@ from src.config import (
     BATCH_LAYOUT_LABEL_TEXT,
     BATCH_EXCEL_LABEL_TEXT,
     BATCH_OUTPUT_LABEL_TEXT,
+    BUTTON_BROWSE_TEXT,
+    BUTTON_CREATE_PDF_TEXT,
+    BUTTON_SUPPORT_TEXT,
+    BUTTON_MANUAL_TEXT,
+    BUTTON_TEXT_SIGN_TEST_TEXT,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -192,7 +197,7 @@ class QRCodeGeneratorApp:
             bg=BG_COLOR
         ).grid(row=5, column=0, pady=(14, 0), sticky="w")
         tk.Entry(frame, textvariable=self.single_output, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=6, column=0, sticky="w")
-        tk.Button(frame, text="Durchsuchen", command=self.single_save_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=6, column=1, padx=10)
+        tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.single_save_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=6, column=1, padx=10)
 
         # Status-Label
         self.single_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
@@ -204,7 +209,7 @@ class QRCodeGeneratorApp:
 
         self.single_btn_pdf = tk.Button(
             btn_frame,
-            text="PDF erstellen",
+            text=BUTTON_CREATE_PDF_TEXT,
             command=self.on_single_generate,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR,
@@ -216,7 +221,7 @@ class QRCodeGeneratorApp:
 
         tk.Button(
             btn_frame,
-            text="Kontakt / Support",
+            text=BUTTON_SUPPORT_TEXT,
             command=self.open_email,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR,
@@ -227,7 +232,7 @@ class QRCodeGeneratorApp:
         # Handbuch-Button unten rechts
         tk.Button(
             frame,
-            text="Handbuch",
+            text=BUTTON_MANUAL_TEXT,
             command=self.show_handbuch,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR,
@@ -236,7 +241,7 @@ class QRCodeGeneratorApp:
         
         tk.Button(
             btn_frame,
-            text="Textschild Test",
+            text=BUTTON_TEXT_SIGN_TEST_TEXT,
             command=lambda: generate_text_sign_pdf(
                 "TESTSCHILD",
                 "PARKPLATZ FÜR BESUCHER UND LIEFERANTEN SOWIE EXTERNE DIENSTLEISTER",
@@ -329,7 +334,7 @@ class QRCodeGeneratorApp:
         # Excel-Dateiauswahl
         tk.Label(frame, text=BATCH_EXCEL_LABEL_TEXT, bg=BG_COLOR).grid(row=3, column=0, sticky="w")
         tk.Entry(frame, textvariable=self.batch_excel_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=4, column=0, sticky="w")
-        tk.Button(frame, text="Durchsuchen", command=self.browse_batch_excel, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=4, column=1, padx=10)
+        tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.browse_batch_excel, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=4, column=1, padx=10)
 
         # Hinweistext
         tk.Label(
@@ -345,7 +350,7 @@ class QRCodeGeneratorApp:
         # Speicherort Auswahl
         tk.Label(frame, text=BATCH_OUTPUT_LABEL_TEXT, bg=BG_COLOR).grid(row=8, column=0, pady=(16, 0), sticky="w")
         tk.Entry(frame, textvariable=self.batch_output_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=9, column=0, sticky="w")
-        tk.Button(frame, text="Durchsuchen", command=self.save_batch_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=9, column=1, padx=10)
+        tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.save_batch_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=9, column=1, padx=10)
 
         # Status-Label
         self.batch_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
@@ -357,7 +362,7 @@ class QRCodeGeneratorApp:
 
         self.batch_btn_pdf = tk.Button(
             btn_frame,
-            text="PDF erstellen",
+            text=BUTTON_CREATE_PDF_TEXT,
             command=self.on_batch_generate,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR,
@@ -369,7 +374,7 @@ class QRCodeGeneratorApp:
 
         tk.Button(
             btn_frame,
-            text="Kontakt / Support",
+            text=BUTTON_SUPPORT_TEXT,
             command=self.open_email,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR,
@@ -380,7 +385,7 @@ class QRCodeGeneratorApp:
         # Handbuch-Button unten rechts
         tk.Button(
             frame,
-            text="Handbuch",
+            text=BUTTON_MANUAL_TEXT,
             command=self.show_handbuch,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR,
