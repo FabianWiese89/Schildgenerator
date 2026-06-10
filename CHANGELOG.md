@@ -278,6 +278,9 @@ Ausgangsversion des Projekts.
 - Buttontexte als zentrale Konfigurationswerte ergänzt.
 - Wiederkehrende Button-Beschriftungen in `src/gui/main_window.py` auf zentrale Textkonstanten umgestellt.
 - Vorbereitung für spätere Auslagerung von Einzelerstellung und Sammelverarbeitung weiter verbessert.
+- Status- und Erfolgsmeldungen als zentrale Konfigurationswerte ergänzt.
+- Statusanzeigen für Einzelerstellung und Sammelverarbeitung auf zentrale Textkonstanten umgestellt.
+- Erfolgsmeldungen der PDF-Erstellung in `src/gui/main_window.py` auf zentrale Meldungstexte umgestellt.
 
 #### Neue Datei: layouts.py
 

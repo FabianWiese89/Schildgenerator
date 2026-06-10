@@ -62,6 +62,11 @@ from src.config import (
     BUTTON_SUPPORT_TEXT,
     BUTTON_MANUAL_TEXT,
     BUTTON_TEXT_SIGN_TEST_TEXT,
+    STATUS_READY_TEXT,
+    STATUS_CREATING_PDF_TEXT,
+    STATUS_DONE_TEXT,
+    MESSAGEBOX_DONE_TITLE,
+    MESSAGEBOX_PDF_CREATED_TEXT,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -200,7 +205,7 @@ class QRCodeGeneratorApp:
         tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.single_save_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=6, column=1, padx=10)
 
         # Status-Label
-        self.single_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
+        self.single_status = tk.Label(frame, text=STATUS_READY_TEXT, fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
         self.single_status.grid(row=7, column=0, pady=(15, 0), sticky="w")
 
         # Buttons
@@ -277,7 +282,7 @@ class QRCodeGeneratorApp:
             self.update_single_button()
 
     def on_single_generate(self):
-        self.single_status.config(text="PDF wird erstellt...")
+        self.single_status.config(text=STATUS_CREATING_PDF_TEXT)
         self.root.update_idletasks()
         choice = get_line_count_from_layout(self.single_layout.get())
         lagerplatz_sys = self.single_lagerplatz.get().strip()
@@ -289,8 +294,11 @@ class QRCodeGeneratorApp:
             generate_pdf_einzeln(lagerplatz_vis, qr_data, output, 4)
         else:
             generate_pdf_einzeln(lagerplatz_vis, qr_data, output, 5)
-        self.single_status.config(text="Fertig")
-        messagebox.showinfo("Fertig", f"PDF erfolgreich erstellt:\n{output}")
+        self.single_status.config(text=STATUS_DONE_TEXT)
+        messagebox.showinfo(
+            MESSAGEBOX_DONE_TITLE,
+            f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{output}"
+        )
 
     def init_batch_variables(self):
         self.batch_excel_path = tk.StringVar()
@@ -353,7 +361,7 @@ class QRCodeGeneratorApp:
         tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.save_batch_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=9, column=1, padx=10)
 
         # Status-Label
-        self.batch_status = tk.Label(frame, text="Bereit", fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
+        self.batch_status = tk.Label(frame, text=STATUS_READY_TEXT, fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
         self.batch_status.grid(row=10, column=0, pady=(15, 0), sticky="w")
 
         # Buttons
@@ -424,7 +432,7 @@ class QRCodeGeneratorApp:
             self.update_batch_button()
 
     def on_batch_generate(self):
-        self.batch_status.config(text="PDF wird erstellt...")
+        self.batch_status.config(text=STATUS_CREATING_PDF_TEXT)
         self.root.update_idletasks()
         
         choice = get_line_count_from_layout(self.batch_layout.get())
@@ -433,8 +441,11 @@ class QRCodeGeneratorApp:
         
         generate_batch_pdf(excel, output, choice)
         
-        self.batch_status.config(text="Fertig")
-        messagebox.showinfo("Fertig", f"PDF erfolgreich erstellt:\n{self.batch_output_path.get()}")
+        self.batch_status.config(text=STATUS_DONE_TEXT)
+        messagebox.showinfo(
+            MESSAGEBOX_DONE_TITLE,
+            f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{self.batch_output_path.get()}"
+        )
     
     def show_handbuch(self):
         HandbuchWindow(self.root)
