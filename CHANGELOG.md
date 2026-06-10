@@ -266,6 +266,10 @@ Ausgangsversion des Projekts.
 - Versionslabel- und Release-Notes-Bereich in `src/gui/main_window.py` klarer gruppiert.
 - Methode `add_logo_to_frame()` in einen allgemeinen GUI-Hilfsmethodenbereich verschoben.
 - Abschnittsstruktur im Hauptfenster für spätere GUI-Auslagerungen weiter vorbereitet.
+- Initialisierung der Einzelerstellungs-Variablen in `init_single_variables()` ausgelagert.
+- Initialisierung der Sammelverarbeitungs-Variablen in `init_batch_variables()` ausgelagert.
+- `__init__` der Hauptfensterklasse weiter entschlackt und fachlich klarer strukturiert.
+
 
 #### Neue Datei: layouts.py
 

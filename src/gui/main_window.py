@@ -78,19 +78,8 @@ class QRCodeGeneratorApp:
 
         self.notebook.select(0)  # Einzelerstellung ist Standard
 
-        # Einzel-TAB Variablen
-        self.single_lagerplatz = tk.StringVar()
-        self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
-        self.single_output = tk.StringVar()
-        self.single_status = None
-        self.single_btn_pdf = None
-
-        # Batch-TAB Variablen
-        self.batch_excel_path = tk.StringVar()
-        self.batch_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
-        self.batch_output_path = tk.StringVar()
-        self.batch_status = None
-        self.batch_btn_pdf = None
+        self.init_single_variables()
+        self.init_batch_variables()
 
         self.build_tab_single()
         self.build_tab_batch()
@@ -122,7 +111,7 @@ class QRCodeGeneratorApp:
     def show_release_notes(self, event=None):
         ReleaseNotesWindow(self.root)
    
-# ==== ALLGEMEINE GUI-HILFSMETHODEN ====
+    # ==== ALLGEMEINE GUI-HILFSMETHODEN ====
     def add_logo_to_frame(self, frame):
         logo_path = resource_path(GUI_LOGO_PATH)
 
@@ -139,6 +128,13 @@ class QRCodeGeneratorApp:
                 anchor=GUI_LOGO_ANCHOR,
             )
    
+    def init_single_variables(self):
+        self.single_lagerplatz = tk.StringVar()
+        self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
+        self.single_output = tk.StringVar()
+        self.single_status = None
+        self.single_btn_pdf = None
+    
     # ==== EINZELERSTELLUNG ====
     def build_tab_single(self):
         frame = self.tab_single
@@ -283,6 +279,13 @@ class QRCodeGeneratorApp:
         self.single_status.config(text="Fertig")
         messagebox.showinfo("Fertig", f"PDF erfolgreich erstellt:\n{output}")
 
+    def init_batch_variables(self):
+        self.batch_excel_path = tk.StringVar()
+        self.batch_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
+        self.batch_output_path = tk.StringVar()
+        self.batch_status = None
+        self.batch_btn_pdf = None
+        
     # ==== SAMMELVERARBEITUNG ====
     def build_tab_batch(self):
         frame = self.tab_batch
