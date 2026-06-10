@@ -269,7 +269,9 @@ Ausgangsversion des Projekts.
 - Initialisierung der Einzelerstellungs-Variablen in `init_single_variables()` ausgelagert.
 - Initialisierung der Sammelverarbeitungs-Variablen in `init_batch_variables()` ausgelagert.
 - `__init__` der Hauptfensterklasse weiter entschlackt und fachlich klarer strukturiert.
-
+- Labeltexte der Einzelerstellung als zentrale Konfigurationswerte ergänzt.
+- Beschriftungen im Tab „Einzelerstellung“ in `src/gui/main_window.py` auf zentrale Textkonstanten umgestellt.
+- Vorbereitung für spätere Auslagerung des Einzelerstellungs-Tabs verbessert.
 
 #### Neue Datei: layouts.py
 

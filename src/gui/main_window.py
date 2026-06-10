@@ -49,6 +49,10 @@ from src.config import (
     VERSION_HOVER_TEXT_COLOR,
     LAYOUT_OPTION_DEFAULT,
     LAYOUT_OPTIONS,
+    SINGLE_TAB_TITLE_TEXT,
+    SINGLE_LAYOUT_LABEL_TEXT,
+    SINGLE_STORAGE_LABEL_TEXT,
+    SINGLE_OUTPUT_LABEL_TEXT,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -145,7 +149,7 @@ class QRCodeGeneratorApp:
         # Titel
         tk.Label(
             frame,
-            text="Ein einzelnes Lagerplatzschild generieren",
+            text=SINGLE_TAB_TITLE_TEXT,
             font=FONT_TITLE,
             bg=BG_COLOR
         ).grid(row=0, column=0, sticky="w", pady=(10, 8), columnspan=2)
@@ -153,7 +157,7 @@ class QRCodeGeneratorApp:
         # Layout Dropdown
         tk.Label(
             frame,
-            text="Wie viele Zeilen Text soll dein Lagerplatzetikett enthalten?",
+            text=SINGLE_LAYOUT_LABEL_TEXT,
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=1, column=0, sticky="w", padx=(0,0))
@@ -170,7 +174,7 @@ class QRCodeGeneratorApp:
         # Eingabe Lagerplatz (systemisch)
         tk.Label(
             frame,
-            text="Lagerplatz (systemisch, mit Bindestrichen):",
+            text=SINGLE_STORAGE_LABEL_TEXT,
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=3, column=0, sticky="w", pady=(0, 2))
@@ -179,7 +183,7 @@ class QRCodeGeneratorApp:
         # Speicherort Auswahl
         tk.Label(
             frame,
-            text="Speicherort für das PDF:",
+            text=SINGLE_OUTPUT_LABEL_TEXT,
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=5, column=0, pady=(14, 0), sticky="w")

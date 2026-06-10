@@ -42,3 +42,8 @@ VALID_LAYOUT_OPTIONS = [
     LAYOUT_OPTION_4_LINES,
     LAYOUT_OPTION_5_LINES,
 ]
+
+SINGLE_TAB_TITLE_TEXT = "Ein einzelnes Lagerplatzschild generieren"
+SINGLE_LAYOUT_LABEL_TEXT = "Wie viele Zeilen Text soll dein Lagerplatzetikett enthalten?"
+SINGLE_STORAGE_LABEL_TEXT = "Lagerplatz (systemisch, mit Bindestrichen):"
+SINGLE_OUTPUT_LABEL_TEXT = "Speicherort für das PDF:"
