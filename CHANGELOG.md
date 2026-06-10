@@ -453,6 +453,7 @@ Aktive Kernmodule und Pakete:
 * `src/gui/__init__.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
+* `src/gui/main_window.py`
 
 #### PDF
 
@@ -464,6 +465,16 @@ Aktive Kernmodule und Pakete:
 * `src/config/__init__.py`
 * `src/config/theme.py`
 * `src/config/layouts.py`
+
+Zentralisierte Konfigurationsbereiche:
+
+* Layoutwerte
+* Theme-Farben
+* GUI-Schriften
+* GUI-Textwerte
+* Buttontexte
+* Status- und Dialogtexte
+* Dateidialog-Filter
 
 #### Services
 
