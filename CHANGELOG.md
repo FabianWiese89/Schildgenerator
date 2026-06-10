@@ -291,6 +291,9 @@ Ausgangsversion des Projekts.
 - Textschild-Testbutton als temporäre Entwicklungsfunktion gekennzeichnet.
 - Zentrale Konfiguration `SHOW_TEXT_SIGN_TEST_BUTTON` ergänzt.
 - Testbutton kann nun ohne Code-Löschung zentral ein- oder ausgeblendet werden.
+- GUI-Imports in `src/gui/main_window.py` präzisiert.
+- Direkte Modulimporte für `ReleaseNotesWindow` und `HandbuchWindow` ergänzt.
+- Abhängigkeit des Hauptfensters vom GUI-Paketexport reduziert.
 
 #### Neue Datei: layouts.py
 
