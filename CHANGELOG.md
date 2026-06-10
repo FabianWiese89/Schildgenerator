@@ -288,6 +288,9 @@ Ausgangsversion des Projekts.
 - Hinweistexte der Sammelverarbeitung als zentrale Konfigurationswerte ergänzt.
 - Hinweislabels im Tab „Sammelverarbeitung“ auf zentrale Textkonstanten umgestellt.
 - Harte Hinweistext-Werte in `src/gui/main_window.py` weiter reduziert.
+- Textschild-Testbutton als temporäre Entwicklungsfunktion gekennzeichnet.
+- Zentrale Konfiguration `SHOW_TEXT_SIGN_TEST_BUTTON` ergänzt.
+- Testbutton kann nun ohne Code-Löschung zentral ein- oder ausgeblendet werden.
 
 #### Neue Datei: layouts.py
 
