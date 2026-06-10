@@ -24,6 +24,7 @@ from src.config import (
     BG_COLOR,
     BUTTON_COLOR,
     BUTTON_TEXT_COLOR,
+    NOTEBOOK_SELECTED_TAB_COLOR,
     ENTRY_TEXT_COLOR,
     ENTRY_CURSOR_COLOR,
     GUI_LOGO_PATH,
@@ -92,7 +93,7 @@ class QRCodeGeneratorApp:
         style = ttk.Style()
         style.theme_use('default')
         style.configure('TNotebook.Tab', background=BG_COLOR, font=FONT_TAB, padding=[16, 6])
-        style.map('TNotebook.Tab', background=[('selected', '#bdbdbd')])
+        style.map('TNotebook.Tab', background=[('selected', NOTEBOOK_SELECTED_TAB_COLOR)])
 
         self.notebook = ttk.Notebook(root)
         self.tab_single = tk.Frame(self.notebook, bg=BG_COLOR)
