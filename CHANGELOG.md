@@ -297,6 +297,9 @@ Ausgangsversion des Projekts.
 - Ausgewählte Notebook-Tab-Farbe als zentrale Theme-Konstante ergänzt.
 - Harten Farbwert für den aktiven Tab in `src/gui/main_window.py` entfernt.
 - GUI-Theme-Konfiguration weiter vervollständigt.
+- Handbuch-Button-Erstellung in zentrale GUI-Hilfsmethode `add_handbook_button()` ausgelagert.
+- Doppelte Handbuch-Button-Logik aus Einzelerstellung und Sammelverarbeitung entfernt.
+- Hauptfensterstruktur weiter für spätere Tab-Auslagerung vorbereitet.
 
 #### Neue Datei: layouts.py
 

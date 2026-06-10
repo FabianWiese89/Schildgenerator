@@ -157,7 +157,16 @@ class QRCodeGeneratorApp:
                 rely=GUI_LOGO_RELY,
                 anchor=GUI_LOGO_ANCHOR,
             )
-   
+    def add_handbook_button(self, frame):
+        tk.Button(
+            frame,
+            text=BUTTON_MANUAL_TEXT,
+            command=self.show_handbuch,
+            bg=BUTTON_COLOR,
+            fg=BUTTON_TEXT_COLOR,
+            relief="raised"
+        ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
+        
     def init_single_variables(self):
         self.single_lagerplatz = tk.StringVar()
         self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
@@ -247,14 +256,7 @@ class QRCodeGeneratorApp:
         ).pack(side="left")
 
         # Handbuch-Button unten rechts
-        tk.Button(
-            frame,
-            text=BUTTON_MANUAL_TEXT,
-            command=self.show_handbuch,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            relief="raised"
-        ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
+        self.add_handbook_button(frame)
         
         # Temporäre Entwicklungsfunktion:
         # Dient aktuell nur zum Testen der Textschild-PDF-Erzeugung.
@@ -408,14 +410,7 @@ class QRCodeGeneratorApp:
         ).pack(side="left")
 
         # Handbuch-Button unten rechts
-        tk.Button(
-            frame,
-            text=BUTTON_MANUAL_TEXT,
-            command=self.show_handbuch,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            relief="raised"
-        ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
+        self.add_handbook_button(frame)
 
         # Live-Validation
         frame.bind_all('<KeyRelease>', lambda e: self.update_batch_button())
