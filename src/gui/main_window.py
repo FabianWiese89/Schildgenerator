@@ -73,6 +73,9 @@ from src.config import (
     EXCEL_DIALOG_TITLE,
     EXCEL_FILE_TYPE_LABEL,
     EXCEL_FILE_PATTERN,
+    BATCH_HINT_NO_HEADER_TEXT,
+    BATCH_HINT_COLUMN_A_TEXT,
+    BATCH_HINT_COLUMN_B_TEXT,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -352,13 +355,13 @@ class QRCodeGeneratorApp:
 
         # Hinweistext
         tk.Label(
-            frame, text="• Es muss eine .xlsx-Datei ohne Überschrift verwendet werden.", font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
+            frame, text=BATCH_HINT_NO_HEADER_TEXT, font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
         ).grid(row=5, column=0, sticky="w", pady=(12, 0))
         tk.Label(
-            frame, text="• Spalte A: Lagerplatz mit Leerzeichen (z. B. 05 H2 11 093 L)", font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
+            frame, text=BATCH_HINT_COLUMN_A_TEXT, font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
         ).grid(row=6, column=0, sticky="w")
         tk.Label(
-            frame, text="• Spalte B: Lagerplatz mit Bindestrichen (z. B. 05-H2-11-093-L)", font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
+            frame, text=BATCH_HINT_COLUMN_B_TEXT, font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
         ).grid(row=7, column=0, sticky="w")
 
         # Speicherort Auswahl

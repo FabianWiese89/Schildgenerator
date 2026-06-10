@@ -72,3 +72,7 @@ PDF_FILE_PATTERN = "*.pdf"
 EXCEL_DIALOG_TITLE = "Excel-Datei wählen"
 EXCEL_FILE_TYPE_LABEL = "Excel-Dateien"
 EXCEL_FILE_PATTERN = "*.xlsx"
+
+BATCH_HINT_NO_HEADER_TEXT = "• Es muss eine .xlsx-Datei ohne Überschrift verwendet werden."
+BATCH_HINT_COLUMN_A_TEXT = "• Spalte A: Lagerplatz mit Leerzeichen (z. B. 05 H2 11 093 L)"
+BATCH_HINT_COLUMN_B_TEXT = "• Spalte B: Lagerplatz mit Bindestrichen (z. B. 05-H2-11-093-L)"

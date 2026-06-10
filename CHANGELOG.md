@@ -285,7 +285,9 @@ Ausgangsversion des Projekts.
 - PDF-Speicherdialoge in Einzelerstellung und Sammelverarbeitung auf zentrale Dialog-Konstanten umgestellt.
 - Excel-Auswahldialog der Sammelverarbeitung auf zentrale Dialog-Konstanten umgestellt.
 - Harte Dateidialog-Werte in `src/gui/main_window.py` reduziert.
-
+- Hinweistexte der Sammelverarbeitung als zentrale Konfigurationswerte ergänzt.
+- Hinweislabels im Tab „Sammelverarbeitung“ auf zentrale Textkonstanten umgestellt.
+- Harte Hinweistext-Werte in `src/gui/main_window.py` weiter reduziert.
 
 #### Neue Datei: layouts.py
 
