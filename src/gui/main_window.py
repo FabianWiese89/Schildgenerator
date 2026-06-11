@@ -7,17 +7,20 @@ from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
 from src.gui.single_tab import build_single_tab
 from src.gui.batch_tab import build_batch_tab
+from src.gui.single_actions import (
+    update_single_button as handle_update_single_button,
+    single_save_pdf as handle_single_save_pdf,
+    on_single_generate as handle_on_single_generate,
+)
 from src.services import open_support_email
 
 from src.utils import (
     get_line_count_from_layout,
     resource_path,
-    is_single_pdf_valid,
     is_batch_pdf_valid,
 )
 
 from src.pdf import (
-    generate_pdf_einzeln,
     generate_batch_pdf,
 )
 
@@ -228,41 +231,13 @@ class QRCodeGeneratorApp:
         build_single_tab(self)
 
     def update_single_button(self):
-        lagerplatz = self.single_lagerplatz.get().strip()
-        pdf = self.single_output.get().strip()
-        layout = self.single_layout.get()
-        if is_single_pdf_valid(lagerplatz, pdf, layout):
-            self.single_btn_pdf.config(state="normal")
-        else:
-            self.single_btn_pdf.config(state="disabled")
+        handle_update_single_button(self)
 
     def single_save_pdf(self):
-        path = filedialog.asksaveasfilename(
-            defaultextension=PDF_DEFAULT_EXTENSION,
-            filetypes=[(PDF_FILE_TYPE_LABEL, PDF_FILE_PATTERN)]
-        )
-        if path:
-            self.single_output.set(path)
-            self.update_single_button()
+        handle_single_save_pdf(self)
 
     def on_single_generate(self):
-        self.single_status.config(text=STATUS_CREATING_PDF_TEXT)
-        self.root.update_idletasks()
-        choice = get_line_count_from_layout(self.single_layout.get())
-        lagerplatz_sys = self.single_lagerplatz.get().strip()
-        lagerplatz_vis = lagerplatz_sys.replace("-", " ")
-        qr_data = lagerplatz_sys
-
-        output = self.single_output.get().strip()
-        if choice == 4:
-            generate_pdf_einzeln(lagerplatz_vis, qr_data, output, 4)
-        else:
-            generate_pdf_einzeln(lagerplatz_vis, qr_data, output, 5)
-        self.single_status.config(text=STATUS_DONE_TEXT)
-        messagebox.showinfo(
-            MESSAGEBOX_DONE_TITLE,
-            f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{output}"
-        )
+        handle_on_single_generate(self)
 
     def init_batch_variables(self):
         self.batch_excel_path = tk.StringVar()

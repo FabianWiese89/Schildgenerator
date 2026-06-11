@@ -58,6 +58,7 @@ src/
 ├── gui/
 │   ├── main_window.py
 │   ├── single_tab.py
+│   ├── single_actions.py
 │   ├── batch_tab.py
 │   ├── handbuch_window.py
 │   └── release_notes_window.py

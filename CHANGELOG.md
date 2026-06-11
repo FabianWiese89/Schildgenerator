@@ -324,6 +324,10 @@ Ausgangsversion des Projekts.
 - `build_tab_batch()` in `src/gui/main_window.py` auf einen delegierenden Aufruf reduziert.
 - Hauptfenster weiter von direkter Tab-Aufbaulogik entlastet.
 - Vorbereitung für spätere fachliche Trennung von GUI-Aufbau und Steuerungslogik verbessert.
+- Steuerungslogik der Einzelerstellung in `src/gui/single_actions.py` ausgelagert.
+- Methoden `update_single_button()`, `single_save_pdf()` und `on_single_generate()` in `src/gui/main_window.py` auf delegierende Aufrufe reduziert.
+- Hauptfenster weiter von fachlicher Einzelerstellungslogik entlastet.
+- Vorbereitung für die anschließende Auslagerung der Sammelverarbeitungslogik verbessert.
 
 #### Neue Datei: layouts.py
 
@@ -486,6 +490,7 @@ Aktive Kernmodule und Pakete:
 * `src/gui/__init__.py`
 * `src/gui/main_window.py`
 * `src/gui/single_tab.py`
+* `src/gui/single_actions.py`
 * `src/gui/batch_tab.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`

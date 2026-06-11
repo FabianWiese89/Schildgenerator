@@ -66,6 +66,7 @@ Ausgelagerte Komponenten und Pakete:
 * `src/gui/`
   * `main_window.py`
   * `single_tab.py`
+  * `single_actions.py`
   * `batch_tab.py`
   * `release_notes_window.py`
   * `handbuch_window.py`
@@ -120,6 +121,7 @@ Aktuell:
 * `src/gui/__init__.py`
 * `src/gui/main_window.py`
 * `src/gui/single_tab.py`
+* `src/gui/single_actions.py`
 * `src/gui/batch_tab.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
@@ -165,6 +167,7 @@ src/
 │   ├── handbuch_window.py
 │   ├── main_window.py
 │   ├── release_notes_window.py
+│   ├── single_actions.py
 │   └── single_tab.py
 ├── pdf/
 │   ├── __init__.py
@@ -286,6 +289,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Bereit für weitere Refactoring-Schritte
 * Hauptfensterklasse `QRCodeGeneratorApp` nach `src/gui/main_window.py` ausgelagert
 * Oberflächenaufbau der Einzelerstellung nach `src/gui/single_tab.py` ausgelagert
+* Steuerungslogik der Einzelerstellung nach `src/gui/single_actions.py` ausgelagert
 * Oberflächenaufbau der Sammelverarbeitung nach `src/gui/batch_tab.py` ausgelagert
 * PDF-Erzeugung nach `src/pdf/` verschoben
 * Layout- und Theme-Konfiguration nach `src/config/` verschoben
