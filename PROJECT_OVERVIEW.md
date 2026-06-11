@@ -292,6 +292,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 ## 11. Aktueller Status
 
 * Version 1.0 veröffentlicht
+* Version 1.1 als Architektur- und Modularisierungsstand vorbereitet
 * GitHub synchronisiert
 * Anwendung lauffähig
 * Modularisierung begonnen
@@ -313,3 +314,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Paket-Exports über `__init__.py` für `gui`, `pdf`, `config`, `utils` und `services` eingerichtet
 * GUI-Theme-, Text- und Dialogwerte in `src/config/theme.py` zentralisiert
 * Textschild-Testbutton als temporäre Entwicklungsfunktion zentral ein- und ausblendbar
+* Versionsanzeige im Programm auf Version 1.1 aktualisiert
+* Fenstertitel auf Version 1.1 aktualisiert
+* PDF-Footer auf Version 1.1 aktualisiert
+* Release Notes im Programm um Version 1.1 ergänzt

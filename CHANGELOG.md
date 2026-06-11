@@ -79,6 +79,11 @@ Ausgangsversion des Projekts.
 ---
 
 ### Geändert
+- Versionsanzeige im Programm auf Version 1.1 aktualisiert.
+- Fenstertitel auf Version 1.1 aktualisiert.
+- PDF-Footer auf Version 1.1 aktualisiert.
+- Release Notes im Programm um Version 1.1 ergänzt.
+- README.md und PROJECT_OVERVIEW.md für den Version-1.1-Zwischenstand aktualisiert.
 - `PROJECT_OVERVIEW.md` an die neue PDF-Paketstruktur mit `src/pdf/generator.py` angepasst.
 - Aktive Projektverweise auf die alte Datei `pdf_generator.py` geprüft und bereinigt.
 - Historische CHANGELOG-Einträge unverändert beibehalten.

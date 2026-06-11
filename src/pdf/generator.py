@@ -108,7 +108,7 @@ def generate_pdf_einzeln(text_vis, qr_data, output, zeilen):
         pdf.drawString(text_x + (left_width - tw) / 2, text_y, line)
         text_y -= size + 22.6772
 
-    footer_text = "Erstellt: Fabian Wiese, generiert durch Lagerplatz-QRCode-Generator Version 1.0"
+    footer_text = "Erstellt: Fabian Wiese, generiert durch Lagerplatz-QRCode-Generator Version 1.1"
     pdf.setFont("Times-Roman", 12)
     pdf.drawString(50, 30, footer_text)
 
@@ -295,7 +295,7 @@ def generate_batch_pdf_4(excel, output):
                     tw = pdf.stringWidth(line, "Times-Bold", size)
                     pdf.drawString(text_x+(left_width-tw)/2, text_y, line)
                     text_y -= size+22.6772
-            footer_text = "Erstellt: Fabian Wiese, generiert durch Lagerplatz-QRCode-Generator Version 1.0"
+            footer_text = "Erstellt: Fabian Wiese, generiert durch Lagerplatz-QRCode-Generator Version 1.1"
             pdf.setFont("Times-Roman",12)
             pdf.drawString(50,30, footer_text)
             qr_data = row[1] if row[1] else "https://example.com"
@@ -344,7 +344,7 @@ def generate_batch_pdf_5(excel, output):
                     text_y += 28.3465
                 pdf.drawString(text_x+(left_width-tw)/2, text_y, line)
                 text_y -= size+22.6772
-        footer_text = "Erstellt: Fabian Wiese, generiert durch Lagerplatz-QRCode-Generator Version 1.0"
+        footer_text = "Erstellt: Fabian Wiese, generiert durch Lagerplatz-QRCode-Generator Version 1.1"
         pdf.setFont("Times-Roman",12)
         pdf.drawString(50,30, footer_text)
         qr_data = row[1] if row[1] else "https://example.com"

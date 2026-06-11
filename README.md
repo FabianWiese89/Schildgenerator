@@ -142,4 +142,6 @@ Weitere Projektdokumentation:
 
 ## Status
 
-Das Projekt ist lauffähig und wird aktiv weiterentwickelt.
+Das Projekt ist als **Version 1.1** vorbereitet.
+
+Version 1.1 bündelt den aktuellen Architektur- und Modularisierungsstand inklusive aktualisierter Release Notes im Programm.
