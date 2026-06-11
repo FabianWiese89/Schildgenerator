@@ -312,6 +312,11 @@ Ausgangsversion des Projekts.
 - Statuslabel-Erstellung in zentrale GUI-Hilfsmethode `add_status_label()` ausgelagert.
 - Doppelte Statuslabel-Logik aus Einzelerstellung und Sammelverarbeitung reduziert.
 - Gemeinsame GUI-Element-Erzeugung im Hauptfenster weiter vereinheitlicht.
+- Layout-Combobox-Erstellung in zentrale GUI-Hilfsmethode `add_layout_combobox()` ausgelagert.
+- Wiederholte Layout-Dropdown-Logik in Einzelerstellung und Sammelverarbeitung reduziert.
+- Eingabefeld-Erstellung in zentrale GUI-Hilfsmethode `add_text_entry()` ausgelagert.
+- Wiederholte Entry-Logik im Hauptfenster reduziert.
+- Status- und Buttonplatzierung nach der GUI-Hilfsmethoden-Auslagerung korrigiert.
 
 #### Neue Datei: layouts.py
 

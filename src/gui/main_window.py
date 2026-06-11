@@ -125,13 +125,14 @@ class QRCodeGeneratorApp:
             text=VERSION_LABEL_TEXT,
             fg=VERSION_TEXT_COLOR,
             bg=BG_COLOR,
+            font=FONT_VERSION,
             cursor="arrow"
         )
         self.version_lbl.pack(anchor="sw")
         self.version_lbl.bind("<Enter>", self._on_version_hover)
         self.version_lbl.bind("<Leave>", self._on_version_leave)
         self.version_lbl.bind("<Button-1>", self.show_release_notes)
-  
+
     def _on_version_hover(self, event):
         self.version_lbl.config(fg=VERSION_HOVER_TEXT_COLOR, font=FONT_VERSION_HOVER, cursor="hand2")
 
@@ -140,7 +141,7 @@ class QRCodeGeneratorApp:
 
     def show_release_notes(self, event=None):
         ReleaseNotesWindow(self.root)
-   
+
     # ==== ALLGEMEINE GUI-HILFSMETHODEN ====
     def add_logo_to_frame(self, frame):
         logo_path = resource_path(GUI_LOGO_PATH)
@@ -157,6 +158,7 @@ class QRCodeGeneratorApp:
                 rely=GUI_LOGO_RELY,
                 anchor=GUI_LOGO_ANCHOR,
             )
+
     def add_handbook_button(self, frame):
         tk.Button(
             frame,
@@ -166,7 +168,7 @@ class QRCodeGeneratorApp:
             fg=BUTTON_TEXT_COLOR,
             relief="raised"
         ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
-    
+
     def add_support_button(self, frame):
         tk.Button(
             frame,
@@ -177,7 +179,7 @@ class QRCodeGeneratorApp:
             padx=18,
             pady=5
         ).pack(side="left", padx=(0, 20))
-    
+
     def add_browse_button(self, frame, command, row):
         tk.Button(
             frame,
@@ -185,8 +187,19 @@ class QRCodeGeneratorApp:
             command=command,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR
-        ).grid(row=row, column=1, padx=10)  
-            
+        ).grid(row=row, column=1, padx=10)
+
+    def add_layout_combobox(self, frame, variable, row, pady):
+        layout_dropdown = ttk.Combobox(
+            frame,
+            textvariable=variable,
+            values=LAYOUT_OPTIONS,
+            state="readonly",
+            width=30
+        )
+        layout_dropdown.grid(row=row, column=0, sticky="w", pady=pady)
+        return layout_dropdown
+
     def add_create_pdf_button(self, frame, command):
         return tk.Button(
             frame,
@@ -197,15 +210,15 @@ class QRCodeGeneratorApp:
             state="disabled",
             padx=20,
             pady=8
-        )  
-        
+        )
+
     def init_single_variables(self):
         self.single_lagerplatz = tk.StringVar()
         self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
         self.single_output = tk.StringVar()
         self.single_status = None
         self.single_btn_pdf = None
-    
+
     def add_status_label(self, frame):
         return tk.Label(
             frame,
@@ -213,14 +226,26 @@ class QRCodeGeneratorApp:
             fg=STATUS_TEXT_COLOR,
             bg=BG_COLOR
         )
-        
+
+    def add_text_entry(self, frame, variable, row, width):
+        entry = tk.Entry(
+            frame,
+            textvariable=variable,
+            width=width,
+            bg=BG_COLOR,
+            fg=ENTRY_TEXT_COLOR,
+            insertbackground=ENTRY_CURSOR_COLOR
+        )
+        entry.grid(row=row, column=0, sticky="w")
+        return entry
+
     # ==== EINZELERSTELLUNG ====
     def build_tab_single(self):
         frame = self.tab_single
 
         # Firmenlogo
         self.add_logo_to_frame(frame)
-        
+
         # Titel
         tk.Label(
             frame,
@@ -236,14 +261,12 @@ class QRCodeGeneratorApp:
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=1, column=0, sticky="w", padx=(0,0))
-        layout_dropdown = ttk.Combobox(
+        layout_dropdown = self.add_layout_combobox(
             frame,
-            textvariable=self.single_layout,
-            values=LAYOUT_OPTIONS,
-            state="readonly",
-            width=30
+            self.single_layout,
+            row=2,
+            pady=(0, 10)
         )
-        layout_dropdown.grid(row=2, column=0, sticky="w", pady=(0, 10))
         layout_dropdown.bind("<<ComboboxSelected>>", lambda e: self.update_single_button())
 
         # Eingabe Lagerplatz (systemisch)
@@ -253,7 +276,7 @@ class QRCodeGeneratorApp:
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=3, column=0, sticky="w", pady=(0, 2))
-        tk.Entry(frame, textvariable=self.single_lagerplatz, width=50, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=4, column=0, sticky="w")
+        self.add_text_entry(frame, self.single_lagerplatz, row=4, width=50)
 
         # Speicherort Auswahl
         tk.Label(
@@ -262,25 +285,25 @@ class QRCodeGeneratorApp:
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=5, column=0, pady=(14, 0), sticky="w")
-        tk.Entry(frame, textvariable=self.single_output, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=6, column=0, sticky="w")
+        self.add_text_entry(frame, self.single_output, row=6, width=60)
         self.add_browse_button(frame, self.single_save_pdf, row=6)
 
         # Status-Label
         self.single_status = self.add_status_label(frame)
-        self.single_status.grid(row=8, column=0, sticky="w")
+        self.single_status.grid(row=7, column=0, sticky="w", pady=(14, 0))
 
         # Buttons
         btn_frame = tk.Frame(frame, bg=BG_COLOR)
         btn_frame.grid(row=8, column=0, columnspan=2, pady=20, sticky="w")
 
-        self.single_btn_pdf = self.add_create_pdf_button(frame, self.on_single_generate)
-        self.single_btn_pdf.grid(row=7, column=0, pady=20, sticky="w")
+        self.single_btn_pdf = self.add_create_pdf_button(btn_frame, self.on_single_generate)
+        self.single_btn_pdf.pack(side="left", padx=(0, 20))
 
         self.add_support_button(btn_frame)
 
         # Handbuch-Button unten rechts
         self.add_handbook_button(frame)
-        
+
         # Temporäre Entwicklungsfunktion:
         # Dient aktuell nur zum Testen der Textschild-PDF-Erzeugung.
         # Die spätere Vollversion soll Textschild-Inhalte über die GUI auswählbar machen.
@@ -348,7 +371,7 @@ class QRCodeGeneratorApp:
         self.batch_output_path = tk.StringVar()
         self.batch_status = None
         self.batch_btn_pdf = None
-        
+
     # ==== SAMMELVERARBEITUNG ====
     def build_tab_batch(self):
         frame = self.tab_batch
@@ -371,19 +394,17 @@ class QRCodeGeneratorApp:
             font=FONT_LABEL,
             bg=BG_COLOR
         ).grid(row=1, column=0, sticky="w", padx=(0,0))
-        layout_dropdown = ttk.Combobox(
+        layout_dropdown = self.add_layout_combobox(
             frame,
-            textvariable=self.batch_layout,
-            values=LAYOUT_OPTIONS,
-            state="readonly",
-            width=30
+            self.batch_layout,
+            row=2,
+            pady=(0, 14)
         )
-        layout_dropdown.grid(row=2, column=0, sticky="w", pady=(0, 14))
         layout_dropdown.bind("<<ComboboxSelected>>", lambda e: self.update_batch_button())
 
         # Excel-Dateiauswahl
         tk.Label(frame, text=BATCH_EXCEL_LABEL_TEXT, bg=BG_COLOR).grid(row=3, column=0, sticky="w")
-        tk.Entry(frame, textvariable=self.batch_excel_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=4, column=0, sticky="w")
+        self.add_text_entry(frame, self.batch_excel_path, row=4, width=60)
         self.add_browse_button(frame, self.browse_batch_excel, row=4)
 
         # Hinweistext
@@ -399,19 +420,19 @@ class QRCodeGeneratorApp:
 
         # Speicherort Auswahl
         tk.Label(frame, text=BATCH_OUTPUT_LABEL_TEXT, bg=BG_COLOR).grid(row=8, column=0, pady=(16, 0), sticky="w")
-        tk.Entry(frame, textvariable=self.batch_output_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=9, column=0, sticky="w")
+        self.add_text_entry(frame, self.batch_output_path, row=9, width=60)
         self.add_browse_button(frame, self.save_batch_pdf, row=9)
 
         # Status-Label
         self.batch_status = self.add_status_label(frame)
-        self.batch_status.grid(row=11, column=0, sticky="w")
+        self.batch_status.grid(row=10, column=0, sticky="w", pady=(14, 0))
 
         # Buttons
         btn_frame = tk.Frame(frame, bg=BG_COLOR)
         btn_frame.grid(row=11, column=0, columnspan=2, pady=20, sticky="w")
 
-        self.batch_btn_pdf = self.add_create_pdf_button(frame, self.on_batch_generate)
-        self.batch_btn_pdf.grid(row=10, column=0, pady=20, sticky="w")
+        self.batch_btn_pdf = self.add_create_pdf_button(btn_frame, self.on_batch_generate)
+        self.batch_btn_pdf.pack(side="left", padx=(0, 20))
 
         self.add_support_button(btn_frame)
 
@@ -434,7 +455,7 @@ class QRCodeGeneratorApp:
     def browse_batch_excel(self):
         path = filedialog.askopenfilename(
             title=EXCEL_DIALOG_TITLE,
-            filetypes=[(EXCEL_FILE_TYPE_LABEL, EXCEL_FILE_PATTERN)] 
+            filetypes=[(EXCEL_FILE_TYPE_LABEL, EXCEL_FILE_PATTERN)]
         )
         if path:
             self.batch_excel_path.set(path)
@@ -452,22 +473,22 @@ class QRCodeGeneratorApp:
     def on_batch_generate(self):
         self.batch_status.config(text=STATUS_CREATING_PDF_TEXT)
         self.root.update_idletasks()
-        
+
         choice = get_line_count_from_layout(self.batch_layout.get())
         excel = self.batch_excel_path.get()
         output = self.batch_output_path.get()
-        
+
         generate_batch_pdf(excel, output, choice)
-        
+
         self.batch_status.config(text=STATUS_DONE_TEXT)
         messagebox.showinfo(
             MESSAGEBOX_DONE_TITLE,
             f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{self.batch_output_path.get()}"
         )
-    
+
     def show_handbuch(self):
         HandbuchWindow(self.root)
-        
+
     def open_email(self):
         open_support_email()
-        
+
