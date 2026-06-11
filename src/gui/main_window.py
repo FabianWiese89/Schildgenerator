@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 from tkinter import filedialog, messagebox, ttk
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
+from src.gui.single_tab import build_single_tab
 from src.services import open_support_email
 
 from src.utils import (
@@ -16,7 +17,6 @@ from src.utils import (
 
 from src.pdf import (
     generate_pdf_einzeln,
-    generate_text_sign_pdf,
     generate_batch_pdf,
 )
 
@@ -51,10 +51,6 @@ from src.config import (
     VERSION_HOVER_TEXT_COLOR,
     LAYOUT_OPTION_DEFAULT,
     LAYOUT_OPTIONS,
-    SINGLE_TAB_TITLE_TEXT,
-    SINGLE_LAYOUT_LABEL_TEXT,
-    SINGLE_STORAGE_LABEL_TEXT,
-    SINGLE_OUTPUT_LABEL_TEXT,
     BATCH_TAB_TITLE_TEXT,
     BATCH_LAYOUT_LABEL_TEXT,
     BATCH_EXCEL_LABEL_TEXT,
@@ -63,7 +59,6 @@ from src.config import (
     BUTTON_CREATE_PDF_TEXT,
     BUTTON_SUPPORT_TEXT,
     BUTTON_MANUAL_TEXT,
-    BUTTON_TEXT_SIGN_TEST_TEXT,
     STATUS_READY_TEXT,
     STATUS_CREATING_PDF_TEXT,
     STATUS_DONE_TEXT,
@@ -78,7 +73,6 @@ from src.config import (
     BATCH_HINT_NO_HEADER_TEXT,
     BATCH_HINT_COLUMN_A_TEXT,
     BATCH_HINT_COLUMN_B_TEXT,
-    SHOW_TEXT_SIGN_TEST_BUTTON,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -241,92 +235,7 @@ class QRCodeGeneratorApp:
 
     # ==== EINZELERSTELLUNG ====
     def build_tab_single(self):
-        frame = self.tab_single
-
-        # Firmenlogo
-        self.add_logo_to_frame(frame)
-
-        # Titel
-        tk.Label(
-            frame,
-            text=SINGLE_TAB_TITLE_TEXT,
-            font=FONT_TITLE,
-            bg=BG_COLOR
-        ).grid(row=0, column=0, sticky="w", pady=(10, 8), columnspan=2)
-
-        # Layout Dropdown
-        tk.Label(
-            frame,
-            text=SINGLE_LAYOUT_LABEL_TEXT,
-            font=FONT_LABEL,
-            bg=BG_COLOR
-        ).grid(row=1, column=0, sticky="w", padx=(0,0))
-        layout_dropdown = self.add_layout_combobox(
-            frame,
-            self.single_layout,
-            row=2,
-            pady=(0, 10)
-        )
-        layout_dropdown.bind("<<ComboboxSelected>>", lambda e: self.update_single_button())
-
-        # Eingabe Lagerplatz (systemisch)
-        tk.Label(
-            frame,
-            text=SINGLE_STORAGE_LABEL_TEXT,
-            font=FONT_LABEL,
-            bg=BG_COLOR
-        ).grid(row=3, column=0, sticky="w", pady=(0, 2))
-        self.add_text_entry(frame, self.single_lagerplatz, row=4, width=50)
-
-        # Speicherort Auswahl
-        tk.Label(
-            frame,
-            text=SINGLE_OUTPUT_LABEL_TEXT,
-            font=FONT_LABEL,
-            bg=BG_COLOR
-        ).grid(row=5, column=0, pady=(14, 0), sticky="w")
-        self.add_text_entry(frame, self.single_output, row=6, width=60)
-        self.add_browse_button(frame, self.single_save_pdf, row=6)
-
-        # Status-Label
-        self.single_status = self.add_status_label(frame)
-        self.single_status.grid(row=7, column=0, sticky="w", pady=(14, 0))
-
-        # Buttons
-        btn_frame = tk.Frame(frame, bg=BG_COLOR)
-        btn_frame.grid(row=8, column=0, columnspan=2, pady=20, sticky="w")
-
-        self.single_btn_pdf = self.add_create_pdf_button(btn_frame, self.on_single_generate)
-        self.single_btn_pdf.pack(side="left", padx=(0, 20))
-
-        self.add_support_button(btn_frame)
-
-        # Handbuch-Button unten rechts
-        self.add_handbook_button(frame)
-
-        # Temporäre Entwicklungsfunktion:
-        # Dient aktuell nur zum Testen der Textschild-PDF-Erzeugung.
-        # Die spätere Vollversion soll Textschild-Inhalte über die GUI auswählbar machen.
-        # Daher werden die hier verwendeten Testwerte bewusst nicht weiter zentralisiert.
-        if SHOW_TEXT_SIGN_TEST_BUTTON:
-            tk.Button(
-                btn_frame,
-                text=BUTTON_TEXT_SIGN_TEST_TEXT,
-                command=lambda: generate_text_sign_pdf(
-                    "TESTSCHILD",
-                    "PARKPLATZ FÜR BESUCHER UND LIEFERANTEN SOWIE EXTERNE DIENSTLEISTER",
-                    "output/test_textschild.pdf",
-                    True
-                ),
-                bg=BUTTON_COLOR,
-                fg=BUTTON_TEXT_COLOR,
-                padx=18,
-                pady=5
-            ).pack(side="left", padx=(0, 20))
-
-        # Live-Validation
-        frame.bind_all('<KeyRelease>', lambda e: self.update_single_button())
-        frame.bind_all('<<ComboboxSelected>>', lambda e: self.update_single_button())
+        build_single_tab(self)
 
     def update_single_button(self):
         lagerplatz = self.single_lagerplatz.get().strip()
