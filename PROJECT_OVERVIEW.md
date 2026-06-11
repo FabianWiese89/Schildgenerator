@@ -300,6 +300,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Steuerungslogik der Sammelverarbeitung nach `src/gui/batch_actions.py` ausgelagert
 * Gemeinsame GUI-Hilfsfunktionen nach `src/gui/gui_helpers.py` ausgelagert
 * GUI-Paketimporte wurden bereinigt und `src/gui/__init__.py` dient nur noch als Paketdatei
+* `src/gui/main_window.py` wurde strukturell bereinigt und stärker auf Hauptfenster-Aufbau sowie delegierende Methoden reduziert
 * PDF-Erzeugung nach `src/pdf/` verschoben
 * Layout- und Theme-Konfiguration nach `src/config/` verschoben
 * Pfad-, Layout- und Validierungshelfer nach `src/utils/` verschoben

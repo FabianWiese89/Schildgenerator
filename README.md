@@ -76,6 +76,8 @@ src/
 
 Die Anwendung importiert GUI-Komponenten direkt aus ihren jeweiligen Modulen. `src/gui/__init__.py` dient als Paketdatei und enthält keine schweren Re-Exports mehr.
 
+`src/gui/main_window.py` wurde einem Stabilitäts-Review unterzogen und ist jetzt stärker auf Hauptfenster-Aufbau, Versionsanzeige und delegierende Methoden fokussiert.
+
 ---
 
 ## Installation
