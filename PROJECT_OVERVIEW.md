@@ -68,6 +68,7 @@ Ausgelagerte Komponenten und Pakete:
   * `single_tab.py`
   * `single_actions.py`
   * `batch_tab.py`
+  * `batch_actions.py`
   * `release_notes_window.py`
   * `handbuch_window.py`
   * zentraler Export über `src/gui/__init__.py`
@@ -123,6 +124,7 @@ Aktuell:
 * `src/gui/single_tab.py`
 * `src/gui/single_actions.py`
 * `src/gui/batch_tab.py`
+* `src/gui/batch_actions.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
 
@@ -164,6 +166,7 @@ src/
 ├── gui/
 │   ├── __init__.py
 │   ├── batch_tab.py
+│   ├── batch_actions.py
 │   ├── handbuch_window.py
 │   ├── main_window.py
 │   ├── release_notes_window.py
@@ -291,6 +294,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Oberflächenaufbau der Einzelerstellung nach `src/gui/single_tab.py` ausgelagert
 * Steuerungslogik der Einzelerstellung nach `src/gui/single_actions.py` ausgelagert
 * Oberflächenaufbau der Sammelverarbeitung nach `src/gui/batch_tab.py` ausgelagert
+* Steuerungslogik der Sammelverarbeitung nach `src/gui/batch_actions.py` ausgelagert
 * PDF-Erzeugung nach `src/pdf/` verschoben
 * Layout- und Theme-Konfiguration nach `src/config/` verschoben
 * Pfad-, Layout- und Validierungshelfer nach `src/utils/` verschoben

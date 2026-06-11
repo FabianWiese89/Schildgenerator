@@ -328,6 +328,10 @@ Ausgangsversion des Projekts.
 - Methoden `update_single_button()`, `single_save_pdf()` und `on_single_generate()` in `src/gui/main_window.py` auf delegierende Aufrufe reduziert.
 - Hauptfenster weiter von fachlicher Einzelerstellungslogik entlastet.
 - Vorbereitung für die anschließende Auslagerung der Sammelverarbeitungslogik verbessert.
+- Steuerungslogik der Sammelverarbeitung in `src/gui/batch_actions.py` ausgelagert.
+- Methoden `update_batch_button()`, `browse_batch_excel()`, `save_batch_pdf()` und `on_batch_generate()` in `src/gui/main_window.py` auf delegierende Aufrufe reduziert.
+- Hauptfenster weiter von fachlicher Sammelverarbeitungslogik entlastet.
+- Trennung zwischen GUI-Aufbau und Steuerungslogik für beide Tabs vervollständigt.
 
 #### Neue Datei: layouts.py
 
@@ -492,6 +496,7 @@ Aktive Kernmodule und Pakete:
 * `src/gui/single_tab.py`
 * `src/gui/single_actions.py`
 * `src/gui/batch_tab.py`
+* `src/gui/batch_actions.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
 

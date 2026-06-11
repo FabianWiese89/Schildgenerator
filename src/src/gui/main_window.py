@@ -2,7 +2,7 @@ import os
 import tkinter as tk
 
 from PIL import Image, ImageTk
-from tkinter import ttk
+from tkinter import filedialog, messagebox, ttk
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
 from src.gui.single_tab import build_single_tab
@@ -12,15 +12,17 @@ from src.gui.single_actions import (
     single_save_pdf as handle_single_save_pdf,
     on_single_generate as handle_on_single_generate,
 )
-from src.gui.batch_actions import (
-    update_batch_button as handle_update_batch_button,
-    browse_batch_excel as handle_browse_batch_excel,
-    save_batch_pdf as handle_save_batch_pdf,
-    on_batch_generate as handle_on_batch_generate,
-)
 from src.services import open_support_email
 
-from src.utils import resource_path
+from src.utils import (
+    get_line_count_from_layout,
+    resource_path,
+    is_batch_pdf_valid,
+)
+
+from src.pdf import (
+    generate_batch_pdf,
+)
 
 from src.config import (
     BG_COLOR,
@@ -54,6 +56,16 @@ from src.config import (
     BUTTON_SUPPORT_TEXT,
     BUTTON_MANUAL_TEXT,
     STATUS_READY_TEXT,
+    STATUS_CREATING_PDF_TEXT,
+    STATUS_DONE_TEXT,
+    MESSAGEBOX_DONE_TITLE,
+    MESSAGEBOX_PDF_CREATED_TEXT,
+    PDF_DEFAULT_EXTENSION,
+    PDF_FILE_TYPE_LABEL,
+    PDF_FILE_PATTERN,
+    EXCEL_DIALOG_TITLE,
+    EXCEL_FILE_TYPE_LABEL,
+    EXCEL_FILE_PATTERN,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -239,16 +251,47 @@ class QRCodeGeneratorApp:
         build_batch_tab(self)
 
     def update_batch_button(self):
-        handle_update_batch_button(self)
+        excel = self.batch_excel_path.get().strip()
+        pdf = self.batch_output_path.get().strip()
+        zeilen = self.batch_layout.get()
+        if is_batch_pdf_valid(excel, pdf, zeilen):
+            self.batch_btn_pdf.config(state="normal")
+        else:
+            self.batch_btn_pdf.config(state="disabled")
 
     def browse_batch_excel(self):
-        handle_browse_batch_excel(self)
+        path = filedialog.askopenfilename(
+            title=EXCEL_DIALOG_TITLE,
+            filetypes=[(EXCEL_FILE_TYPE_LABEL, EXCEL_FILE_PATTERN)]
+        )
+        if path:
+            self.batch_excel_path.set(path)
+            self.update_batch_button()
 
     def save_batch_pdf(self):
-        handle_save_batch_pdf(self)
+        path = filedialog.asksaveasfilename(
+            defaultextension=PDF_DEFAULT_EXTENSION,
+            filetypes=[(PDF_FILE_TYPE_LABEL, PDF_FILE_PATTERN)]
+        )
+        if path:
+            self.batch_output_path.set(path)
+            self.update_batch_button()
 
     def on_batch_generate(self):
-        handle_on_batch_generate(self)
+        self.batch_status.config(text=STATUS_CREATING_PDF_TEXT)
+        self.root.update_idletasks()
+
+        choice = get_line_count_from_layout(self.batch_layout.get())
+        excel = self.batch_excel_path.get()
+        output = self.batch_output_path.get()
+
+        generate_batch_pdf(excel, output, choice)
+
+        self.batch_status.config(text=STATUS_DONE_TEXT)
+        messagebox.showinfo(
+            MESSAGEBOX_DONE_TITLE,
+            f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{self.batch_output_path.get()}"
+        )
 
     def show_handbuch(self):
         HandbuchWindow(self.root)
