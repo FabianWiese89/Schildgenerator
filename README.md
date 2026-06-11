@@ -57,6 +57,8 @@ src/
 │   └── theme.py
 ├── gui/
 │   ├── main_window.py
+│   ├── single_tab.py
+│   ├── batch_tab.py
 │   ├── handbuch_window.py
 │   └── release_notes_window.py
 ├── pdf/
@@ -67,3 +69,69 @@ src/
     ├── layout_helpers.py
     ├── paths.py
     └── validators.py
+```
+
+---
+
+## Installation
+
+Benötigt wird Python 3.
+
+Abhängigkeiten installieren:
+
+```powershell
+pip install openpyxl qrcode reportlab pillow
+```
+
+Falls eine virtuelle Umgebung verwendet wird:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install openpyxl qrcode reportlab pillow
+```
+
+---
+
+## Programm starten
+
+Im Projektordner ausführen:
+
+```powershell
+python main.py
+```
+
+---
+
+## Entwicklungsstand
+
+Aktuelle Phase:
+
+```text
+Phase 1: Architektur und Modularisierung
+```
+
+Der Schwerpunkt liegt aktuell auf:
+
+* Aufräumen der Projektstruktur
+* Auslagern von Modulen
+* Reduzieren von Hardcodierungen
+* Vereinfachen von Importstrukturen
+* Stabilisieren der bestehenden Funktionen
+
+Neue Funktionen werden erst nach Abschluss der Grundstruktur priorisiert.
+
+---
+
+## Dokumentation
+
+Weitere Projektdokumentation:
+
+* `PROJECT_OVERVIEW.md`
+* `CHANGELOG.md`
+
+---
+
+## Status
+
+Das Projekt ist lauffähig und wird aktiv weiterentwickelt.

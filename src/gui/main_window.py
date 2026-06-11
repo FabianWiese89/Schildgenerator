@@ -6,6 +6,7 @@ from tkinter import filedialog, messagebox, ttk
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
 from src.gui.single_tab import build_single_tab
+from src.gui.batch_tab import build_batch_tab
 from src.services import open_support_email
 
 from src.utils import (
@@ -37,12 +38,8 @@ from src.config import (
     SEPARATOR_COLOR,
     VERSION_LABEL_TEXT,
     FONT_TAB,
-    FONT_TITLE,
-    FONT_LABEL,
     FONT_VERSION,
     FONT_VERSION_HOVER,
-    FONT_HINT,
-    HINT_TEXT_COLOR,
     APP_WINDOW_TITLE,
     TAB_SINGLE_TITLE,
     TAB_BATCH_TITLE,
@@ -51,10 +48,6 @@ from src.config import (
     VERSION_HOVER_TEXT_COLOR,
     LAYOUT_OPTION_DEFAULT,
     LAYOUT_OPTIONS,
-    BATCH_TAB_TITLE_TEXT,
-    BATCH_LAYOUT_LABEL_TEXT,
-    BATCH_EXCEL_LABEL_TEXT,
-    BATCH_OUTPUT_LABEL_TEXT,
     BUTTON_BROWSE_TEXT,
     BUTTON_CREATE_PDF_TEXT,
     BUTTON_SUPPORT_TEXT,
@@ -70,9 +63,6 @@ from src.config import (
     EXCEL_DIALOG_TITLE,
     EXCEL_FILE_TYPE_LABEL,
     EXCEL_FILE_PATTERN,
-    BATCH_HINT_NO_HEADER_TEXT,
-    BATCH_HINT_COLUMN_A_TEXT,
-    BATCH_HINT_COLUMN_B_TEXT,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -283,74 +273,7 @@ class QRCodeGeneratorApp:
 
     # ==== SAMMELVERARBEITUNG ====
     def build_tab_batch(self):
-        frame = self.tab_batch
-
-        # Firmenlogo
-        self.add_logo_to_frame(frame)
-
-        # Titel
-        tk.Label(
-            frame,
-            text=BATCH_TAB_TITLE_TEXT,
-            font=FONT_TITLE,
-            bg=BG_COLOR
-        ).grid(row=0, column=0, sticky="w", pady=(10, 8), columnspan=2)
-
-        # Layout Dropdown
-        tk.Label(
-            frame,
-            text=BATCH_LAYOUT_LABEL_TEXT,
-            font=FONT_LABEL,
-            bg=BG_COLOR
-        ).grid(row=1, column=0, sticky="w", padx=(0,0))
-        layout_dropdown = self.add_layout_combobox(
-            frame,
-            self.batch_layout,
-            row=2,
-            pady=(0, 14)
-        )
-        layout_dropdown.bind("<<ComboboxSelected>>", lambda e: self.update_batch_button())
-
-        # Excel-Dateiauswahl
-        tk.Label(frame, text=BATCH_EXCEL_LABEL_TEXT, bg=BG_COLOR).grid(row=3, column=0, sticky="w")
-        self.add_text_entry(frame, self.batch_excel_path, row=4, width=60)
-        self.add_browse_button(frame, self.browse_batch_excel, row=4)
-
-        # Hinweistext
-        tk.Label(
-            frame, text=BATCH_HINT_NO_HEADER_TEXT, font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
-        ).grid(row=5, column=0, sticky="w", pady=(12, 0))
-        tk.Label(
-            frame, text=BATCH_HINT_COLUMN_A_TEXT, font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
-        ).grid(row=6, column=0, sticky="w")
-        tk.Label(
-            frame, text=BATCH_HINT_COLUMN_B_TEXT, font=FONT_HINT, fg=HINT_TEXT_COLOR, bg=BG_COLOR
-        ).grid(row=7, column=0, sticky="w")
-
-        # Speicherort Auswahl
-        tk.Label(frame, text=BATCH_OUTPUT_LABEL_TEXT, bg=BG_COLOR).grid(row=8, column=0, pady=(16, 0), sticky="w")
-        self.add_text_entry(frame, self.batch_output_path, row=9, width=60)
-        self.add_browse_button(frame, self.save_batch_pdf, row=9)
-
-        # Status-Label
-        self.batch_status = self.add_status_label(frame)
-        self.batch_status.grid(row=10, column=0, sticky="w", pady=(14, 0))
-
-        # Buttons
-        btn_frame = tk.Frame(frame, bg=BG_COLOR)
-        btn_frame.grid(row=11, column=0, columnspan=2, pady=20, sticky="w")
-
-        self.batch_btn_pdf = self.add_create_pdf_button(btn_frame, self.on_batch_generate)
-        self.batch_btn_pdf.pack(side="left", padx=(0, 20))
-
-        self.add_support_button(btn_frame)
-
-        # Handbuch-Button unten rechts
-        self.add_handbook_button(frame)
-
-        # Live-Validation
-        frame.bind_all('<KeyRelease>', lambda e: self.update_batch_button())
-        frame.bind_all('<<ComboboxSelected>>', lambda e: self.update_batch_button())
+        build_batch_tab(self)
 
     def update_batch_button(self):
         excel = self.batch_excel_path.get().strip()

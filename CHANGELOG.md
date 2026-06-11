@@ -318,6 +318,13 @@ Ausgangsversion des Projekts.
 - Wiederholte Entry-Logik im Hauptfenster reduziert.
 - Status- und Buttonplatzierung nach der GUI-Hilfsmethoden-Auslagerung korrigiert.
 
+- Oberflächenaufbau der Einzelerstellung in `src/gui/single_tab.py` ausgelagert.
+- `build_tab_single()` in `src/gui/main_window.py` auf einen delegierenden Aufruf reduziert.
+- Oberflächenaufbau der Sammelverarbeitung in `src/gui/batch_tab.py` ausgelagert.
+- `build_tab_batch()` in `src/gui/main_window.py` auf einen delegierenden Aufruf reduziert.
+- Hauptfenster weiter von direkter Tab-Aufbaulogik entlastet.
+- Vorbereitung für spätere fachliche Trennung von GUI-Aufbau und Steuerungslogik verbessert.
+
 #### Neue Datei: layouts.py
 
 Ausgelagert:
@@ -477,9 +484,11 @@ Aktive Kernmodule und Pakete:
 #### GUI
 
 * `src/gui/__init__.py`
+* `src/gui/main_window.py`
+* `src/gui/single_tab.py`
+* `src/gui/batch_tab.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
-* `src/gui/main_window.py`
 
 #### PDF
 

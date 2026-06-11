@@ -65,6 +65,8 @@ Ausgelagerte Komponenten und Pakete:
 
 * `src/gui/`
   * `main_window.py`
+  * `single_tab.py`
+  * `batch_tab.py`
   * `release_notes_window.py`
   * `handbuch_window.py`
   * zentraler Export über `src/gui/__init__.py`
@@ -116,9 +118,11 @@ Aktuell:
 ### GUI
 
 * `src/gui/__init__.py`
+* `src/gui/main_window.py`
+* `src/gui/single_tab.py`
+* `src/gui/batch_tab.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
-* `src/gui/main_window.py`
 
 ### PDF
 
@@ -157,9 +161,11 @@ src/
 │   └── theme.py
 ├── gui/
 │   ├── __init__.py
+│   ├── batch_tab.py
 │   ├── handbuch_window.py
 │   ├── main_window.py
-│   └── release_notes_window.py
+│   ├── release_notes_window.py
+│   └── single_tab.py
 ├── pdf/
 │   ├── __init__.py
 │   └── generator.py
@@ -279,6 +285,8 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Architekturumbau aktiv
 * Bereit für weitere Refactoring-Schritte
 * Hauptfensterklasse `QRCodeGeneratorApp` nach `src/gui/main_window.py` ausgelagert
+* Oberflächenaufbau der Einzelerstellung nach `src/gui/single_tab.py` ausgelagert
+* Oberflächenaufbau der Sammelverarbeitung nach `src/gui/batch_tab.py` ausgelagert
 * PDF-Erzeugung nach `src/pdf/` verschoben
 * Layout- und Theme-Konfiguration nach `src/config/` verschoben
 * Pfad-, Layout- und Validierungshelfer nach `src/utils/` verschoben
