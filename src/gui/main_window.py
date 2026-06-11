@@ -206,6 +206,14 @@ class QRCodeGeneratorApp:
         self.single_status = None
         self.single_btn_pdf = None
     
+    def add_status_label(self, frame):
+        return tk.Label(
+            frame,
+            text=STATUS_READY_TEXT,
+            fg=STATUS_TEXT_COLOR,
+            bg=BG_COLOR
+        )
+        
     # ==== EINZELERSTELLUNG ====
     def build_tab_single(self):
         frame = self.tab_single
@@ -258,8 +266,8 @@ class QRCodeGeneratorApp:
         self.add_browse_button(frame, self.single_save_pdf, row=6)
 
         # Status-Label
-        self.single_status = tk.Label(frame, text=STATUS_READY_TEXT, fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
-        self.single_status.grid(row=7, column=0, pady=(15, 0), sticky="w")
+        self.single_status = self.add_status_label(frame)
+        self.single_status.grid(row=8, column=0, sticky="w")
 
         # Buttons
         btn_frame = tk.Frame(frame, bg=BG_COLOR)
@@ -395,8 +403,8 @@ class QRCodeGeneratorApp:
         self.add_browse_button(frame, self.save_batch_pdf, row=9)
 
         # Status-Label
-        self.batch_status = tk.Label(frame, text=STATUS_READY_TEXT, fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
-        self.batch_status.grid(row=10, column=0, pady=(15, 0), sticky="w")
+        self.batch_status = self.add_status_label(frame)
+        self.batch_status.grid(row=11, column=0, sticky="w")
 
         # Buttons
         btn_frame = tk.Frame(frame, bg=BG_COLOR)

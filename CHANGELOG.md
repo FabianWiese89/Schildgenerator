@@ -309,6 +309,9 @@ Ausgangsversion des Projekts.
 - PDF-Erstellen-Button-Erstellung in zentrale GUI-Hilfsmethode `add_create_pdf_button()` ausgelagert.
 - Wiederholte PDF-Button-Logik in Einzelerstellung und Sammelverarbeitung reduziert.
 - Gemeinsame GUI-Buttonlogik im Hauptfenster weiter vereinheitlicht.
+- Statuslabel-Erstellung in zentrale GUI-Hilfsmethode `add_status_label()` ausgelagert.
+- Doppelte Statuslabel-Logik aus Einzelerstellung und Sammelverarbeitung reduziert.
+- Gemeinsame GUI-Element-Erzeugung im Hauptfenster weiter vereinheitlicht.
 
 #### Neue Datei: layouts.py
 
