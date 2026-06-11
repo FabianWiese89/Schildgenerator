@@ -303,6 +303,9 @@ Ausgangsversion des Projekts.
 - Kontakt-/Support-Button-Erstellung in zentrale GUI-Hilfsmethode `add_support_button()` ausgelagert.
 - Doppelte Support-Button-Logik aus Einzelerstellung und Sammelverarbeitung entfernt.
 - Gemeinsame GUI-Buttonlogik im Hauptfenster weiter reduziert.
+- Durchsuchen-Button-Erstellung in zentrale GUI-Hilfsmethode `add_browse_button()` ausgelagert.
+- Wiederholte Browse-Button-Logik in Einzelerstellung und Sammelverarbeitung reduziert.
+- Gemeinsame GUI-Buttonlogik im Hauptfenster weiter vereinheitlicht.
 
 #### Neue Datei: layouts.py
 

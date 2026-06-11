@@ -177,7 +177,16 @@ class QRCodeGeneratorApp:
             padx=18,
             pady=5
         ).pack(side="left", padx=(0, 20))
-            
+    
+    def add_browse_button(self, frame, command, row):
+        tk.Button(
+            frame,
+            text=BUTTON_BROWSE_TEXT,
+            command=command,
+            bg=BUTTON_COLOR,
+            fg=BUTTON_TEXT_COLOR
+        ).grid(row=row, column=1, padx=10)  
+              
     def init_single_variables(self):
         self.single_lagerplatz = tk.StringVar()
         self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
@@ -234,7 +243,7 @@ class QRCodeGeneratorApp:
             bg=BG_COLOR
         ).grid(row=5, column=0, pady=(14, 0), sticky="w")
         tk.Entry(frame, textvariable=self.single_output, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=6, column=0, sticky="w")
-        tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.single_save_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=6, column=1, padx=10)
+        self.add_browse_button(frame, self.single_save_pdf, row=6)
 
         # Status-Label
         self.single_status = tk.Label(frame, text=STATUS_READY_TEXT, fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
@@ -364,7 +373,7 @@ class QRCodeGeneratorApp:
         # Excel-Dateiauswahl
         tk.Label(frame, text=BATCH_EXCEL_LABEL_TEXT, bg=BG_COLOR).grid(row=3, column=0, sticky="w")
         tk.Entry(frame, textvariable=self.batch_excel_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=4, column=0, sticky="w")
-        tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.browse_batch_excel, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=4, column=1, padx=10)
+        self.add_browse_button(frame, self.browse_batch_excel, row=4)
 
         # Hinweistext
         tk.Label(
@@ -380,7 +389,7 @@ class QRCodeGeneratorApp:
         # Speicherort Auswahl
         tk.Label(frame, text=BATCH_OUTPUT_LABEL_TEXT, bg=BG_COLOR).grid(row=8, column=0, pady=(16, 0), sticky="w")
         tk.Entry(frame, textvariable=self.batch_output_path, width=60, bg=BG_COLOR, fg=ENTRY_TEXT_COLOR, insertbackground=ENTRY_CURSOR_COLOR).grid(row=9, column=0, sticky="w")
-        tk.Button(frame, text=BUTTON_BROWSE_TEXT, command=self.save_batch_pdf, bg=BUTTON_COLOR, fg=BUTTON_TEXT_COLOR).grid(row=9, column=1, padx=10)
+        self.add_browse_button(frame, self.save_batch_pdf, row=9)
 
         # Status-Label
         self.batch_status = tk.Label(frame, text=STATUS_READY_TEXT, fg=STATUS_TEXT_COLOR, bg=BG_COLOR)
