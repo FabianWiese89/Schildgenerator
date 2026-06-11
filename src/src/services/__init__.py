@@ -1,1 +1,0 @@
-from src.services.support_service import open_support_email

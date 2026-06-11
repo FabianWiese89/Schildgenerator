@@ -20,9 +20,9 @@ from src.config import (
 def build_single_tab(app):
     """Erstellt den GUI-Inhalt für den Tab Einzelerstellung.
 
-    Die eigentliche Steuerungs- und PDF-Logik bleibt vorerst bewusst in
-    QRCodeGeneratorApp. Dadurch wird nur der Oberflächenaufbau ausgelagert
-    und das Risiko beim Refactoring bleibt gering.
+    Diese Datei enthält ausschließlich den Oberflächenaufbau für den Tab
+    Einzelerstellung. Die zugehörige Steuerungslogik liegt getrennt im jeweiligen
+    Actions-Modul.
     """
     frame = app.tab_single
 

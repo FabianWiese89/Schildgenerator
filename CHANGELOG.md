@@ -345,6 +345,11 @@ Ausgangsversion des Projekts.
 - Hauptfenster-Aufbau in klar benannte Methoden für Root-Konfiguration, Notebook-Stil, Notebook-Aufbau und Separator-Aufbau gegliedert.
 - Methodenstruktur in `src/gui/main_window.py` nach Hauptfenster-Aufbau, Versionsanzeige, GUI-Helfern, Einzelerstellung, Sammelverarbeitung und gemeinsamen Aktionen geordnet.
 - Veraltete Kommentare und kleinere Formatierungsabweichungen in `src/gui/main_window.py` bereinigt.
+- Projektstruktur-Review für den gesamten `src`-Bereich durchgeführt.
+- Docstrings in `src/gui/single_tab.py` und `src/gui/batch_tab.py` an die inzwischen ausgelagerte Actions-Logik angepasst.
+- `.gitignore` vereinheitlicht und um typische Python-, Build-, IDE- und Doppelstruktur-Einträge ergänzt.
+- Neue Review-Dokumentation `docs/PROJECT_STRUCTURE_REVIEW.md` ergänzt.
+- Technische Artefakte wie `__pycache__`, kompilierte Python-Dateien, virtuelle Umgebungen und versehentliche Doppelstrukturen als nicht versionierbar eingeordnet.
 
 #### Neue Datei: layouts.py
 

@@ -1,10 +1,27 @@
+# Virtuelle Umgebungen
+.venv/
 env/
+venv/
+
+# Python-Caches und kompilierte Dateien
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.exe
-*.pyc
-output/
-dist/
+*.py[cod]
+*$py.class
+
+# Build- und Release-Ausgaben
 build/
+dist/
+*.spec
+*.exe
+
+# Generierte Ausgaben
+output/
+
+# Lokale IDE-/Systemdateien
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Fehlhafte/alte Doppelstruktur, falls versehentlich erzeugt
+src/src/

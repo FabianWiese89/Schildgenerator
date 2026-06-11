@@ -146,6 +146,10 @@ Aktuell:
 * `src/services/__init__.py`
 * `src/services/support_service.py`
 
+### Dokumentation
+
+* `docs/PROJECT_STRUCTURE_REVIEW.md`
+
 ### Utilities
 
 * `src/utils/__init__.py`
@@ -301,6 +305,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Gemeinsame GUI-Hilfsfunktionen nach `src/gui/gui_helpers.py` ausgelagert
 * GUI-Paketimporte wurden bereinigt und `src/gui/__init__.py` dient nur noch als Paketdatei
 * `src/gui/main_window.py` wurde strukturell bereinigt und stärker auf Hauptfenster-Aufbau sowie delegierende Methoden reduziert
+* Projektstruktur-Review durchgeführt und technische Artefakte wie `__pycache__`, virtuelle Umgebungen und versehentliche Doppelstrukturen als nicht versionierbar eingeordnet
 * PDF-Erzeugung nach `src/pdf/` verschoben
 * Layout- und Theme-Konfiguration nach `src/config/` verschoben
 * Pfad-, Layout- und Validierungshelfer nach `src/utils/` verschoben
