@@ -74,6 +74,8 @@ src/
     └── validators.py
 ```
 
+Die Anwendung importiert GUI-Komponenten direkt aus ihren jeweiligen Modulen. `src/gui/__init__.py` dient als Paketdatei und enthält keine schweren Re-Exports mehr.
+
 ---
 
 ## Installation

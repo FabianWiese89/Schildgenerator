@@ -72,7 +72,7 @@ Ausgelagerte Komponenten und Pakete:
   * `gui_helpers.py`
   * `release_notes_window.py`
   * `handbuch_window.py`
-  * zentraler Export über `src/gui/__init__.py`
+  * Paketdatei `src/gui/__init__.py` ohne schwere Re-Exports
 
 * `src/pdf/`
   * `generator.py`
@@ -299,6 +299,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Oberflächenaufbau der Sammelverarbeitung nach `src/gui/batch_tab.py` ausgelagert
 * Steuerungslogik der Sammelverarbeitung nach `src/gui/batch_actions.py` ausgelagert
 * Gemeinsame GUI-Hilfsfunktionen nach `src/gui/gui_helpers.py` ausgelagert
+* GUI-Paketimporte wurden bereinigt und `src/gui/__init__.py` dient nur noch als Paketdatei
 * PDF-Erzeugung nach `src/pdf/` verschoben
 * Layout- und Theme-Konfiguration nach `src/config/` verschoben
 * Pfad-, Layout- und Validierungshelfer nach `src/utils/` verschoben

@@ -338,6 +338,10 @@ Ausgangsversion des Projekts.
 - `src/gui/main_window.py` weiter auf Hauptfenstersteuerung und delegierende Methoden reduziert.
 - Wiederverwendbare GUI-Bausteine fachlich in ein eigenes Hilfsmodul verschoben.
 
+- GUI-Paketimporte bereinigt: `src/app.py` importiert `QRCodeGeneratorApp` nun direkt aus `src/gui/main_window.py`.
+- `src/gui/__init__.py` von schweren Re-Exports entlastet und auf eine reine Paketdatei reduziert.
+- Importstruktur der GUI weiter vereinfacht und potenzielle Paket-Import-Nebeneffekte reduziert.
+
 #### Neue Datei: layouts.py
 
 Ausgelagert:
