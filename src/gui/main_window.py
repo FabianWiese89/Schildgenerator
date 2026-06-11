@@ -186,7 +186,19 @@ class QRCodeGeneratorApp:
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR
         ).grid(row=row, column=1, padx=10)  
-              
+            
+    def add_create_pdf_button(self, frame, command):
+        return tk.Button(
+            frame,
+            text=BUTTON_CREATE_PDF_TEXT,
+            command=command,
+            bg=BUTTON_COLOR,
+            fg=BUTTON_TEXT_COLOR,
+            state="disabled",
+            padx=20,
+            pady=8
+        )  
+        
     def init_single_variables(self):
         self.single_lagerplatz = tk.StringVar()
         self.single_layout = tk.StringVar(value=LAYOUT_OPTION_DEFAULT)
@@ -253,17 +265,8 @@ class QRCodeGeneratorApp:
         btn_frame = tk.Frame(frame, bg=BG_COLOR)
         btn_frame.grid(row=8, column=0, columnspan=2, pady=20, sticky="w")
 
-        self.single_btn_pdf = tk.Button(
-            btn_frame,
-            text=BUTTON_CREATE_PDF_TEXT,
-            command=self.on_single_generate,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            padx=20,
-            pady=5,
-            state="disabled"
-        )
-        self.single_btn_pdf.pack(side="left", padx=(0, 20))
+        self.single_btn_pdf = self.add_create_pdf_button(frame, self.on_single_generate)
+        self.single_btn_pdf.grid(row=7, column=0, pady=20, sticky="w")
 
         self.add_support_button(btn_frame)
 
@@ -399,17 +402,8 @@ class QRCodeGeneratorApp:
         btn_frame = tk.Frame(frame, bg=BG_COLOR)
         btn_frame.grid(row=11, column=0, columnspan=2, pady=20, sticky="w")
 
-        self.batch_btn_pdf = tk.Button(
-            btn_frame,
-            text=BUTTON_CREATE_PDF_TEXT,
-            command=self.on_batch_generate,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            padx=20,
-            pady=5,
-            state="disabled"
-        )
-        self.batch_btn_pdf.pack(side="left", padx=(0, 20))
+        self.batch_btn_pdf = self.add_create_pdf_button(frame, self.on_batch_generate)
+        self.batch_btn_pdf.grid(row=10, column=0, pady=20, sticky="w")
 
         self.add_support_button(btn_frame)
 

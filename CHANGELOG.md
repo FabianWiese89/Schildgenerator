@@ -306,6 +306,9 @@ Ausgangsversion des Projekts.
 - Durchsuchen-Button-Erstellung in zentrale GUI-Hilfsmethode `add_browse_button()` ausgelagert.
 - Wiederholte Browse-Button-Logik in Einzelerstellung und Sammelverarbeitung reduziert.
 - Gemeinsame GUI-Buttonlogik im Hauptfenster weiter vereinheitlicht.
+- PDF-Erstellen-Button-Erstellung in zentrale GUI-Hilfsmethode `add_create_pdf_button()` ausgelagert.
+- Wiederholte PDF-Button-Logik in Einzelerstellung und Sammelverarbeitung reduziert.
+- Gemeinsame GUI-Buttonlogik im Hauptfenster weiter vereinheitlicht.
 
 #### Neue Datei: layouts.py
 
