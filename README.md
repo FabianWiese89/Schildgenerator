@@ -61,6 +61,7 @@ src/
 │   ├── single_actions.py
 │   ├── batch_tab.py
 │   ├── batch_actions.py
+│   ├── gui_helpers.py
 │   ├── handbuch_window.py
 │   └── release_notes_window.py
 ├── pdf/

@@ -333,6 +333,11 @@ Ausgangsversion des Projekts.
 - Hauptfenster weiter von fachlicher Sammelverarbeitungslogik entlastet.
 - Trennung zwischen GUI-Aufbau und Steuerungslogik für beide Tabs vervollständigt.
 
+- Gemeinsame GUI-Hilfsfunktionen in `src/gui/gui_helpers.py` ausgelagert.
+- Logo-, Handbuch-, Support-, Browse-, Layout-, PDF-Button-, Statuslabel- und Eingabefeld-Helfer aus `src/gui/main_window.py` entlastet.
+- `src/gui/main_window.py` weiter auf Hauptfenstersteuerung und delegierende Methoden reduziert.
+- Wiederverwendbare GUI-Bausteine fachlich in ein eigenes Hilfsmodul verschoben.
+
 #### Neue Datei: layouts.py
 
 Ausgelagert:
@@ -497,6 +502,7 @@ Aktive Kernmodule und Pakete:
 * `src/gui/single_actions.py`
 * `src/gui/batch_tab.py`
 * `src/gui/batch_actions.py`
+* `src/gui/gui_helpers.py`
 * `src/gui/release_notes_window.py`
 * `src/gui/handbuch_window.py`
 

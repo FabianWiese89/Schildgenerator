@@ -1,7 +1,5 @@
-import os
 import tkinter as tk
 
-from PIL import Image, ImageTk
 from tkinter import ttk
 from src.gui.release_notes_window import ReleaseNotesWindow
 from src.gui.handbuch_window import HandbuchWindow
@@ -18,23 +16,21 @@ from src.gui.batch_actions import (
     save_batch_pdf as handle_save_batch_pdf,
     on_batch_generate as handle_on_batch_generate,
 )
+from src.gui.gui_helpers import (
+    add_logo_to_frame as helper_add_logo_to_frame,
+    add_handbook_button as helper_add_handbook_button,
+    add_support_button as helper_add_support_button,
+    add_browse_button as helper_add_browse_button,
+    add_layout_combobox as helper_add_layout_combobox,
+    add_create_pdf_button as helper_add_create_pdf_button,
+    add_status_label as helper_add_status_label,
+    add_text_entry as helper_add_text_entry,
+)
 from src.services import open_support_email
-
-from src.utils import resource_path
 
 from src.config import (
     BG_COLOR,
-    BUTTON_COLOR,
-    BUTTON_TEXT_COLOR,
     NOTEBOOK_SELECTED_TAB_COLOR,
-    ENTRY_TEXT_COLOR,
-    ENTRY_CURSOR_COLOR,
-    GUI_LOGO_PATH,
-    GUI_LOGO_WIDTH,
-    GUI_LOGO_HEIGHT,
-    GUI_LOGO_RELX,
-    GUI_LOGO_RELY,
-    GUI_LOGO_ANCHOR,
     MAIN_WINDOW_GEOMETRY,
     SEPARATOR_COLOR,
     VERSION_LABEL_TEXT,
@@ -44,16 +40,9 @@ from src.config import (
     APP_WINDOW_TITLE,
     TAB_SINGLE_TITLE,
     TAB_BATCH_TITLE,
-    STATUS_TEXT_COLOR,
     VERSION_TEXT_COLOR,
     VERSION_HOVER_TEXT_COLOR,
     LAYOUT_OPTION_DEFAULT,
-    LAYOUT_OPTIONS,
-    BUTTON_BROWSE_TEXT,
-    BUTTON_CREATE_PDF_TEXT,
-    BUTTON_SUPPORT_TEXT,
-    BUTTON_MANUAL_TEXT,
-    STATUS_READY_TEXT,
 )
 # ==== HAUPTFENSTER ====
 class QRCodeGeneratorApp:
@@ -119,73 +108,28 @@ class QRCodeGeneratorApp:
 
     # ==== ALLGEMEINE GUI-HILFSMETHODEN ====
     def add_logo_to_frame(self, frame):
-        logo_path = resource_path(GUI_LOGO_PATH)
-
-        if os.path.exists(logo_path):
-            img = Image.open(logo_path)
-            img = img.resize((GUI_LOGO_WIDTH, GUI_LOGO_HEIGHT), Image.LANCZOS)
-            logo_img = ImageTk.PhotoImage(img)
-
-            logo_label = tk.Label(frame, image=logo_img, bg=BG_COLOR)
-            logo_label.image = logo_img
-            logo_label.place(
-                relx=GUI_LOGO_RELX,
-                rely=GUI_LOGO_RELY,
-                anchor=GUI_LOGO_ANCHOR,
-            )
+        helper_add_logo_to_frame(self, frame)
 
     def add_handbook_button(self, frame):
-        tk.Button(
-            frame,
-            text=BUTTON_MANUAL_TEXT,
-            command=self.show_handbuch,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            relief="raised"
-        ).place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
+        helper_add_handbook_button(self, frame)
 
     def add_support_button(self, frame):
-        tk.Button(
-            frame,
-            text=BUTTON_SUPPORT_TEXT,
-            command=self.open_email,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            padx=18,
-            pady=5
-        ).pack(side="left", padx=(0, 20))
+        helper_add_support_button(self, frame)
 
     def add_browse_button(self, frame, command, row):
-        tk.Button(
-            frame,
-            text=BUTTON_BROWSE_TEXT,
-            command=command,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR
-        ).grid(row=row, column=1, padx=10)
+        helper_add_browse_button(frame, command, row)
 
     def add_layout_combobox(self, frame, variable, row, pady):
-        layout_dropdown = ttk.Combobox(
-            frame,
-            textvariable=variable,
-            values=LAYOUT_OPTIONS,
-            state="readonly",
-            width=30
-        )
-        layout_dropdown.grid(row=row, column=0, sticky="w", pady=pady)
-        return layout_dropdown
+        return helper_add_layout_combobox(frame, variable, row, pady)
 
     def add_create_pdf_button(self, frame, command):
-        return tk.Button(
-            frame,
-            text=BUTTON_CREATE_PDF_TEXT,
-            command=command,
-            bg=BUTTON_COLOR,
-            fg=BUTTON_TEXT_COLOR,
-            state="disabled",
-            padx=20,
-            pady=8
-        )
+        return helper_add_create_pdf_button(frame, command)
+
+    def add_status_label(self, frame):
+        return helper_add_status_label(frame)
+
+    def add_text_entry(self, frame, variable, row, width):
+        return helper_add_text_entry(frame, variable, row, width)
 
     def init_single_variables(self):
         self.single_lagerplatz = tk.StringVar()
@@ -194,25 +138,6 @@ class QRCodeGeneratorApp:
         self.single_status = None
         self.single_btn_pdf = None
 
-    def add_status_label(self, frame):
-        return tk.Label(
-            frame,
-            text=STATUS_READY_TEXT,
-            fg=STATUS_TEXT_COLOR,
-            bg=BG_COLOR
-        )
-
-    def add_text_entry(self, frame, variable, row, width):
-        entry = tk.Entry(
-            frame,
-            textvariable=variable,
-            width=width,
-            bg=BG_COLOR,
-            fg=ENTRY_TEXT_COLOR,
-            insertbackground=ENTRY_CURSOR_COLOR
-        )
-        entry.grid(row=row, column=0, sticky="w")
-        return entry
 
     # ==== EINZELERSTELLUNG ====
     def build_tab_single(self):
