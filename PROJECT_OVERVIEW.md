@@ -21,6 +21,10 @@ Das Projekt soll langfristig modular, wartbar und erweiterbar aufgebaut werden.
 
 ### Phase 1: Architektur und Modularisierung
 
+Version 1.1 wurde als Architektur- und Modularisierungsstand vorbereitet.
+
+Version 1.2 wird als Stabilisierungs-Version vorbereitet.
+
 Aktuelle Priorität:
 
 * Projektstruktur verbessern
@@ -30,6 +34,8 @@ Aktuelle Priorität:
 * Abhängigkeiten reduzieren
 * Wartbarkeit erhöhen
 * GitHub-Struktur optimieren
+* Installation über `requirements.txt` vereinheitlichen
+* Testplan und Setup-/Fehlerbehebungsdokumentation ergänzen
 
 Wichtig:
 
@@ -149,6 +155,8 @@ Aktuell:
 ### Dokumentation
 
 * `docs/PROJECT_STRUCTURE_REVIEW.md`
+* `docs/TESTPLAN.md`
+* `docs/SETUP_AND_TROUBLESHOOTING.md`
 
 ### Utilities
 
@@ -247,6 +255,9 @@ Stabilisierung
 
 * Fehlerbehandlung
 * Codebereinigung
+* reproduzierbare Installation über `requirements.txt`
+* Setup- und Fehlerbehebungsdokumentation
+* manueller Testplan
 * Logging
 * Testbarkeit
 
@@ -292,7 +303,8 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 ## 11. Aktueller Status
 
 * Version 1.0 veröffentlicht
-* Version 1.1 als Architektur- und Modularisierungsstand vorbereitet
+* Version 1.1 als Architektur- und Modularisierungsstand abgeschlossen
+* Version 1.2 als Stabilisierungs-Version gestartet
 * GitHub synchronisiert
 * Anwendung lauffähig
 * Modularisierung begonnen
@@ -318,3 +330,6 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Fenstertitel auf Version 1.1 aktualisiert
 * PDF-Footer auf Version 1.1 aktualisiert
 * Release Notes im Programm um Version 1.1 ergänzt
+* `requirements.txt` für reproduzierbare Installation vorbereitet
+* Manueller Testplan unter `docs/TESTPLAN.md` ergänzt
+* Setup- und Fehlerbehebungsdokumentation unter `docs/SETUP_AND_TROUBLESHOOTING.md` ergänzt

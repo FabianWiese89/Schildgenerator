@@ -84,17 +84,17 @@ Die Anwendung importiert GUI-Komponenten direkt aus ihren jeweiligen Modulen. `s
 
 Benötigt wird Python 3.
 
-Abhängigkeiten installieren:
+Empfohlen ist die Installation über `requirements.txt`:
 
 ```powershell
-pip install openpyxl qrcode reportlab pillow
+python -m venv env
+.\env\Scripts\activate
+pip install -r requirements.txt
 ```
 
-Falls eine virtuelle Umgebung verwendet wird:
+Alternativ können die Abhängigkeiten manuell installiert werden:
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\activate
 pip install openpyxl qrcode reportlab pillow
 ```
 
@@ -137,11 +137,13 @@ Weitere Projektdokumentation:
 * `PROJECT_OVERVIEW.md`
 * `CHANGELOG.md`
 * `docs/PROJECT_STRUCTURE_REVIEW.md`
+* `docs/TESTPLAN.md`
+* `docs/SETUP_AND_TROUBLESHOOTING.md`
 
 ---
 
 ## Status
 
-Das Projekt ist als **Version 1.1** vorbereitet.
+Das Projekt ist als **Version 1.1** abgeschlossen.
 
-Version 1.1 bündelt den aktuellen Architektur- und Modularisierungsstand inklusive aktualisierter Release Notes im Programm.
+Version 1.2 wird als Stabilisierungs-Version vorbereitet. Der Fokus liegt auf reproduzierbarer Installation, klarer Fehlerbehandlung, dokumentierten Tests und Bedienungssicherheit.

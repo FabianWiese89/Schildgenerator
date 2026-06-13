@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## Version 1.2
+
+Status: in Vorbereitung.
+
+### Hinzugefügt
+
+- `requirements.txt` für eine reproduzierbare Installation über `pip install -r requirements.txt` vorbereitet.
+- Neuer manueller Testplan `docs/TESTPLAN.md` ergänzt.
+- Neue Setup- und Fehlerbehebungsdokumentation `docs/SETUP_AND_TROUBLESHOOTING.md` ergänzt.
+
+### Geändert
+
+- README.md um empfohlene Installation über `requirements.txt` erweitert.
+- PROJECT_OVERVIEW.md um den Start der Stabilisierungs-Version 1.2 ergänzt.
+
+### Ziel der Version
+
+- Stabilere lokale Einrichtung.
+- Verständlichere Prüfung nach Änderungen.
+- Bessere Grundlage für zukünftige Fehlerbehandlung und Bedienungssicherheit.
+
+---
+
 ## Version 1.0
 
 Ausgangsversion des Projekts.

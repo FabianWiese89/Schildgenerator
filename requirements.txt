@@ -1,4 +1,7 @@
-openpyxl
-qrcode
-reportlab
-pillow
+# Runtime dependencies for the Schildgenerator
+# Install with: pip install -r requirements.txt
+
+openpyxl>=3.1.0
+qrcode[pil]>=7.4.0
+reportlab>=4.0.0
+pillow>=10.0.0
