@@ -2,7 +2,6 @@ import tkinter as tk
 
 from src.config.theme import BG_COLOR
 
-
 class ReleaseNotesWindow(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
@@ -12,15 +11,7 @@ class ReleaseNotesWindow(tk.Toplevel):
         self.focus_set()
         self.grab_set()
 
-        txt = tk.Text(
-            self,
-            wrap="word",
-            font=("Arial", 11),
-            padx=10,
-            pady=10,
-            bg=BG_COLOR,
-            fg="black",
-        )
+        txt = tk.Text(self, wrap="word", font=("Arial", 11), padx=10, pady=10, bg=BG_COLOR, fg="black")
         txt.pack(fill="both", expand=True, side="left")
         sb = tk.Scrollbar(self, command=txt.yview)
         sb.pack(side="right", fill="y")
@@ -28,17 +19,6 @@ class ReleaseNotesWindow(tk.Toplevel):
 
         changelog = (
             "Release Notes / Änderungsprotokoll\n\n"
-            "Version 1.2 – Stabilisierung\n"
-            "- Robustere Pfadlogik unabhängig vom aktuellen Arbeitsverzeichnis\n"
-            "- PDF-Erstellung ohne temporäre QR-/Logo-Dateien stabilisiert\n"
-            "- Verständlichere Fehlermeldungen bei PDF-, Excel-, Logo- und Speicherproblemen\n"
-            "- Excel-Sammelverarbeitung prüft Eingabedatei, Spalten und leere Datensätze robuster\n"
-            "- Sammelverarbeitung meldet erstellte und übersprungene Zeilen\n"
-            "- Logo-Anzeige in der GUI gegen fehlende oder beschädigte Logo-Dateien abgesichert\n"
-            "- Testbutton für Textschild-Funktion standardmäßig ausgeblendet\n"
-            "- requirements.txt, Testplan und Setup-/Fehlerbehebungsdokumentation ergänzt\n"
-            "- Versionsanzeige, Fenstertitel und PDF-Footer auf Version 1.2 aktualisiert\n"
-            "\n"
             "Version 1.1 – 11.06.2026\n"
             "- Architektur- und Modularisierungsrelease vorbereitet\n"
             "- Projektstruktur in src/gui, src/pdf, src/config, src/utils und src/services aufgeteilt\n"

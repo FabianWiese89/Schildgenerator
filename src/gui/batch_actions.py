@@ -8,10 +8,8 @@ from src.utils import (
 )
 
 from src.config import (
-    ERROR_MESSAGEBOX_TITLE,
     STATUS_CREATING_PDF_TEXT,
     STATUS_DONE_TEXT,
-    STATUS_ERROR_TEXT,
     MESSAGEBOX_DONE_TITLE,
     MESSAGEBOX_PDF_CREATED_TEXT,
     PDF_DEFAULT_EXTENSION,
@@ -64,22 +62,14 @@ def on_batch_generate(app):
     app.batch_status.config(text=STATUS_CREATING_PDF_TEXT)
     app.root.update_idletasks()
 
-    try:
-        choice = get_line_count_from_layout(app.batch_layout.get())
-        excel = app.batch_excel_path.get().strip()
-        output = app.batch_output_path.get().strip()
+    choice = get_line_count_from_layout(app.batch_layout.get())
+    excel = app.batch_excel_path.get()
+    output = app.batch_output_path.get()
 
-        result = generate_batch_pdf(excel, output, choice)
+    generate_batch_pdf(excel, output, choice)
 
-        app.batch_status.config(text=STATUS_DONE_TEXT)
-        messagebox.showinfo(
-            MESSAGEBOX_DONE_TITLE,
-            (
-                f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{output}\n\n"
-                f"Erstellte Schilder: {result['created']}\n"
-                f"Übersprungene Zeilen: {result['skipped']}"
-            )
-        )
-    except Exception as exc:
-        app.batch_status.config(text=STATUS_ERROR_TEXT)
-        messagebox.showerror(ERROR_MESSAGEBOX_TITLE, str(exc))
+    app.batch_status.config(text=STATUS_DONE_TEXT)
+    messagebox.showinfo(
+        MESSAGEBOX_DONE_TITLE,
+        f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{output}"
+    )

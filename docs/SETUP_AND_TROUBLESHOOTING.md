@@ -120,15 +120,3 @@ output/
 
 Diese Einträge sind in `.gitignore` vorgesehen.
 
-
-## Hinweis zu Version 1.2
-
-Version 1.2 stabilisiert die Pfad- und Datei-Prüfung. Das Programm kann dadurch besser unterscheiden zwischen:
-
-* fehlender Excel-Datei
-* ungültigem Excel-Format
-* fehlender Logo-Datei
-* geöffnetem oder gesperrtem PDF-Ziel
-* fehlendem Zielordner
-
-Wenn eine PDF nicht gespeichert werden kann, bitte zuerst prüfen, ob sie noch in einem PDF-Viewer geöffnet ist.

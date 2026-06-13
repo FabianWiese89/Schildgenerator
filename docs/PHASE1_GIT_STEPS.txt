@@ -1,0 +1,21 @@
+# Git-Schritte nach Phase 1
+
+1. Im lokalen Projektordner prüfen:
+
+git status
+
+2. Wenn die Änderungen korrekt sind:
+
+git add README.md CHANGELOG.md PROJECT_OVERVIEW.md main.py requirements.txt src docs
+git commit -m "Stabilen Stand vor PDF-Refactoring sichern"
+
+3. Wenn Fontdateien aus dem Repository entfernt werden sollen, ohne sie lokal zu löschen:
+
+git rm --cached assets/*.ttf
+git commit -m "Remove bundled font files from repository"
+
+4. Danach erneut prüfen:
+
+git status
+
+Ziel: Der Arbeitsbaum muss sauber sein, bevor Phase 2 startet.

@@ -78,14 +78,3 @@ Danach manuell prüfen:
 * Release Notes öffnen
 * Keine Fehlermeldung im Terminal
 
-
-## Zusätzliche Stabilisierungstests Version 1.2
-
-| Nr. | Test | Erwartetes Ergebnis |
-|---:|---|---|
-| 1 | Programm aus einem anderen Arbeitsverzeichnis starten, z. B. per absolutem Pfad | Assets werden weiterhin gefunden |
-| 2 | PDF in einen neuen Unterordner speichern | Zielordner wird erstellt und PDF wird geschrieben |
-| 3 | Bereits geöffnete PDF überschreiben | Verständliche Fehlermeldung erscheint |
-| 4 | Excel-Datei mit nur einer Spalte verwenden | Verständliche Fehlermeldung zu Spalte A/B erscheint |
-| 5 | Excel-Datei mit leeren Zeilen verwenden | Gültige Zeilen werden erstellt, leere Zeilen werden gezählt/übersprungen |
-| 6 | Logo-Datei testweise umbenennen | Programm startet weiter; GUI zeigt einen Logo-Hinweis bzw. PDF meldet das fehlende Logo verständlich |
