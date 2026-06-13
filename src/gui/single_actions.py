@@ -8,8 +8,10 @@ from src.utils import (
 )
 
 from src.config import (
+    ERROR_MESSAGEBOX_TITLE,
     STATUS_CREATING_PDF_TEXT,
     STATUS_DONE_TEXT,
+    STATUS_ERROR_TEXT,
     MESSAGEBOX_DONE_TITLE,
     MESSAGEBOX_PDF_CREATED_TEXT,
     PDF_DEFAULT_EXTENSION,
@@ -47,19 +49,19 @@ def on_single_generate(app):
     app.single_status.config(text=STATUS_CREATING_PDF_TEXT)
     app.root.update_idletasks()
 
-    choice = get_line_count_from_layout(app.single_layout.get())
-    lagerplatz_sys = app.single_lagerplatz.get().strip()
-    lagerplatz_vis = lagerplatz_sys.replace("-", " ")
-    qr_data = lagerplatz_sys
-    output = app.single_output.get().strip()
+    try:
+        choice = get_line_count_from_layout(app.single_layout.get())
+        lagerplatz_sys = app.single_lagerplatz.get().strip()
+        lagerplatz_vis = lagerplatz_sys.replace("-", " ")
+        output = app.single_output.get().strip()
 
-    if choice == 4:
-        generate_pdf_einzeln(lagerplatz_vis, qr_data, output, 4)
-    else:
-        generate_pdf_einzeln(lagerplatz_vis, qr_data, output, 5)
+        generate_pdf_einzeln(lagerplatz_vis, lagerplatz_sys, output, choice)
 
-    app.single_status.config(text=STATUS_DONE_TEXT)
-    messagebox.showinfo(
-        MESSAGEBOX_DONE_TITLE,
-        f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{output}"
-    )
+        app.single_status.config(text=STATUS_DONE_TEXT)
+        messagebox.showinfo(
+            MESSAGEBOX_DONE_TITLE,
+            f"{MESSAGEBOX_PDF_CREATED_TEXT}\n{output}"
+        )
+    except Exception as exc:
+        app.single_status.config(text=STATUS_ERROR_TEXT)
+        messagebox.showerror(ERROR_MESSAGEBOX_TITLE, str(exc))

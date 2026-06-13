@@ -2,27 +2,38 @@
 
 ## Version 1.2
 
-Status: in Vorbereitung.
+Status: vorbereitet als Stabilisierungs-Version.
 
 ### Hinzugefügt
 
-- `requirements.txt` für eine reproduzierbare Installation über `pip install -r requirements.txt` vorbereitet.
-- Neuer manueller Testplan `docs/TESTPLAN.md` ergänzt.
+- Neue Hilfsdatei `src/utils/file_helpers.py` für Datei-, Excel- und PDF-Pfadprüfungen.
+- Neue Utility-Exporte für `project_root()`, `project_path()`, `ensure_pdf_output_path()`, `ensure_excel_input_path()` und `ensure_required_file()`.
+- Neuer manueller Testplan `docs/TESTPLAN.md` ergänzt und um Stabilisierungstests erweitert.
 - Neue Setup- und Fehlerbehebungsdokumentation `docs/SETUP_AND_TROUBLESHOOTING.md` ergänzt.
+- Neue Dokumentation `docs/VERSION_1_2_STABILISIERUNG.md` ergänzt.
 
 ### Geändert
 
-- README.md um empfohlene Installation über `requirements.txt` erweitert.
-- PROJECT_OVERVIEW.md um den Start der Stabilisierungs-Version 1.2 ergänzt.
+- Versionsanzeige im Programm auf Version 1.2 aktualisiert.
+- Fenstertitel auf Version 1.2 aktualisiert.
+- PDF-Footer auf Version 1.2 aktualisiert.
+- Release Notes im Programm um Version 1.2 ergänzt.
+- README.md und PROJECT_OVERVIEW.md für den Version-1.2-Stabilisierungsstand aktualisiert.
+- Textschild-Testbutton für stabile Nutzung standardmäßig ausgeblendet.
 
-### Ziel der Version
+### Stabilisiert
 
-- Stabilere lokale Einrichtung.
-- Verständlichere Prüfung nach Änderungen.
-- Bessere Grundlage für zukünftige Fehlerbehandlung und Bedienungssicherheit.
+- Projektpfade werden nun robuster über die Projektwurzel ermittelt und sind weniger abhängig vom aktuellen Arbeitsverzeichnis.
+- PDF-Erstellung erstellt QR-Code und Logo direkt im Speicher statt über temporäre Dateien im Arbeitsordner.
+- PDF-Ausgabepfade werden geprüft und Zielordner bei Bedarf angelegt.
+- Fehlende oder beschädigte Logo-Dateien führen zu verständlicheren Fehlermeldungen.
+- GUI-Logo-Anzeige stürzt bei fehlendem Logo nicht mehr ab, sondern zeigt einen Hinweis.
+- Einzelerstellung und Sammelverarbeitung fangen Fehler ab und zeigen verständliche Dialogmeldungen.
+- Excel-Sammelverarbeitung prüft Datei, Dateiformat, Spalten und leere Datensätze robuster.
+- Sammelverarbeitung meldet erstellte und übersprungene Zeilen.
+- Validierung akzeptiert Dateiendungen robuster über echte Pfadprüfung.
 
 ---
-
 ## Version 1.0
 
 Ausgangsversion des Projekts.

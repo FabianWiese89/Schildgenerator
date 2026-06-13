@@ -1,12 +1,17 @@
 import tkinter as tk
 
+from tkinter import messagebox
+
 from src.pdf import generate_text_sign_pdf
+
+from src.utils import project_path
 
 from src.config import (
     BG_COLOR,
     BUTTON_COLOR,
     BUTTON_TEXT_COLOR,
     BUTTON_TEXT_SIGN_TEST_TEXT,
+    ERROR_MESSAGEBOX_TITLE,
     FONT_LABEL,
     FONT_TITLE,
     SHOW_TEXT_SIGN_TEST_BUTTON,
@@ -93,15 +98,21 @@ def build_single_tab(app):
     # Die spätere Vollversion soll Textschild-Inhalte über die GUI auswählbar machen.
     # Daher werden die hier verwendeten Testwerte bewusst nicht weiter zentralisiert.
     if SHOW_TEXT_SIGN_TEST_BUTTON:
+        def create_test_text_sign():
+            try:
+                generate_text_sign_pdf(
+                    "TESTSCHILD",
+                    "PARKPLATZ FÜR BESUCHER UND LIEFERANTEN SOWIE EXTERNE DIENSTLEISTER",
+                    str(project_path("output/test_textschild.pdf")),
+                    True
+                )
+            except Exception as exc:
+                messagebox.showerror(ERROR_MESSAGEBOX_TITLE, str(exc))
+
         tk.Button(
             btn_frame,
             text=BUTTON_TEXT_SIGN_TEST_TEXT,
-            command=lambda: generate_text_sign_pdf(
-                "TESTSCHILD",
-                "PARKPLATZ FÜR BESUCHER UND LIEFERANTEN SOWIE EXTERNE DIENSTLEISTER",
-                "output/test_textschild.pdf",
-                True
-            ),
+            command=create_test_text_sign,
             bg=BUTTON_COLOR,
             fg=BUTTON_TEXT_COLOR,
             padx=18,

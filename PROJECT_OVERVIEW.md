@@ -23,7 +23,7 @@ Das Projekt soll langfristig modular, wartbar und erweiterbar aufgebaut werden.
 
 Version 1.1 wurde als Architektur- und Modularisierungsstand vorbereitet.
 
-Version 1.2 wird als Stabilisierungs-Version vorbereitet.
+Version 1.2 ist als Stabilisierungs-Version vorbereitet.
 
 Aktuelle Priorität:
 
@@ -108,6 +108,11 @@ Neue bzw. ausgelagerte öffentliche Funktionen:
 * `is_single_pdf_valid()`
 * `is_batch_pdf_valid()`
 * `open_support_email()`
+* `ensure_pdf_output_path()`
+* `ensure_excel_input_path()`
+* `ensure_required_file()`
+* `project_root()`
+* `project_path()`
 
 Interne Detailfunktionen:
 
@@ -157,6 +162,7 @@ Aktuell:
 * `docs/PROJECT_STRUCTURE_REVIEW.md`
 * `docs/TESTPLAN.md`
 * `docs/SETUP_AND_TROUBLESHOOTING.md`
+* `docs/VERSION_1_2_STABILISIERUNG.md`
 
 ### Utilities
 
@@ -304,7 +310,7 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 
 * Version 1.0 veröffentlicht
 * Version 1.1 als Architektur- und Modularisierungsstand abgeschlossen
-* Version 1.2 als Stabilisierungs-Version gestartet
+* Version 1.2 als Stabilisierungs-Version vorbereitet
 * GitHub synchronisiert
 * Anwendung lauffähig
 * Modularisierung begonnen
@@ -326,10 +332,16 @@ Immer nur einen kontrollierbaren Entwicklungsschritt durchführen.
 * Paket-Exports über `__init__.py` für `gui`, `pdf`, `config`, `utils` und `services` eingerichtet
 * GUI-Theme-, Text- und Dialogwerte in `src/config/theme.py` zentralisiert
 * Textschild-Testbutton als temporäre Entwicklungsfunktion zentral ein- und ausblendbar
-* Versionsanzeige im Programm auf Version 1.1 aktualisiert
-* Fenstertitel auf Version 1.1 aktualisiert
-* PDF-Footer auf Version 1.1 aktualisiert
-* Release Notes im Programm um Version 1.1 ergänzt
+* Versionsanzeige im Programm auf Version 1.2 aktualisiert
+* Fenstertitel auf Version 1.2 aktualisiert
+* PDF-Footer auf Version 1.2 aktualisiert
+* Release Notes im Programm um Version 1.2 ergänzt
+* Pfadlogik über `src/utils/paths.py` robuster und unabhängig vom aktuellen Arbeitsverzeichnis gemacht
+* PDF-Erzeugung ohne temporäre QR-/Logo-Dateien stabilisiert
+* Excel-Sammelverarbeitung gegen fehlende Dateien, fehlende Spalten und leere Datensätze abgesichert
+* GUI-Fehlerbehandlung für Einzel- und Sammelverarbeitung verbessert
+* GUI-Logo-Anzeige gegen fehlende oder beschädigte Logo-Dateien abgesichert
+* Textschild-Testbutton für stabile Nutzung standardmäßig ausgeblendet
 * `requirements.txt` für reproduzierbare Installation vorbereitet
 * Manueller Testplan unter `docs/TESTPLAN.md` ergänzt
 * Setup- und Fehlerbehebungsdokumentation unter `docs/SETUP_AND_TROUBLESHOOTING.md` ergänzt

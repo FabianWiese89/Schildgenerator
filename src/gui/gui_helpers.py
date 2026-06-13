@@ -1,4 +1,3 @@
-import os
 import tkinter as tk
 from tkinter import ttk
 
@@ -29,10 +28,15 @@ from src.config import (
 
 
 def add_logo_to_frame(app, frame):
-    """Fügt das konfigurierte Firmenlogo in einen GUI-Frame ein."""
+    """Fügt das konfigurierte Firmenlogo in einen GUI-Frame ein.
+
+    Fehlt das Logo oder ist die Datei beschädigt, soll die Anwendung trotzdem
+    starten. Statt eines Absturzes wird ein dezenter Hinweis im Logo-Bereich
+    angezeigt.
+    """
     logo_path = resource_path(GUI_LOGO_PATH)
 
-    if os.path.exists(logo_path):
+    try:
         img = Image.open(logo_path)
         img = img.resize((GUI_LOGO_WIDTH, GUI_LOGO_HEIGHT), Image.LANCZOS)
         logo_img = ImageTk.PhotoImage(img)
@@ -40,6 +44,17 @@ def add_logo_to_frame(app, frame):
         logo_label = tk.Label(frame, image=logo_img, bg=BG_COLOR)
         logo_label.image = logo_img
         logo_label.place(
+            relx=GUI_LOGO_RELX,
+            rely=GUI_LOGO_RELY,
+            anchor=GUI_LOGO_ANCHOR,
+        )
+    except Exception:
+        tk.Label(
+            frame,
+            text="Logo nicht verfügbar",
+            bg=BG_COLOR,
+            fg="darkred",
+        ).place(
             relx=GUI_LOGO_RELX,
             rely=GUI_LOGO_RELY,
             anchor=GUI_LOGO_ANCHOR,

@@ -36,7 +36,7 @@ Geplante Einsatzbereiche:
 * Parkplatzschilder
 * Bereichsschilder
 
-Der aktuelle Fokus liegt jedoch nicht auf neuen Funktionen, sondern auf:
+Der aktuelle Fokus liegt jedoch nicht auf neuen Funktionen, sondern auf Stabilität und Wartbarkeit:
 
 * sauberer Projektstruktur
 * Modularisierung
@@ -139,11 +139,12 @@ Weitere Projektdokumentation:
 * `docs/PROJECT_STRUCTURE_REVIEW.md`
 * `docs/TESTPLAN.md`
 * `docs/SETUP_AND_TROUBLESHOOTING.md`
+* `docs/VERSION_1_2_STABILISIERUNG.md`
 
 ---
 
 ## Status
 
-Das Projekt ist als **Version 1.1** abgeschlossen.
+Das Projekt ist als **Version 1.2 – Stabilisierung** vorbereitet.
 
-Version 1.2 wird als Stabilisierungs-Version vorbereitet. Der Fokus liegt auf reproduzierbarer Installation, klarer Fehlerbehandlung, dokumentierten Tests und Bedienungssicherheit.
+Version 1.2 bündelt robustere Pfad- und Datei-Prüfungen, verständlichere Fehlermeldungen, stabilere PDF-Erzeugung ohne temporäre Bilddateien, abgesicherte Excel-Sammelverarbeitung sowie aktualisierte Release Notes im Programm.
